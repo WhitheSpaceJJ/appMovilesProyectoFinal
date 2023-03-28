@@ -7,7 +7,10 @@
     android:orientation="vertical"
     android:background="@drawable/round_purple"
     tools:context=".MainActivity">
+
+
     <ImageView
+        android:id="@+id/img_logo_main"
         android:layout_width="340dp"
         android:layout_height="200dp"
         android:layout_marginTop="100dp"

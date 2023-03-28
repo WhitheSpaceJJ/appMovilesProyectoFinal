@@ -5,24 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/purple_200"
+    android:orientation="vertical"
     tools:context=".IniciarSesion">
-    <ImageView android:id="@+id/imageView"
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="362dp"
-        android:layout_marginTop="25dp"
         android:layout_height="228dp"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="24dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <com.google.android.material.textfield.TextInputLayout
 
+        android:id="@+id/txti_usuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="252dp"        android:layout_marginTop="25dp"
-        android:layout_height="65dp" android:id="@+id/txti_usuario"
-        android:hint="Usuario"   android:layout_gravity="center"
+        android:layout_width="252dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:hint="Usuario"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="284dp">
 
@@ -30,8 +35,9 @@
 
             android:layout_width="249dp"
             android:layout_height="53dp"
+            android:layout_gravity="center"
             android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"         android:layout_gravity="center"
+            android:backgroundTint="#FFFFFF"
             android:inputType="textPersonName"
             android:textColor="#000000"
             android:textColorHighlight="#000000"
@@ -42,16 +48,19 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
+        android:id="@+id/txi_contraseña"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="255dp"
-        android:layout_height="68dp" android:id="@+id/txi_contraseña"
-        android:hint="Contraseña"         android:layout_gravity="center"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:hint="Contraseña"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="349dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="249dp"
-            android:layout_height="53dp"        android:layout_gravity="center"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
             android:background="#FFFFFF"
             android:inputType="textPersonName" />
 
@@ -61,7 +70,8 @@
     <CheckBox
         android:id="@+id/checkBox_recordatorio"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"         android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:button="@android:drawable/checkbox_off_background"
         android:buttonTint="#DAD8D8"
         android:text="Recordar Usuario"
@@ -70,8 +80,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="210dp"         android:layout_gravity="center"
+        android:layout_width="210dp"
         android:layout_height="53dp"
+        android:layout_gravity="center"
         android:text=" ¿Olvidaste tu contraseña?"
         android:textColor="#FFD57F"
         android:textSize="18sp"
@@ -79,24 +90,25 @@
         tools:layout_editor_absoluteY="417dp" />
 
     <Button
-        android:id="@+id/btn_iniciar"
+        android:id="@+id/btn_iniciar_sesion"
         android:layout_width="249dp"
         android:layout_height="72dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/round_button_green"
         android:layout_gravity="center"
+        android:background="@drawable/round_button_green"
         android:text="Iniciar Sesión"
+        app:backgroundTint="@null"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="532dp" />
 
     <Button
         android:id="@+id/btn_registrarse"
         android:layout_width="249dp"
-        android:layout_height="70dp"        android:layout_gravity="center"
-        app:backgroundTint="@null"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_button_purple"
         android:text="Registrarse"
+        app:backgroundTint="@null"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="614dp" />
 </LinearLayout>
