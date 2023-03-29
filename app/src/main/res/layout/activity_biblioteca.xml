@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Fantasia"
+                android:text="FantasiaPrue"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -100,61 +100,4 @@
 
     </GridLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center|bottom"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/buttonInicio"
-            android:layout_width="65dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_height="50dp"
-            android:background="@drawable/inicio"
-            android:contentDescription="Ir a inicio de app"
-            app:backgroundTint="@null"/>
-        <Button
-            android:id="@+id/buttonBuscar"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/buscar"
-            android:contentDescription="Buscar libros,categorias"
-            app:backgroundTint="@null"
-            />
-        <Button
-            android:id="@+id/buttonbiblioteca"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/biblioteca"
-            android:contentDescription="Entrar a biblioteca"
-            app:backgroundTint="@null"
-            />
-        <Button
-            android:id="@+id/buttonActividades"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/actividades"
-            android:contentDescription="Ver actividades"
-            app:backgroundTint="@null"
-            />
-        <Button
-            android:id="@+id/buttonPerfil"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/perfil"
-            android:contentDescription="Ver perfil"
-            app:backgroundTint="@null"
-            />
-
-    </LinearLayout>
 </LinearLayout>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/round_purple3"
     android:orientation="vertical"
     android:scrollbarThumbHorizontal="@android:drawable/presence_online"
@@ -223,11 +224,13 @@
         </LinearLayout>
 
         <Button
+
             android:layout_width="220dp"
             android:layout_height="60dp"
-            android:backgroundTint="@color/green_btn_200"
-            android:layout_marginTop="28dp"
-            android:layout_marginStart="192dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/round_green"
+            android:layout_marginTop="33dp"
+            android:layout_marginStart="205dp"
             android:text="Siguiente >"
             android:textSize="23sp"/>
 

@@ -10,6 +10,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_color">#6200EE</color>
     <color name="brand_color_dark">#3700B3</color>
+    <color name="bluelight">#BFD1FF</color>
+    <color name="blue">#4B72D4</color>
+    <color name="dark_blue">#2E4FA5</color>
     <color name="secondary_color">#03DAC6</color>
     <color name="secondary_color_dark">#018786</color>
     <color name="light_text">#FFFFFF</color>
@@ -24,5 +27,7 @@
     <color name="purple_rnd_200">#9085C8</color>
     <color name="purple_rnd_300">#706897</color>
     <color name="text_purple_dark">#484463</color>
+    <color name="yellow_dark">#C3A840</color>
+    <color name="yellow_light">#FFDD85</color>
 
 </resources>
