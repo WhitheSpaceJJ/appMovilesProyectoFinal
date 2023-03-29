@@ -3,54 +3,113 @@ package mx.edu.itson.appmoviles
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
 //FragmentBuscar : Fragment(R.layout.fragment_buscar) {
-class FragmentCatalogo : Fragment(R.layout.fragment_catalogo) {
+class FragmentCatalogo : Fragment() {
+    private var param1: String? = null
+    private var param2: String? = null
     var catalogo: ArrayList<Historia> = ArrayList<Historia>()
     var adapter: HistoriaAdapter? = null
 
-    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.fragment_catalogo)
-        //var opcion: String? = intent.getStringExtra("selection")
-        //agregarHistorias(opcion)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
 
+    override fun onCreateView(
+    inflater: LayoutInflater, container: ViewGroup?,
+    savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view: View = inflater.inflate(R.layout.fragment_catalogo, container, false)
         agregarHistorias()
-        //var listView: GridView = findViewById(R.id.catalogo) as GridView
-
-        //adapter = HistoriaAdapter(this, catalogo)
-        adapter = HistoriaAdapter(this, catalogo)
-
+        adapter = HistoriaAdapter(view.context, catalogo)
+        var listView: GridView = view.findViewById(R.id.catalogo)
+        listView.adapter=adapter
+        return view
     }
 
-
-    private fun agregarHistorias(){
-        catalogo.add(Historia(R.drawable.biblioteca1, "El regalo de la princesa", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
-        catalogo.add(Historia(R.drawable.biblioteca2, "Ricitos de oro", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
-        catalogo.add(Historia(R.drawable.biblioteca3, "Cenicienta", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
-        catalogo.add(Historia(R.drawable.biblioteca4, "Rapunzel", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
-        catalogo.add(Historia(R.drawable.animales, "La reina de las nieves", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
-        catalogo.add(Historia(R.drawable.aventura, "Pinochio", "aaa", "123", "aaaaaaaaaaaaaaaaaaaaaaaaaaa"))
+    private fun agregarHistorias() {
+        catalogo.add(
+            Historia(
+                R.drawable.biblioteca1,
+                "El regalo de la princesa",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.biblioteca2,
+                "Ricitos de oro",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.biblioteca3,
+                "Cenicienta",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.biblioteca4,
+                "Rapunzel",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.animales,
+                "La reina de las nieves",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.aventura,
+                "Pinochio",
+                "aaa",
+                "123",
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            )
+        )
     }
 
-    class HistoriaAdapter: BaseAdapter{
+    class HistoriaAdapter : BaseAdapter {
         var context: Context? = null
         var catalogo = ArrayList<Historia>()
 
-        constructor(context: Context, catalogo:ArrayList<Historia>){
+        constructor(context: Context, catalogo: ArrayList<Historia>) {
             this.context = context
             this.catalogo = catalogo
         }
+
         override fun getCount(): Int {
             return catalogo.size
         }
@@ -65,7 +124,8 @@ class FragmentCatalogo : Fragment(R.layout.fragment_catalogo) {
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             var historia = catalogo[p0]
-            var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var inflator =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.celda_historia, null)
 
             var imagen: ImageView = vista.findViewById(R.id.historia_imagen)
