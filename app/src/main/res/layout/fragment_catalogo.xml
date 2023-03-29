@@ -3,14 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:orientation="vertical"
     tools:context=".FragmentCatalogo">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_with_shadow"
+        android:elevation="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginBottom="11dp"
+            android:fontFamily="@font/nunito_black"
+            android:text="@string/catalogo"
+            android:textColor="@color/text_purple_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_with_shadow"
+        android:elevation="10dp"
+        android:orientation="horizontal">
+
+        <GridView
+            android:id="@+id/catalogo"
+            android:layout_width="match_parent"
+            android:layout_height="554dp"
+            android:layout_marginTop="20dp"
+            android:numColumns="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barra_inicio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Catalogo"
-        android:textSize="50sp"/>
+        android:orientation="horizontal"/>
 
 
 </LinearLayout>

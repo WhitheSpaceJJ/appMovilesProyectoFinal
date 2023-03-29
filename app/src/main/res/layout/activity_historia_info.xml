@@ -53,10 +53,13 @@
 
    </RelativeLayout>
 <TextView
-    android:layout_width="match_parent" android:textSize="35sp"
+    android:layout_width="match_parent"
+    android:textSize="35sp"
     android:textStyle="bold"
-    android:layout_height="wrap_content"   android:layout_marginTop="15dp"
-    android:text="Click"  android:layout_marginLeft="30dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:text="Click"
+    android:layout_marginLeft="30dp"
     android:id="@+id/tituloHistoria"/>
    <TextView
        android:layout_width="match_parent"

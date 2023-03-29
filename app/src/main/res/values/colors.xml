@@ -24,5 +24,7 @@
     <color name="purple_rnd_200">#9085C8</color>
     <color name="purple_rnd_300">#706897</color>
     <color name="text_purple_dark">#484463</color>
+    <color name="gray">#27000000</color>
+
 
 </resources>
