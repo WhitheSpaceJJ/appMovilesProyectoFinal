@@ -135,7 +135,7 @@ class FragmentCatalogo : Fragment() {
             imagen.setOnClickListener {
                 var intento = Intent(context, HistoriaInfo::class.java)
 
-                intento.putExtra("imagen", historia.image)
+                intento.putExtra("image", historia.image)
                 intento.putExtra("titulo", historia.titulo)
                 intento.putExtra("autor", historia.autor)
                 intento.putExtra("numPaginas", historia.numPaginas)
