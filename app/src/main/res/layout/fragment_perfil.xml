@@ -23,7 +23,7 @@
 
 
         <ImageView
-            android:id="@+id/img_configuracion_perfil"
+            android:id="@+id/img_configuracion"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
