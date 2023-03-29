@@ -9,6 +9,8 @@
     <string name="aciertos_regalo">10/10</string>
     <string name="aciertos_fallida">4/10</string>
     <string name="nom_perfil">Karla</string>
+    <string name="catalogo">Catálogo</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
