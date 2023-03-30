@@ -1,8 +1,10 @@
 package mx.edu.itson.appmoviles
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -22,6 +24,12 @@ class Faq : AppCompatActivity(), View.OnClickListener {
         tv_mini_cambio = findViewById(R.id.minitextviewCambio)
         tv_mini_olvide = findViewById(R.id.minitextviewOlvide)
         tv_mini_sin_imagen = findViewById(R.id.minitextviewSinImagenes)
+
+        val iv_regresar: ImageView = findViewById(R.id.ivRegresarFaq)
+        iv_regresar.setOnClickListener {
+            var intent: Intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onClick(view: View) {
