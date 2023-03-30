@@ -55,7 +55,7 @@ class ColeccionBase : Fragment() {
 
         regresar.setOnClickListener {
             val menuActivity = requireActivity() as Menu
-            menuActivity.setCurrentFragment(ColeccionBase())
+            menuActivity.setCurrentFragment(FragmentPerfil())
         }
         return view
     }

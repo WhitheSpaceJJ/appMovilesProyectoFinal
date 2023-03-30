@@ -57,7 +57,7 @@
         android:layout_height="494dp"
         android:background="@drawable/background_with_shadow"
         android:elevation="10dp"
-        android:orientation="horizontal">
+        android:orientatio="vertical">
 
         <GridView
             android:id="@+id/medallas"

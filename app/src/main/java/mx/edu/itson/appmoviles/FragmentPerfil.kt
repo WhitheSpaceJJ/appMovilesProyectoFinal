@@ -58,7 +58,6 @@ class FragmentPerfil : Fragment() {
             menuActivity.setCurrentFragment(Medallas())
         }
         val ivColecion:ImageView= view.findViewById(R.id.coleccionablesPerfil)
-
         ivColecion.setOnClickListener {
             // Obtener la instancia de la actividad actual y llamar setCurrentFragment
             val menuActivity = requireActivity() as Menu
