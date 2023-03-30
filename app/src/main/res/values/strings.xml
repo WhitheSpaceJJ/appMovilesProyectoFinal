@@ -41,13 +41,19 @@
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="elige_temas">Elige tus temas favoritos</string>
     <string name="listo">Listo</string>
-
     <string name="deportes">Deportes</string>
     <string name="animales">Animales</string>
     <string name="magia">Magia</string>
     <string name="videojuegos">Videojuegos</string>
     <string name="musical">Musical</string>
     <string name="aventura">Aventura</string>
+
+    <!--Perfiles-->
+    <string name="perfiles">Perfiles</string>
+    <string name="carla">Carla</string>
+    <string name="david">David</string>
+    <string name="eric">Eric</string>
+    <string name="agregar_perfil">Agregar perfil</string>
 
 
 
