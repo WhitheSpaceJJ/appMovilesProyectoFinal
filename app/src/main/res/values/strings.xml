@@ -55,6 +55,17 @@
     <string name="eric">Eric</string>
     <string name="agregar_perfil">Agregar perfil</string>
 
+    <!--Contraseña olvidada-->
+    <string name="perdiste_tu_contrasena">¿Perdiste tu contraseña?</string>
+    <string name="desc_contrasena">¡No te preocupes! Escribe tu usuario para recuperarla</string>
+    <string name="checar">Checar</string>
+
+    <string name="hola_user">¡Hola, Hannah23!</string>
+    <string name="nueva_contrasena">Nueva contraseña</string>
+    <string name="restablecer">Restablecer</string>
+
+
+
 
 
 

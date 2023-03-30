@@ -11,7 +11,7 @@ class PaswordOlvidada : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pasword_olvidada)
 
-        val btnChecar: Button = findViewById(R.id.btn_checar_contra_olvidada)
+        val btnChecar: Button = findViewById(R.id.btn_checar)
 
         btnChecar.setOnClickListener{
             var intent: Intent = Intent(this, RestablecerPasword::class.java)

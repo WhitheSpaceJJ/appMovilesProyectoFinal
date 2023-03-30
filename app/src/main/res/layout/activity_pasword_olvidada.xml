@@ -4,60 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/background_degraded"
     android:orientation="vertical"
     tools:context=".PaswordOlvidada">
 
 
-    <ImageView
-        android:id="@+id/ivRegresarPass"
-        android:layout_width="25dp"
-        android:layout_height="50dp"
-        android:background="@drawable/angleleftsolid2"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="220dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿Perdiste tu contraseña?"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtsubtitulo"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="30dp"
+        <ImageView
+            android:id="@+id/ivRegresarPass"
+            android:layout_width="14dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/angleleftsolid2"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
         android:layout_marginTop="30dp"
-        android:text="¡No te preocupes! Escribe tu usuario para recuperarla"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/perdiste_tu_contrasena"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="241dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/desc_contrasena"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
 
     <EditText
-        android:id="@+id/etUsuario_contra_olvidada"
+        android:id="@+id/et_usuario_contra_olvidada"
         android:layout_width="252dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:background="@drawable/round_gray"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
         android:padding="10dp"
         android:paddingStart="25dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        android:fontFamily="@font/nunito_bold"/>
 
 
     <Button
-        android:id="@+id/btn_checar_contra_olvidada"
+        android:id="@+id/btn_checar"
         android:layout_width="246dp"
-        android:layout_height="57dp"
+        android:layout_height="77dp"
         android:layout_gravity="center"
         android:layout_marginTop="180dp"
-        android:background="@drawable/round_button_purple"
-        android:text="Checar"
+        android:background="@drawable/rectangle5"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/checar"
+        android:textAllCaps="false"
         app:backgroundTint="@null" />
 </LinearLayout>

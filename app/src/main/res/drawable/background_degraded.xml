@@ -8,6 +8,5 @@
                 android:centerColor="@color/purple_rnd_300"
                 android:gradientRadius="500dp"/>
         </shape>
-
     </item>
 </selector>
