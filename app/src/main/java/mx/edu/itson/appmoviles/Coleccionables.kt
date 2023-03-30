@@ -1,6 +1,5 @@
 package mx.edu.itson.appmoviles
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,7 +34,7 @@ class Coleccionables : AppCompatActivity() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla, parent, false)
+            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla_coleccionable, parent, false)
             val imageView = view.findViewById<ImageView>(R.id.imageView)
             imageView.setImageResource(coleccionable[position])
             return view

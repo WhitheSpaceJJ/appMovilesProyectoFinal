@@ -34,7 +34,7 @@ class Medallas : AppCompatActivity() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla, parent, false)
+            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla_coleccionable, parent, false)
             val imageView = view.findViewById<ImageView>(R.id.imageView)
             imageView.setImageResource(medallas[position])
             return view
