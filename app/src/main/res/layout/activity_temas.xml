@@ -5,36 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_200"
+    android:background="@drawable/background_degraded"
     tools:context=".Temas">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"
+        android:layout_height="137dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="5dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/buttonRegresar"
-            android:layout_width="25dp"
-            android:layout_height="50dp"
-            android:background="@drawable/angleleftsolid416"
-            android:padding="8dp"/>
+            android:id="@+id/btn_regresar"
+            android:layout_width="14dp"
+            android:layout_height="23dp"
+            android:background="@drawable/vector192"
+            android:padding="8dp" />
 
         <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="0dp"
+            android:id="@+id/txt_titulo"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Bienvenido \nElige tus temas favoritos"
-            android:layout_marginLeft="10dp"
-            android:textSize="30sp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/bienvenido"
             android:textColor="@color/light_text"
-         />
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/txt_descripcion"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/elige_temas"
+            android:textColor="@color/light_text"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -44,96 +55,121 @@
         android:background="@android:color/holo_purple"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"/>
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="347dp">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="407dp"
+            android:layout_gravity="center">
+
+            <TableRow android:layout_marginTop="120dp">
+
+                <Button
+                    android:id="@+id/btn_deportes"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/balon"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/deportes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/btn_animales"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/perro"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/animales"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="15dp">
+
+                <Button
+                    android:id="@+id/btn_magia"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/magia"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/magia"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/btn_videojuegos"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/videojuego"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/videojuegos"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="15dp">
+
+                <Button
+                    android:id="@+id/btn_musical"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/musical"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/musical"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/btn_aventuras"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/botontemaselectable"
+                    android:drawableTop="@drawable/cohete"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/aventura"
+                    android:textAllCaps="false"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="15dp" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_degraded">
+    <Button
+        android:id="@+id/btn_listo"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-      >
-
-        <TableRow>
-            <Button
-                android:id="@+id/balon_button"
-                android:layout_width="145dp"
-                android:layout_height="145dp"
-                android:textColor="@color/black"
-                android:text="Balón"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:drawableTop="@drawable/balon"
-                android:background="@drawable/botontemaselectable" />
-
-            <Button
-                android:id="@+id/cohete_button"
-                android:layout_width="145dp"
-                android:layout_height="145dp"
-                android:text="Cohete"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:textColor="@color/black"
-                android:drawableTop="@drawable/cohete"
-                android:background="@drawable/botontemaselectable" />
-        </TableRow>
-
-        <TableRow>
-            <Button
-                android:id="@+id/magia_button"
-                android:layout_width="145dp"
-                android:layout_height="145dp"
-
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:text="Magia"  android:textColor="@color/black"
-android:layout_marginBottom="10dp"
-                android:drawableTop="@drawable/magia"
-                android:background="@drawable/botontemaselectable" />
-
-            <Button
-                android:id="@+id/musical_button"
-                android:layout_width="145dp"
-                android:layout_height="145dp"
-
-                android:layout_marginTop="10dp"
-                android:text="Musical"
-                android:textColor="@color/black"
-                android:drawableTop="@drawable/musical"
-                android:background="@drawable/botontemaselectable" />
-        </TableRow>
-
-        <TableRow>
-            <Button
-                android:id="@+id/perro_button"
-
-                android:layout_width="145dp"
-                android:layout_height="145dp"
-                android:layout_marginRight="10dp"
-                android:text="Perro"
-                android:layout_marginTop="10dp"
-                android:drawableTop="@drawable/perro"  android:textColor="@color/black"
-                android:background="@drawable/botontemaselectable" />
-
-            <Button
-                android:id="@+id/videojuego_button"
-                android:layout_width="145dp"
-                android:layout_marginTop="5dp"
-                android:layout_height="145dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/botontemaselectable"
-                android:drawableTop="@drawable/videojuego"
-                android:text="Videojuego"
-                android:textColor="@color/black"
-               />
-        </TableRow>
-
-    </TableLayout>
-<Button
-    android:id="@+id/botonListo"
-    app:backgroundTint="@null"
-    android:layout_marginTop="25dp"
-    android:layout_width="250dp"
-    android:layout_height="60dp"
-    android:layout_gravity="center"
-    android:text="Listo"
-   android:background="@drawable/round_green"
-    />
-
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_button_green"
+        android:text="Listo"
+        app:backgroundTint="@null" />
+</LinearLayout>
 </LinearLayout>

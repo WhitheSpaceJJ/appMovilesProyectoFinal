@@ -23,5 +23,39 @@
     <string name="contrasena">Contraseña</string>
     <string name="olvidaste_tu_contrasena">¿Olvidaste tu contraseña?</string>
     <string name="recordar_usuario">Recordar Usuario</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="registrarse">Registrarse</string>
+
+    <!--Crear cuenta-->
+    <string name="crea_tu_cuenta">Crea tu cuenta</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="repetir_contrasena">Repetir contraseña</string>
+
+    <!--Configurar perfil-->
+    <string name="configura_tu_perfil">Configura tu perfil</string>
+    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
+    <string name="siguiente">Siguiente</string>
+
+    <!--Temas-->
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="elige_temas">Elige tus temas favoritos</string>
+    <string name="listo">Listo</string>
+    <string name="deportes">Deportes</string>
+    <string name="animales">Animales</string>
+    <string name="magia">Magia</string>
+    <string name="videojuegos">Videojuegos</string>
+    <string name="musical">Musical</string>
+    <string name="aventura">Aventura</string>
+
+    <!--Perfiles-->
+    <string name="perfiles">Perfiles</string>
+    <string name="carla">Carla</string>
+    <string name="david">David</string>
+    <string name="eric">Eric</string>
+    <string name="agregar_perfil">Agregar perfil</string>
+
+
+
 
 </resources>

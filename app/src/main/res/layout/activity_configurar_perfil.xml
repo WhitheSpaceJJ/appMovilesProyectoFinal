@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/background_degraded"
     android:orientation="vertical"
     tools:context=".ConfigurarPerfil">
 
 
     <ImageView
-        android:id="@+id/ivRegresarConfigurarPerfil"
+        android:id="@+id/iv_regresar_configurar_perfil"
         android:layout_width="25dp"
         android:layout_height="50dp"
         android:background="@drawable/angleleftsolid2"
@@ -19,15 +19,16 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/tvConfiguraPerfil"
+        android:id="@+id/tv_configura_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:padding="8dp"
-        android:text="Configura tu perfil"
+        android:text="@string/configura_tu_perfil"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/nunito_bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,27 +64,29 @@
 
 
     <EditText
-        android:id="@+id/etConfiguranombre"
+        android:id="@+id/et_configura_nombre"
         android:layout_width="252dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/round_gray"
-        android:hint="Nombre"
+        android:hint="@string/nombre"
         android:padding="10dp"
-        android:textColorHint="#808080"
-        android:textSize="18sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        android:fontFamily="@font/nunito_bold"/>
 
     <TextView
-        android:id="@+id/tvConfiguraEdad"
+        android:id="@+id/tv_edad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="5dp"
         android:padding="8dp"
-        android:text="Edad"
+        android:text="@string/edad"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/nunito_regular"/>
 
 <LinearLayout
     android:layout_width="wrap_content"
@@ -98,15 +101,16 @@
         android:layout_marginEnd="30dp"
         android:src="@drawable/menos"/>
     <EditText
-        android:id="@+id/etConfigurarEdad"
+        android:id="@+id/et_configurar_edad"
         android:layout_width="54dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
         android:background="@drawable/round_gray"
         android:hint="12"
-        android:textColorHint="#808080"
+        android:textColorHint="@color/deep_gray"
         android:textAlignment="center"
-        android:textSize="21sp" />
+        android:textSize="21sp"
+        android:fontFamily="@font/nunito_bold"/>
 
     <ImageView
         android:layout_width="40dp"
@@ -118,14 +122,14 @@
 </LinearLayout>
 
 
-
     <Button
-        android:id="@+id/btnConfigurarSiguiente"
+        android:id="@+id/btn_siguiente"
         android:layout_width="246dp"
-        android:layout_height="68dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_purple"
-        android:text="Siguiente"
+        android:text="@string/siguiente"
+        android:textAllCaps="false"
         app:backgroundTint="@null" />
 </LinearLayout>

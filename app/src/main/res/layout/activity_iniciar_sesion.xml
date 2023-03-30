@@ -80,10 +80,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_button_green"
-        android:text="Iniciar Sesión"
+        android:text="@string/iniciar_sesion"
         app:backgroundTint="@null"
         tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="532dp" />
+        tools:layout_editor_absoluteY="532dp"
+        android:textAllCaps="false"
+        android:textSize="15dp"/>
 
     <Button
         android:id="@+id/btn_registrarse"
@@ -92,10 +94,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_button_purple"
-        android:text="Registrarse"
+        android:text="@string/registrarse"
         app:backgroundTint="@null"
         tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="614dp" />
-
-
+        tools:layout_editor_absoluteY="614dp"
+        android:textAllCaps="false"
+        android:textSize="15dp"/>
 </LinearLayout>
