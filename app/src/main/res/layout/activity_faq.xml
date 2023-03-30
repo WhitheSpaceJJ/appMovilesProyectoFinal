@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".Faq">
 
@@ -61,13 +61,14 @@
            android:textColor="@color/black"
            android:textSize="18sp"
            app:backgroundTint="@null"
+           android:onClick="onClick"
            android:background="@drawable/round_white"
            />
        <TextView
            android:id="@+id/minitextviewPerfiles"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="Texto secreto"
+           android:text="@string/faqCantidadPerfiles"
            android:visibility="invisible"
            android:layout_gravity="center"
            android:layout_below="@+id/myButton"/>
@@ -84,7 +85,7 @@
             android:id="@+id/buttonOlvideUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:onClick="onClick"
             android:text="Olvide mi nombre de usuario"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -95,7 +96,7 @@
             android:id="@+id/minitextviewOlvide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Texto secreto"
+            android:text="@string/faqOlvideUsuario"
             android:visibility="invisible"
             android:layout_gravity="center"
             android:layout_below="@+id/myButton"/>
@@ -113,7 +114,7 @@
             android:id="@+id/buttonCambioIcono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:onClick="onClick"
             android:text="Quiero Cambiar el Icono de mi Perfil"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -124,7 +125,7 @@
             android:id="@+id/minitextviewCambio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Texto secreto"
+            android:text="@string/faqCambiarIcono"
             android:visibility="invisible"
             android:layout_gravity="center"
             android:layout_below="@+id/myButton"/>
@@ -142,6 +143,7 @@
             android:id="@+id/buttonSinImagenes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClick"
             android:text="No puedo ver las imagenes de las historias"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -152,7 +154,7 @@
             android:id="@+id/minitextviewSinImagenes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Texto secreto"
+            android:text="@string/faqSinImagen"
             android:visibility="invisible"
             android:layout_gravity="center"
             android:layout_below="@+id/myButton"/>

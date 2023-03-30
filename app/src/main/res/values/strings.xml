@@ -10,6 +10,10 @@
     <string name="aciertos_fallida">4/10</string>
     <string name="nom_perfil">Karla</string>
     <string name="catalogo">Catálogo</string>
+    <string name="faqCantidadPerfiles">Con TOFI puedes crear hasta 15 perfiles diferente. No olvides elegir un ícono único para cada uno</string>
+    <string name="faqOlvideUsuario">Si no recuerda su usuario por favor comuníquese con soporte, para ofrecerle una posible solución</string>
+    <string name="faqCambiarIcono">En la opcion "Editar perfil" de la pantalla configuración, usted puede cambiar su ícono de perfil</string>
+    <string name="faqSinImagen">Por favor comuníquese con soporte, para ofrecerle una posible solución</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
