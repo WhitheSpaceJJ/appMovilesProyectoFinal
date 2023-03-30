@@ -1,17 +1,13 @@
 package mx.edu.itson.appmoviles
 
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import mx.edu.itson.appmoviles.R.*
 
@@ -92,7 +88,7 @@ class Coleccionables : Fragment() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla_coleccionable, parent, false)
+            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla_coleccionable_catalogo, parent, false)
             val imageView = view.findViewById<ImageView>(R.id.imageView)
             imageView.setImageResource(coleccionable[position])
             return view

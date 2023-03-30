@@ -126,7 +126,7 @@ class FragmentCatalogo : Fragment() {
             var historia = catalogo[p0]
             var inflator =
                 context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            var vista = inflator.inflate(R.layout.celda_historia, null)
+            var vista = inflator.inflate(R.layout.item_medalla_coleccionable_catalogo, null)
 
             var imagen: ImageView = vista.findViewById(R.id.historia_imagen)
 
