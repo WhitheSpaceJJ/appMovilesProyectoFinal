@@ -18,7 +18,7 @@
         android:gravity="center_vertical">
 
         <ImageView
-            android:id="@+id/buttonRegresar"
+            android:id="@+id/ivRegresarRestablecer"
             android:layout_width="25dp"
             android:layout_height="50dp"
             android:background="@drawable/angleleftsolid2"
@@ -38,8 +38,8 @@
 
     <EditText
         android:id="@+id/etNuevaContrasena"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
         android:padding="10dp"
         android:background="@drawable/round_gray"
         android:hint="Nueva Contraseña"
@@ -48,9 +48,9 @@
         android:textColorHint="#808080"
         android:textSize="21sp" />
     <EditText
-        android:id="@+id/etNuevaContrasena2"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:id="@+id/etNuevaContrasenaConfirmar"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
         android:padding="10dp"
         android:background="@drawable/round_gray"
         android:hint="Repetir Contraseña"
@@ -60,10 +60,10 @@
         android:textSize="21sp" />
 
     <Button
-        android:id="@+id/btn_restablecer"
+        android:id="@+id/btn_restablecer_contraseña"
         app:backgroundTint="@null"
         android:layout_width="300dp"
-        android:layout_height="80dp"
+        android:layout_height="68dp"
         android:layout_marginTop="250dp"
         android:layout_gravity="center"
         android:background="@drawable/round_button_purple"

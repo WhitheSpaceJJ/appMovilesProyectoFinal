@@ -23,6 +23,12 @@
             android:name=".Menu"
             android:exported="false" />
         <activity
+            android:name=".PaswordOlvidada"
+            android:exported="false" />
+        <activity
+            android:name=".RestablecerPasword"
+            android:exported="false" />
+        <activity
             android:name=".Actividad"
             android:exported="false" />
         <activity
