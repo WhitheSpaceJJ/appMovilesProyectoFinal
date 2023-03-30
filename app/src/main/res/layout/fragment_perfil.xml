@@ -53,11 +53,8 @@
                 android:layout_height="220dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-<<<<<<< HEAD
-                android:src="@drawable/perfiloficial1" />
-=======
                 android:src="@drawable/perfilfull1" />
->>>>>>> 654bdcac7042230388410fdabc7f41658f7a552b
+
 
             <TextView
                 android:layout_width="match_parent"
