@@ -1,12 +1,16 @@
 package mx.edu.itson.appmoviles
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import mx.edu.itson.appmoviles.R.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,7 +41,7 @@ class FragmentPerfil : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_perfil, container, false)
+        val view: View = inflater.inflate(layout.fragment_perfil, container, false)
 
         val ivConfiguracion: ImageView = view.findViewById(R.id.img_configuracion)
 
@@ -47,6 +51,20 @@ class FragmentPerfil : Fragment() {
             val intent = Intent(activity, Configuracion::class.java)
             startActivity(intent)
 
+        }
+        val ivMedallas:ImageView= view.findViewById(R.id.medallasPerfil)
+
+        ivMedallas.setOnClickListener {
+            // Crea un Intent para llamar la Activity
+            val intent = Intent(activity, Medallas::class.java)
+            startActivity(intent)
+        }
+        val ivColecion:ImageView= view.findViewById(R.id.coleccionablesPerfil)
+
+        ivColecion.setOnClickListener {
+            // Crea un Intent para llamar la Activity
+            val intent = Intent(activity, ColeccionBase::class.java)
+            startActivity(intent)
         }
         return view
     }

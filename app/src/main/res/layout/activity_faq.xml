@@ -111,17 +111,17 @@
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
         >
+
         <Button
             android:id="@+id/buttonCambioIcono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_white"
             android:onClick="onClick"
             android:text="Quiero Cambiar el Icono de mi Perfil"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:backgroundTint="@null"
-            android:background="@drawable/round_white"
-            />
+            app:backgroundTint="@null" />
         <TextView
             android:id="@+id/minitextviewCambio"
             android:layout_width="match_parent"

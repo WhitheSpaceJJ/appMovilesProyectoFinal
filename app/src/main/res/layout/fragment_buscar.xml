@@ -4,11 +4,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentBuscar">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+     >
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buscar"
+            android:background="@color/design_default_color_on_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/round_gray"
+            >
+
+            <ImageView
+                android:id="@+id/buttonRegresar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/lupa"
+                android:layout_margin="9dp"/>
+
+
+            <EditText
+                android:id="@+id/etBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/round_gray"
+                android:hint="Buscar historias, autores, etc."
+                android:textColorHint="#808080"
+                android:textSize="21sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:id="@+id/txtSubTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Por Categoria"
+            android:background="@color/design_default_color_on_primary"
+            android:textSize="25sp"
+            android:layout_marginLeft="8dp"
+            android:textStyle="bold"
+            />
+        <GridView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/buscarGrid"
+            android:numColumns="2">
+        </GridView>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/buscar">
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
 
 </FrameLayout>

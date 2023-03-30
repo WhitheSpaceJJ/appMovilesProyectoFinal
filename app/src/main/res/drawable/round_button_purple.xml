@@ -10,7 +10,6 @@
             <stroke
                 android:width="15px"
                 android:color="@color/purple_btn_200">
-
             </stroke>
         </shape>
 
