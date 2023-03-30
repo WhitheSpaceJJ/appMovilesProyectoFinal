@@ -50,6 +50,7 @@
                 android:background="@drawable/biblioteca1"
                 android:drawableTop="@drawable/mask"
                 android:layout_margin="25dp"
+                android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 />
 
@@ -58,6 +59,8 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:layout_gravity="center"
                 android:max="100"
                 android:progress="50"
@@ -67,8 +70,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:justificationMode="inter_word"
+                android:textSize="20sp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:textAlignment="center"
                 android:text="El destino de fausto"
                 />
         </LinearLayout>
