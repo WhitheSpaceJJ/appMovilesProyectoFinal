@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="33/80"
             android:background="@color/design_default_color_on_primary"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:textAlignment="center"
             />
     </LinearLayout>
@@ -49,7 +49,7 @@
     <ImageView
         android:id="@+id/invierno"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@drawable/inviernotemporada"
         android:drawableTop="@drawable/mask"
         android:layout_marginLeft="25dp"
@@ -63,31 +63,35 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp">
+    android:layout_gravity="center"
+    android:layout_marginRight="25dp"
+    >
     <ProgressBar
         android:id="@+id/progressbarInvierno"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="10dp"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:max="100"
         android:progress="50"
         android:progressDrawable="@drawable/progress_bar"/>
     <TextView
         android:id="@+id/txtTotalInvierno"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="3/10"
+        android:layout_margin="10dp"
         android:background="@color/design_default_color_on_primary"
-        android:textSize="26sp"
-        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textAlignment="textEnd"
         />
 </LinearLayout>
+
     <ImageView
-        android:id="@+id/otoño"
+        android:id="@+id/otono"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@drawable/otonotemporada"
         android:drawableTop="@drawable/mask"
         android:layout_marginLeft="25dp"
@@ -101,31 +105,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:layout_gravity="center"
+        android:layout_marginRight="25dp"
+        >
         <ProgressBar
-            android:id="@+id/progressbarOtoño"
+            android:id="@+id/progressbarOtono"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:max="100"
             android:progress="50"
             android:progressDrawable="@drawable/progress_bar"/>
         <TextView
-            android:id="@+id/txtTotalOtoño"
-            android:layout_width="match_parent"
+            android:id="@+id/txtTotalOtono"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="8/20"
+            android:text="3/10"
+            android:layout_margin="10dp"
             android:background="@color/design_default_color_on_primary"
             android:textSize="26sp"
-            android:textAlignment="center"
+            android:textAlignment="textEnd"
             />
     </LinearLayout>
     <ImageView
         android:id="@+id/primavera"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@drawable/primaveratemporada"
         android:drawableTop="@drawable/mask"
         android:layout_marginLeft="25dp"
@@ -139,27 +146,29 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:layout_gravity="center"
+        android:layout_marginRight="25dp"
+        >
         <ProgressBar
             android:id="@+id/progressbarPrimavera"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:max="100"
             android:progress="50"
             android:progressDrawable="@drawable/progress_bar"/>
         <TextView
             android:id="@+id/txtTotalPrimavera"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="33/80"
+            android:text="3/10"
+            android:layout_margin="10dp"
             android:background="@color/design_default_color_on_primary"
-            android:textSize="26sp"
-            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textAlignment="textEnd"
             />
     </LinearLayout>
-
 
 </LinearLayout>
