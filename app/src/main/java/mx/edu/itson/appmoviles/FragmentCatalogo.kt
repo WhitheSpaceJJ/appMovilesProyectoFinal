@@ -137,7 +137,7 @@ class FragmentCatalogo : Fragment() {
                 intento.putExtra("titulo", historia.titulo)
                 intento.putExtra("autor", historia.autor)
                 intento.putExtra("numPaginas", historia.numPaginas)
-                intento.putExtra("sinopsis", historia.sinopsis)
+                intento.putExtra("sinopsis", historia.sinopsisi)
                 context!!.startActivity(intento)
             }
             return vista
