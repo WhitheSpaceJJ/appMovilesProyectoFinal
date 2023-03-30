@@ -1,10 +1,17 @@
 package mx.edu.itson.appmoviles
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.GridView
+import android.widget.ImageView
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,10 +40,62 @@ class FragmentBiblioteca : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_biblioteca, container, false)
-    }
 
+
+        val view: View = inflater.inflate(R.layout.fragment_biblioteca, container, false)
+        agregarHistorias()
+        adapter = FragmentBiblioteca.BibliotecaObjetoAdapter(view.context,catalogo)
+        var listView: GridView = view.findViewById(R.id.biblioteca)
+        listView.adapter=adapter
+        return view
+        // Inflate the layout for this fragment
+    }
+    private fun agregarHistorias() {
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.biblioteca1,
+                "El regalo de la princesa",
+                0
+            )
+        )
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.biblioteca2,
+                "Ricitos de oro",
+                0
+            )
+        )
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.biblioteca3,
+                "Cenicienta",
+                0
+            )
+        )
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.biblioteca4,
+                "Rapunzel",
+                0
+            )
+        )
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.animales,
+                "La reina de las nieves",
+                0
+            )
+        )
+        catalogo.add(
+            BibliotecaObjeto(
+                R.drawable.aventura,
+                "Pinochio",
+                0
+            )
+        )
+    }
+    var catalogo: ArrayList<BibliotecaObjeto> = ArrayList<BibliotecaObjeto>()
+    var adapter: BibliotecaObjetoAdapter? = null
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -55,5 +114,42 @@ class FragmentBiblioteca : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    class BibliotecaObjetoAdapter : BaseAdapter {
+        var context: Context? = null
+        var historiasBiblioteca = ArrayList<BibliotecaObjeto>()
+
+        constructor(context: Context, historiasBiblioteca : ArrayList<BibliotecaObjeto>) {
+            this.context = context
+            this.historiasBiblioteca  = historiasBiblioteca
+        }
+
+        override fun getCount(): Int {
+            return historiasBiblioteca .size
+        }
+
+        override fun getItem(p0: Int): Any {
+            return historiasBiblioteca [p0]
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
+        }
+
+        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+            var historia = historiasBiblioteca [p0]
+            var inflator =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var vista = inflator.inflate(R.layout.activity_biblioteca_base, null)
+
+            var imagen: ImageView = vista.findViewById(R.id.bibliotecaImagen)
+
+            imagen.setImageResource(historia.image)
+            var texto: TextView =vista.findViewById(R.id.tituloBiblioteca)
+            texto.setText(historia.titulo)
+            return vista
+        }
     }
 }
