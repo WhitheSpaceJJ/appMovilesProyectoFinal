@@ -24,6 +24,9 @@
             android:name=".Perfil"
             android:exported="false" />
         <activity
+            android:name=".Perfiles"
+            android:exported="false" />
+        <activity
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity

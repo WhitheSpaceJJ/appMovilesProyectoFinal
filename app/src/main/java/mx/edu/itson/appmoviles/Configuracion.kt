@@ -3,6 +3,7 @@ package mx.edu.itson.appmoviles
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class Configuracion : AppCompatActivity() {
@@ -11,9 +12,15 @@ class Configuracion : AppCompatActivity() {
         setContentView(R.layout.activity_configuracion)
 
         val btn_ayuda: Button = findViewById(R.id.buttonAyuda)
+        val iv_regresar: ImageView = findViewById(R.id.ivRegresarConfiguracion)
 
         btn_ayuda.setOnClickListener {
             var intent: Intent = Intent(this, Faq::class.java)
+            startActivity(intent)
+        }
+
+        iv_regresar.setOnClickListener {
+            var intent: Intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
     }
