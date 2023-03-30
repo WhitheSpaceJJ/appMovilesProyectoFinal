@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+    tools:context=".CrearCuenta">
+
+
+    <ImageView
+        android:id="@+id/ivRegresarCrear"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:background="@drawable/angleleftsolid2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tvCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:padding="8dp"
+        android:text="Crea tu cuenta"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+
+    <EditText
+        android:id="@+id/etCrearusuario"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_gray"
+        android:hint="Usuario"
+        android:padding="10dp"
+        android:textColorHint="#808080"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/etCrearCorreoE"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_gray"
+        android:hint="Correo Electrónico"
+        android:padding="10dp"
+        android:textColorHint="#808080"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/etCrearContrasenia"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_gray"
+        android:hint="Contraseña"
+        android:padding="10dp"
+        android:textColorHint="#808080"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/etCrearContraseniaConfirmar"
+        android:layout_width="246dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_gray"
+        android:hint="Repetir Contraseña"
+        android:padding="10dp"
+        android:textColorHint="#808080"
+        android:textSize="21sp" />
+    <CheckBox
+        android:id="@+id/cbCrearRecordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="82dp"
+        android:layout_marginTop="5dp"
+        android:buttonTint="#DAD8D8"
+        android:elegantTextHeight="false"
+        android:text="Recordar Usuario"
+        android:textColor="#F6F6F6"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_restablecer_contraseña"
+        android:layout_width="246dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_button_purple"
+        android:text="Checar"
+        app:backgroundTint="@null" />
+</LinearLayout>

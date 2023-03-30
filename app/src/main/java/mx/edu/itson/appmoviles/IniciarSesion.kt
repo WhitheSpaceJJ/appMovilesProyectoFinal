@@ -15,6 +15,7 @@ class IniciarSesion : AppCompatActivity() {
 
         val btnIniciarSesion: Button = findViewById(R.id.btn_iniciar_sesion)
         val tvolvide_Pass: TextView = findViewById(R.id.tvOlvidePass)
+        val btnRegistrase: Button = findViewById(R.id.btn_registrarse)
 
         btnIniciarSesion.setOnClickListener{
         var intent: Intent = Intent(this, Menu::class.java)
@@ -23,6 +24,11 @@ class IniciarSesion : AppCompatActivity() {
 
         tvolvide_Pass.setOnClickListener {
             var intent: Intent = Intent(this, PaswordOlvidada::class.java)
+            startActivity(intent)
+        }
+
+        btnIniciarSesion.setOnClickListener{
+            var intent: Intent = Intent(this, CrearCuenta::class.java)
             startActivity(intent)
         }
 }
