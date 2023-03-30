@@ -10,13 +10,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_color">#6200EE</color>
     <color name="brand_color_dark">#3700B3</color>
-    <color name="bluelight">#BFD1FF</color>
-    <color name="blue">#4B72D4</color>
+    <color name="blue_light">#C0DCF1</color>
+    <color name="blue">#4799D6</color>
     <color name="dark_blue">#2E4FA5</color>
     <color name="secondary_color">#03DAC6</color>
     <color name="secondary_color_dark">#018786</color>
     <color name="light_text">#FFFFFF</color>
-    <color name="dark_text">#000000</color>
+    <color name="dark_text">#222222</color>
     <color name="red_app">#FF616D</color>
     <color name="green_btn_200">#83CEB3</color>
     <color name="green_btn_300">#7ACCAE</color>
