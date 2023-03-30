@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+    tools:context=".ConfigurarPerfil">
+
+
+    <ImageView
+        android:id="@+id/ivRegresarConfigurarPerfil"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:background="@drawable/angleleftsolid2"
+        android:padding="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvConfiguraPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:padding="8dp"
+        android:text="Configura tu perfil"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/angleleftsolid415"/>
+
+        <ImageView
+            android:layout_width="225dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:src="@drawable/perfil4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/angleleftsolid416"/>
+    </LinearLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/etConfiguranombre"
+        android:layout_width="252dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_gray"
+        android:hint="Nombre"
+        android:padding="10dp"
+        android:textColorHint="#808080"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvConfiguraEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:text="Edad"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/menos"/>
+    <EditText
+        android:id="@+id/etConfigurarEdad"
+        android:layout_width="54dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_gray"
+        android:hint="12"
+        android:textColorHint="#808080"
+        android:textAlignment="center"
+        android:textSize="21sp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ms"/>
+
+</LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btnConfigurarSiguiente"
+        android:layout_width="246dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_button_purple"
+        android:text="Siguiente"
+        app:backgroundTint="@null" />
+</LinearLayout>
