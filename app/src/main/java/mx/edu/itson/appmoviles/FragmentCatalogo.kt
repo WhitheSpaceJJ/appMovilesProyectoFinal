@@ -50,37 +50,49 @@ class FragmentCatalogo : Fragment() {
                 R.drawable.regaloprincesa,
                 "El regalo de la princesa",
                 "Pepe aguilar",
-                "12","aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "12","Érase una vez una pequeña princesa que al cumplir los diez años tuvo una fantástica\n" +
+                        "fiesta. Había músicos, flores, helado de fresa y pasteles con glaseado rosa. Los\n" +
+                        "invitados trajeron los más maravillosos regalos.",
                 ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
         catalogo.add(
             Historia(
-                R.drawable.biblioteca2,
-                "Ricitos de oro",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
-            )
-        )
-        catalogo.add(
-            Historia(
-                R.drawable.biblioteca3,
+                R.drawable.cenicienta,
                 "Cenicienta",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "Maria Bonita",
+                "13",
+                "Érase una vez una hermosa joven que vivía con su madrastra y dos hermanastras que\n" +
+                        "la obligaban a hacer todo el trabajo de la casa. La pobre joven tenía que cocinar, limpiar\n" +
+                        "y también lavarles la ropa.",
                 ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
         catalogo.add(
             Historia(
-                R.drawable.biblioteca4,
-                "Rapunzel",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                R.drawable.pinocho,
+                "Pinocho",
+                "Carlos Coyoli",
+                "10",
+                "Érase una vez un anciano carpintero llamado Gepeto que era muy feliz haciendo\n" +
+                        "juguetes de madera para los niños de su pueblo.\n" +
+                        "Un día, hizo una marioneta de una madera de pino muy especial y decidió llamarla\n" +
+                        "Pinocho. En la noche, un hada azul llegó al taller del anciano carpintero:",
+                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
+            )
+        )
+        catalogo.add(
+            Historia(
+                R.drawable.reinanieves,
+                "La reina de las nieves",
+                "Miguel angel",
+                "9",
+                "Había una vez un horripilante ogro que creó un gran espejo que hacía ver todo lo bueno\n" +
+                        "y hermoso como feo y perverso. Era tanta su maldad, que hizo volar el espejo hasta lo\n" +
+                        "más alto del espacio para dejarlo caer y quebrarse en millones de pequeños fragmentos\n" +
+                        "de cristal en la Tierra. Si uno de esos fragmentos alcanzara los ojos de alguien, todo lo\n" +
+                        "vería mal y si el fragmento se alojara en su corazón, este se volvería tan frío como el\n" +
+                        "hielo.\n",
                 ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
