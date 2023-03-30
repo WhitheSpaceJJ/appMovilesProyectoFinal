@@ -28,6 +28,11 @@
     <color name="purple_rnd_300">#706897</color>
     <color name="text_purple_dark">#484463</color>
     <color name="yellow_dark">#C3A840</color>
-    <color name="yellow_light">#FFDD85</color>
+    <color name="yellow_light">#FFEBA1</color>
+    <color name="gray">#7D7C83</color>
+    <color name="soft_gray">#DAD9E1</color>
+    <color name="dark_gray">#C5C5C5</color>
+    <color name="baby_purple">#D7D4F3</color>
+
 
 </resources>

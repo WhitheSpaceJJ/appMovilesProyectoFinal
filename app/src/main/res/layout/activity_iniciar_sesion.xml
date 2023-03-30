@@ -11,13 +11,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="170dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/logito"
         tools:layout_editor_absoluteX="24dp"
         tools:layout_editor_absoluteY="45dp"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginBottom="30dp"/>
 
 
     <EditText
@@ -26,10 +27,11 @@
         android:layout_height="59dp"
         android:layout_gravity="center"
         android:background="@drawable/round_gray"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
         android:paddingStart="30dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="21sp"
+        android:fontFamily="@font/nunito_bold"/>
 
     <EditText
         android:id="@+id/et_contraseña_inicio"
@@ -38,10 +40,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_gray"
-        android:hint="Contraseña"
+        android:hint="@string/contrasena"
         android:paddingStart="30dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="21sp"
+        android:fontFamily="@font/nunito_bold"/>
 
 
     <TextView
@@ -51,9 +54,10 @@
         android:layout_gravity="right"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
-        android:text=" ¿Olvidaste tu contraseña?"
-        android:textColor="#FFD57F"
-        android:textSize="18sp"
+        android:fontFamily="@font/nunito_light"
+        android:text="@string/olvidaste_tu_contrasena"
+        android:textColor="@color/yellow_light"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="417dp" />
 
@@ -63,11 +67,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginEnd="60dp"
-        android:buttonTint="#DAD8D8"
+        android:buttonTint="@color/soft_gray"
         android:elegantTextHeight="false"
-        android:text="Recordar Usuario"
-        android:textColor="#F6F6F6"
-        android:textSize="18sp" />
+        android:text="@string/recordar_usuario"
+        android:textColor="@color/soft_gray"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btn_iniciar_sesion"
