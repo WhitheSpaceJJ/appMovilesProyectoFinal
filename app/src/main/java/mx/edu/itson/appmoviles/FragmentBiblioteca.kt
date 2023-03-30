@@ -95,7 +95,7 @@ class FragmentBiblioteca : Fragment() {
         )
     }
     var catalogo: ArrayList<BibliotecaObjeto> = ArrayList<BibliotecaObjeto>()
-    var adapter: BibliotecaObjetoAdapter? = null
+    var adapter: FragmentBiblioteca.BibliotecaObjetoAdapter? = null
     companion object {
         /**
          * Use this factory method to create a new instance of
