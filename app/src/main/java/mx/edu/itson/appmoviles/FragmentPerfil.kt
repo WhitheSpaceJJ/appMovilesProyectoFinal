@@ -47,24 +47,22 @@ class FragmentPerfil : Fragment() {
 
         ivConfiguracion.setOnClickListener {
             // Crea un Intent para llamar la Activity
-
             val intent = Intent(activity, Configuracion::class.java)
             startActivity(intent)
-
         }
         val ivMedallas:ImageView= view.findViewById(R.id.medallasPerfil)
 
         ivMedallas.setOnClickListener {
-            // Crea un Intent para llamar la Activity
-            val intent = Intent(activity, Medallas::class.java)
-            startActivity(intent)
+            // Obtener la instancia de la actividad actual y llamar setCurrentFragment
+            val menuActivity = requireActivity() as Menu
+            menuActivity.setCurrentFragment(Medallas())
         }
         val ivColecion:ImageView= view.findViewById(R.id.coleccionablesPerfil)
 
         ivColecion.setOnClickListener {
-            // Crea un Intent para llamar la Activity
-            val intent = Intent(activity, ColeccionBase::class.java)
-            startActivity(intent)
+            // Obtener la instancia de la actividad actual y llamar setCurrentFragment
+            val menuActivity = requireActivity() as Menu
+            menuActivity.setCurrentFragment(ColeccionBase())
         }
         return view
     }

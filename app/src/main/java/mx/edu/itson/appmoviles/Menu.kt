@@ -9,6 +9,7 @@ import mx.edu.itson.appmoviles.databinding.ActivityMenuBinding
 
 class Menu : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +56,11 @@ class Menu : AppCompatActivity() {
 
     }
 
-    private fun setCurrentFragment(fragment: Fragment) {
+    fun setCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.containerView, fragment)
             commit()
         }
     }
-
 
 }
