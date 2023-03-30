@@ -53,43 +53,29 @@ class FragmentBiblioteca : Fragment() {
     private fun agregarHistorias() {
         catalogo.add(
             BibliotecaObjeto(
-                R.drawable.biblioteca1,
+                R.drawable.regaloprincesa,
                 "El regalo de la princesa",
                 0
             )
         )
         catalogo.add(
             BibliotecaObjeto(
-                R.drawable.biblioteca2,
-                "Ricitos de oro",
-                0
-            )
-        )
-        catalogo.add(
-            BibliotecaObjeto(
-                R.drawable.biblioteca3,
+                R.drawable.cenicienta,
                 "Cenicienta",
                 0
             )
         )
         catalogo.add(
             BibliotecaObjeto(
-                R.drawable.biblioteca4,
-                "Rapunzel",
+                R.drawable.pinocho,
+                "Pinocho",
                 0
             )
         )
         catalogo.add(
             BibliotecaObjeto(
-                R.drawable.animales,
+                R.drawable.reinanieves,
                 "La reina de las nieves",
-                0
-            )
-        )
-        catalogo.add(
-            BibliotecaObjeto(
-                R.drawable.aventura,
-                "Pinochio",
                 0
             )
         )
