@@ -50,7 +50,8 @@ class FragmentCatalogo : Fragment() {
                 R.drawable.regaloprincesa,
                 "El regalo de la princesa",
                 "Pepe aguilar",
-                "12", ArrayList<String>(),ArrayList<Int>()
+                "12","aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
         catalogo.add(
@@ -59,7 +60,8 @@ class FragmentCatalogo : Fragment() {
                 "Ricitos de oro",
                 "aaa",
                 "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
         catalogo.add(
@@ -68,7 +70,8 @@ class FragmentCatalogo : Fragment() {
                 "Cenicienta",
                 "aaa",
                 "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
         catalogo.add(
@@ -77,7 +80,8 @@ class FragmentCatalogo : Fragment() {
                 "Rapunzel",
                 "aaa",
                 "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                ArrayList<String>(),ArrayList<Int>(),ArrayList<String>()
             )
         )
 
@@ -110,7 +114,7 @@ class FragmentCatalogo : Fragment() {
                 context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.item_medalla_coleccionable_catalogo, null)
 
-            var imagen: ImageView = vista.findViewById(R.id.historia_imagen)
+            var imagen: ImageView = vista.findViewById(R.id.imageView)
 
             imagen.setImageResource(historia.image)
 
