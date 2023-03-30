@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
 class Configuracion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,7 @@ class Configuracion : AppCompatActivity() {
 
         val btn_ayuda: Button = findViewById(R.id.buttonAyuda)
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarConfiguracion)
+        var perfilFragment = FragmentPerfil()
 
         btn_ayuda.setOnClickListener {
             var intent: Intent = Intent(this, Faq::class.java)
@@ -22,6 +24,8 @@ class Configuracion : AppCompatActivity() {
         iv_regresar.setOnClickListener {
             var intent: Intent = Intent(this, Menu::class.java)
             startActivity(intent)
+
         }
     }
+
 }
