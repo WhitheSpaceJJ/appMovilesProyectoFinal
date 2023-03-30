@@ -14,6 +14,9 @@
         android:theme="@style/Theme.APPMOviles"
         tools:targetApi="31">
         <activity
+            android:name=".Perfiles"
+            android:exported="false" />
+        <activity
             android:name=".ConfigurarPerfil"
             android:exported="false" />
         <activity

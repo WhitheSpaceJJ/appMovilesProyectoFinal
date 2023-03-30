@@ -3,88 +3,151 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Perfiles">
+
     <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Perfiles"
-        android:background="@color/design_default_color_on_primary"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:layout_margin="8dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginBottom="16dp"/>
-    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_gravity="center"
-        >
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity=""
+        android:text="Perfiles"
 
-        <TableRow
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_margin="15dp"    android:layout_marginTop="15dp"
-            android:layout_marginBottom="25dp"
-            >
-            <Button
-                android:id="@+id/perfil1"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:background="@drawable/perfiloficial1"
-                android:text="Perfil 1"
-                android:drawableTop="@drawable/perfil1"
-                android:backgroundTint="@null"
-            />
-            <Button
-                android:id="@+id/perfil2"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:background="@drawable/perfiloficial2"
-                android:text="Perfil 2"
-                android:drawableTop="@drawable/perfil2"
-                android:backgroundTint="@null"
-                />
+        android:textSize="34sp" />
 
-        </TableRow>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <TableRow
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_margin="15dp"
-            >
-            <Button
-                android:id="@+id/perfil3"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:background="@drawable/perfiloficial3"
-                android:text="Perfil 3"
-                android:drawableTop="@drawable/perfil3"
-                android:backgroundTint="@null"
-                />
 
-            <Button
-                android:id="@+id/btn_agregarPerfil"
+
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/round_lightblue"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivPerfil1"
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:src="@drawable/perfiloficial1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/round_perfil_white"
+            android:text="Carla"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="70dp"
+            android:background="@drawable/round_lightblue"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivPerfil2"
                 android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_height="160dp"
                 android:layout_gravity="center"
-                android:background="@drawable/round_button_purple"
+                android:src="@drawable/perfiloficial2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/round_perfil_white"
+                android:text="David"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/round_lightblue"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivPerfil3"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/perfiloficial1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/round_perfil_white"
+                android:text="Erick"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="70dp"
+            android:background="@drawable/round_button_purple_ch"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivAgregarPerfil"
+                android:layout_width="100dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/agregar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/round_perfil_white"
                 android:text="Agregar Perfil"
-                android:drawableTop="@drawable/perfil2"
-                android:backgroundTint="@null"
-                />
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-        </TableRow>
 
-    </TableLayout>
-
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
