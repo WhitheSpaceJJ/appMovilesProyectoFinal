@@ -1,10 +1,17 @@
 package mx.edu.itson.appmoviles
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.GridView
+import android.widget.ImageView
+import android.widget.TextView
+import org.w3c.dom.Text
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +41,14 @@ class FragmentBuscar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+        // Inflate the layout for this fragment
+        val view: View = inflater.inflate(R.layout.fragment_buscar, container, false)
+        agregarCategorias()
+        adapter = CategoriaObjetoAdapter(view.context, catalogo)
+        var listView: GridView = view.findViewById(R.id.categorias)
+        listView.adapter=adapter
+        return view
         return inflater.inflate(R.layout.fragment_buscar, container, false)
     }
 
@@ -55,5 +70,71 @@ class FragmentBuscar : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+
+
+
+    var catalogo: ArrayList<CategoriaObjeto> = ArrayList<CategoriaObjeto>()
+    var adapter: CategoriaObjetoAdapter? = null
+
+
+
+    private fun agregarCategorias() {
+        catalogo.add(
+ CategoriaObjeto("Fantasia",R.drawable.fantasia)
+        )
+        catalogo.add(
+            CategoriaObjeto("Misterio",R.drawable.misterio)
+        )
+        catalogo.add(
+            CategoriaObjeto("Ciencia Ficción",R.drawable.cienciaficion)
+        )
+        catalogo.add(
+            CategoriaObjeto("Animales",R.drawable.animales)
+        )
+        catalogo.add(
+            CategoriaObjeto("Aventura",R.drawable.aventura)
+        )
+        catalogo.add(
+            CategoriaObjeto("Magia",R.drawable.otonotemporada)
+        )
+    }
+
+    class CategoriaObjetoAdapter : BaseAdapter {
+        var context: Context? = null
+        var catalogo = ArrayList<CategoriaObjeto>()
+
+        constructor(context: Context,categoriaObjeto: ArrayList<CategoriaObjeto>) {
+            this.context = context
+            this.catalogo = categoriaObjeto
+        }
+
+        override fun getCount(): Int {
+            return catalogo.size
+        }
+
+        override fun getItem(p0: Int): Any {
+            return catalogo[p0]
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
+        }
+
+        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+            var historia = catalogo[p0]
+            var inflator =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var vista = inflator.inflate(R.layout.activity_categoria_base, null)
+
+            var imagen: ImageView = vista.findViewById(R.id.categoria)
+            var text:TextView=vista.findViewById(R.id.txtCategoria)
+    imagen.setImageResource(historia.imagen)
+            text.setText(historia.titulo)
+
+            return vista
+        }
     }
 }

@@ -66,19 +66,18 @@
             android:layout_marginLeft="8dp"
             android:textStyle="bold"
             />
+
         <GridView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/buscarGrid"
-            android:numColumns="2">
-        </GridView>
-        <GridLayout
+            android:id="@+id/categorias"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:id="@+id/buscar">
-
-        </GridLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:numColumns="1"
+            />
 
     </LinearLayout>
 
