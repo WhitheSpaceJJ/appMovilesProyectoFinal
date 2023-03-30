@@ -49,7 +49,6 @@ class FragmentBuscar : Fragment() {
         var listView: GridView = view.findViewById(R.id.categorias)
         listView.adapter=adapter
         return view
-        return inflater.inflate(R.layout.fragment_buscar, container, false)
     }
 
     companion object {
