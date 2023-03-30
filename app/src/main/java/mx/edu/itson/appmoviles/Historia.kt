@@ -5,9 +5,9 @@ data class Historia(var image:Int,
                     var autor: String,
                     var numPaginas: String,
     var generos: ArrayList<String>,
-                    var sinopsis: String
+                    var sinopsisi: String
                     ,
                     var imagenes: ArrayList<Int>
                     ,
-                    var parrafos: ArrayList<Int>
+                    var parrafos: ArrayList<String>
                     )

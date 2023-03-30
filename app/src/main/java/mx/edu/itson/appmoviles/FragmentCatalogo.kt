@@ -47,11 +47,10 @@ class FragmentCatalogo : Fragment() {
     private fun agregarHistorias() {
         catalogo.add(
             Historia(
-                R.drawable.biblioteca1,
+                R.drawable.regaloprincesa,
                 "El regalo de la princesa",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "Pepe aguilar",
+                "12", ArrayList<String>(),ArrayList<Int>()
             )
         )
         catalogo.add(
@@ -81,24 +80,7 @@ class FragmentCatalogo : Fragment() {
                 "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
             )
         )
-        catalogo.add(
-            Historia(
-                R.drawable.animales,
-                "La reina de las nieves",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            )
-        )
-        catalogo.add(
-            Historia(
-                R.drawable.aventura,
-                "Pinochio",
-                "aaa",
-                "123",
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            )
-        )
+
     }
 
     class HistoriaAdapter : BaseAdapter {
