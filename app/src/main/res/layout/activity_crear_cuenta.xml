@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/background_degraded"
     android:orientation="vertical"
     tools:context=".CrearCuenta">
 
@@ -24,10 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:padding="8dp"
-        android:text="Crea tu cuenta"
+        android:text="@string/crea_tu_cuenta"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/nunito_bold"
+        />
 
 
     <EditText
@@ -39,44 +41,49 @@
         android:background="@drawable/round_gray"
         android:hint="Usuario"
         android:padding="10dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito_bold" />
 
     <EditText
         android:id="@+id/etCrearCorreoE"
         android:layout_width="246dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_gray"
-        android:hint="Correo Electrónico"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="@string/correo_electronico"
         android:padding="10dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/etCrearContrasenia"
         android:layout_width="246dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_gray"
-        android:hint="Contraseña"
+        android:hint="@string/contrasena"
         android:padding="10dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito_bold"/>
 
     <EditText
         android:id="@+id/etCrearContraseniaConfirmar"
         android:layout_width="246dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_gray"
-        android:hint="Repetir Contraseña"
+        android:hint="@string/repetir_contrasena"
         android:padding="10dp"
-        android:textColorHint="#808080"
-        android:textSize="21sp" />
+        android:textColorHint="@color/gray"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito_bold"/>
+
     <CheckBox
         android:id="@+id/cbCrearRecordar"
         android:layout_width="wrap_content"
@@ -84,11 +91,11 @@
         android:layout_gravity="right"
         android:layout_marginEnd="82dp"
         android:layout_marginTop="5dp"
-        android:buttonTint="#DAD8D8"
+        android:buttonTint="@color/soft_gray"
         android:elegantTextHeight="false"
-        android:text="Recordar Usuario"
-        android:textColor="#F6F6F6"
-        android:textSize="18sp" />
+        android:text="@string/recordar_usuario"
+        android:textColor="@color/soft_gray"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnCrearRegistrarse"
@@ -97,6 +104,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/round_button_purple"
-        android:text="Registrarse"
-        app:backgroundTint="@null" />
+        android:text="@string/registrarse"
+        app:backgroundTint="@null"
+        android:textAllCaps="false"
+        android:textSize="18sp"/>
 </LinearLayout>
