@@ -55,9 +55,10 @@ class Medallas : Fragment() {
         gridView.adapter = adapter
        val regresar:ImageView=view.findViewById(R.id.buttonRegresar)
         regresar.setOnClickListener {
-            val menuActivity = Menu.getInstance()
-            menuActivity.setCurrentFragment(FragmentPerfil())
+            val menuActivity = requireActivity() as Menu
+            menuActivity.setCurrentFragment(Fragment())
         }
+
         return view
     }
 
