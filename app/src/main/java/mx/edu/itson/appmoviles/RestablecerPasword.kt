@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
 class RestablecerPasword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,10 +12,16 @@ class RestablecerPasword : AppCompatActivity() {
         setContentView(R.layout.activity_restablecer_pasword)
 
 
-        val ivRegresar : ImageView = findViewById(R.id.ivRegresarRestablecer)
+        val iv_regresar : ImageView = findViewById(R.id.iv_regresar_restablecer)
+        val btn_restablecer : Button = findViewById(R.id.btn_restablecer_contraseña)
 
-        ivRegresar.setOnClickListener{
+        iv_regresar.setOnClickListener{
             var intent: Intent = Intent(this, PaswordOlvidada::class.java)
+            startActivity(intent)
+        }
+
+        btn_restablecer.setOnClickListener{
+            var intent: Intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
     }
