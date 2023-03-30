@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="180dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
     android:layout_gravity="center"
-    android:orientation="vertical"
-   >
+    android:layout_margin="5dp"
+    android:padding="25dp"
+    android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/biblioteca1"
-            android:drawableTop="@drawable/mask"
-            android:layout_margin="25dp"
-            android:layout_gravity="center"
-            android:id="@+id/bibliotecaImagen"
-            android:scaleType="fitCenter"
-            />
+    <ImageView
+        android:id="@+id/bibliotecaImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="187dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:drawableTop="@drawable/mask"
+        android:scaleType="fitCenter"
+        android:src="@drawable/biblioteca1" />
 
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:id="@+id/barraBiblioteca"
-            android:layout_marginRight="25dp"
-            android:layout_gravity="center"
-            android:max="100"
-            android:progress="50"
-            android:progressDrawable="@drawable/progress_bar"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:paddingLeft="25dp"
-            android:id="@+id/tituloBiblioteca"
-            android:paddingRight="25dp"
-            android:textAlignment="center"
-            android:text="El destino de fausto"
-            />
+    <ProgressBar
+        android:id="@+id/barraBiblioteca"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+
+        android:layout_marginBottom="10dp"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/progress_bar" />
+
+    <TextView
+        android:id="@+id/tituloBiblioteca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="El destino de fausto"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 </LinearLayout>
