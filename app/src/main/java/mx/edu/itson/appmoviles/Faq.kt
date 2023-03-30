@@ -27,7 +27,7 @@ class Faq : AppCompatActivity(), View.OnClickListener {
 
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarFaq)
         iv_regresar.setOnClickListener {
-            var intent: Intent = Intent(this, Menu::class.java)
+            var intent: Intent = Intent(this, Configuracion::class.java)
             startActivity(intent)
         }
     }

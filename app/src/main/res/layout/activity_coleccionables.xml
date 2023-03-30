@@ -47,7 +47,7 @@
         android:layout_height="494dp"
         android:background="@drawable/background_with_shadow"
         android:elevation="10dp"
-        android:orientatio="vertical">
+        android:orientation="vertical">
 
         <GridView
             android:id="@+id/inviernoColeccionables"
