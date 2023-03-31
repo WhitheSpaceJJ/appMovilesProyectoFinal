@@ -14,9 +14,17 @@
         android:theme="@style/Theme.APPMOviles"
         tools:targetApi="31">
         <activity
+            android:name=".PopUpVoz"
+            android:exported="false"
+            android:theme="@style/Theme.APPMOviles.TemaPopUp"/>
+        <activity
+            android:name=".PopUpLectura"
+            android:exported="false"
+            android:theme="@style/Theme.APPMOviles.TemaPopUp"/>
+        <activity
             android:name=".PopUpPrueba"
-            android:theme="@style/Theme.APPMOviles.TemaPopUp"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.APPMOviles.TemaPopUp" />
         <activity
             android:name=".HistoriaBase"
             android:exported="false" />
@@ -80,7 +88,6 @@
         <activity
             android:name=".Fantasia"
             android:exported="false" />
-
         <activity
             android:name=".Configuracion"
             android:exported="false" />
