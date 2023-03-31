@@ -22,7 +22,7 @@
             android:exported="false"
             android:theme="@style/Theme.APPMOviles.TemaPopUp"/>
         <activity
-            android:name=".PopUpPrueba"
+            android:name=".PopUpDiccionario"
             android:exported="false"
             android:theme="@style/Theme.APPMOviles.TemaPopUp" />
         <activity

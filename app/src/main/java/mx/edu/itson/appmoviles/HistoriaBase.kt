@@ -40,12 +40,14 @@ class HistoriaBase : AppCompatActivity() {
         val butonRegresar: Button = findViewById(R.id.blRegresar)
         val butonSiguiente: Button = findViewById(R.id.blSiguiente)
         val barraProgreso: ProgressBar = findViewById(R.id.barraHistoriaBase)
+        val btn_diccionario: Button = findViewById(R.id.btnDiccionario)
         butonconfiguracion.visibility = View.VISIBLE
         butonRegresar.visibility = View.VISIBLE
         barraProgreso.visibility = View.VISIBLE
         butonSiguiente.visibility = View.VISIBLE
         butonlectura.visibility =View.VISIBLE
-        val btn_diccionario: Button = findViewById(R.id.btnDiccionario)
+        btn_diccionario.visibility = View.INVISIBLE
+
 
         btn_diccionario.setOnClickListener {
             var intent: Intent= Intent(this,PopUpDiccionario::class.java)
@@ -57,6 +59,7 @@ class HistoriaBase : AppCompatActivity() {
             barraProgreso.visibility = View.INVISIBLE
             butonSiguiente.visibility = View.INVISIBLE
             butonlectura.visibility = View.INVISIBLE
+            btn_diccionario.visibility = View.VISIBLE
         }
 
 

@@ -44,23 +44,25 @@
                     android:layout_alignRight="@+id/iv_historia_imagen"
                     android:layout_alignBottom="@+id/iv_historia_imagen"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="183dp"
-                    android:layout_marginEnd="116dp"
-                    android:layout_marginRight="131dp"
-                    android:layout_marginBottom="-37dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="38dp"
+                    android:layout_marginBottom="-36dp"
                     android:src="@drawable/group26" />
 
                 <ImageView
+
                     android:id="@+id/imageView4Play"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignRight="@+id/iv_historia_imagen"
                     android:layout_alignBottom="@+id/iv_historia_imagen"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="38dp"
-                    android:layout_marginBottom="-36dp"
+                    android:layout_marginTop="183dp"
+                    android:layout_marginEnd="116dp"
+                    android:layout_marginRight="131dp"
+                    android:layout_marginBottom="-37dp"
                     android:src="@drawable/group27" />
+
 
             </RelativeLayout>
 
@@ -187,13 +189,12 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
                 android:justificationMode="inter_word"
                 android:text="Descripción"
-                android:layout_marginBottom="30dp"
                 android:textSize="18sp" />
 
         </LinearLayout>
-
 
 
     </ScrollView>
