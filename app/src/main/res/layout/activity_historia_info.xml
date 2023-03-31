@@ -38,7 +38,7 @@
                     android:src="@drawable/angleleftsolid2" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imageView3Juego"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignRight="@+id/iv_historia_imagen"
@@ -51,7 +51,7 @@
                     android:src="@drawable/group26" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/imageView4Play"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignRight="@+id/iv_historia_imagen"

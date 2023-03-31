@@ -1,5 +1,6 @@
 package mx.edu.itson.appmoviles
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -15,7 +16,6 @@ class HistoriaInfo : AppCompatActivity() {
         val tv_autor_historia: TextView = findViewById(R.id.tv_autor_historia)
         val tv_paginas_historia: TextView = findViewById(R.id.tv_total_paginas_historia)
         val tv_sinopsis_historia: TextView = findViewById(R.id.tv_psinopsis_historia)
-
         val bundle = intent.extras
 
         if(bundle!=null){
@@ -24,6 +24,11 @@ class HistoriaInfo : AppCompatActivity() {
             tv_autor_historia.setText(bundle.getString("autor"))
             tv_paginas_historia.setText(bundle.getString("numPaginas"))
             tv_sinopsis_historia.setText(bundle.getString("sinopsis"))
+        }
+        val imageView: ImageView=findViewById(R.id.imageView4Play)
+        imageView.setOnClickListener{
+            var intent: Intent = Intent(this, HistoriaBase::class.java)
+            startActivity(intent)
         }
 
     }
