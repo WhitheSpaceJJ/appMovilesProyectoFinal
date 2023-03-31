@@ -79,7 +79,7 @@
                     android:text="@string/deportes"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_animales"
@@ -92,7 +92,7 @@
                     android:text="@string/animales"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </TableRow>
 
             <TableRow android:layout_marginTop="15dp">
@@ -109,7 +109,7 @@
                     android:text="@string/magia"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_videojuegos"
@@ -122,7 +122,7 @@
                     android:text="@string/videojuegos"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </TableRow>
 
             <TableRow android:layout_marginTop="15dp">
@@ -139,7 +139,7 @@
                     android:text="@string/musical"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_aventuras"
@@ -152,7 +152,7 @@
                     android:text="@string/aventura"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </TableRow>
 
         </TableLayout>

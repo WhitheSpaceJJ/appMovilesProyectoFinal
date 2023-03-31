@@ -21,7 +21,7 @@ class RestablecerPasword : AppCompatActivity() {
         }
 
         btn_restablecer.setOnClickListener{
-            var intent: Intent = Intent(this, Menu::class.java)
+            var intent: Intent = Intent(this, Perfiles::class.java)
             startActivity(intent)
         }
     }

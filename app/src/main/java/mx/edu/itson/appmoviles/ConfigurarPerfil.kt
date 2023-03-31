@@ -13,7 +13,7 @@ class ConfigurarPerfil : AppCompatActivity() {
 
 
         val iv_regresar : ImageView = findViewById(R.id.iv_regresar_configurar_perfil)
-        val btn_siguiente: Button = findViewById(R.id.btn_siguiente)
+        val btn_siguiente: Button = findViewById(R.id.btnSiguienteConfiPerfil)
 
         iv_regresar.setOnClickListener{
             var intent: Intent = Intent(this, CrearCuenta::class.java)

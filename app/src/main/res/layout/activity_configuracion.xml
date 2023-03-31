@@ -48,7 +48,7 @@
             android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/buttonEditar"
+        android:id="@+id/btnEditarPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -64,7 +64,7 @@
 
 
         <Button
-            android:id="@+id/buttonCambiarPerfil"
+            android:id="@+id/btnCambiarPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cambiar de Perfil"

@@ -13,6 +13,7 @@ class Perfiles : AppCompatActivity() {
         val Perfil1: ImageView = findViewById(R.id.iv_perfil_1)
         val Perfil2: ImageView = findViewById(R.id.iv_perfil_2)
         val Perfil3: ImageView = findViewById(R.id.iv_perfil_3)
+        val agregar_perfil: ImageView = findViewById(R.id.iv_agregar_perfil)
 
         Perfil1.setOnClickListener{
             var intent: Intent = Intent(this, Menu::class.java)
@@ -29,5 +30,9 @@ class Perfiles : AppCompatActivity() {
             startActivity(intent)
         }
 
+        agregar_perfil.setOnClickListener{
+            var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+            startActivity(intent)
+        }
     }
 }

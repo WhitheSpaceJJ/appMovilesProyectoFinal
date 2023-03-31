@@ -14,6 +14,9 @@ class Configuracion : AppCompatActivity() {
 
         val btn_ayuda: Button = findViewById(R.id.buttonAyuda)
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarConfiguracion)
+        val btn_editar_perfil: Button = findViewById(R.id.btnEditarPerfil)
+        val btn_cambiar_perfil: Button = findViewById(R.id.btnCambiarPerfil)
+
 
 
         btn_ayuda.setOnClickListener {
@@ -23,6 +26,16 @@ class Configuracion : AppCompatActivity() {
 
         iv_regresar.setOnClickListener {
             var intent: Intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+
+        }
+        btn_cambiar_perfil.setOnClickListener {
+            var intent: Intent = Intent(this, Perfiles::class.java)
+            startActivity(intent)
+
+        }
+        btn_editar_perfil.setOnClickListener {
+            var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
             startActivity(intent)
 
         }
