@@ -30,7 +30,7 @@
             android:text="¿Genial Has completado tu Perfil"/>
         <TextView
             android:layout_width="match_parent"
-            android:id="@+id/descripcion"
+            android:id="@+id/descripcion_medalla"
             android:textStyle="bold"
             android:textSize="23sp"
             android:layout_marginTop="15dp"

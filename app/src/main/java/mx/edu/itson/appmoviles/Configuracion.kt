@@ -14,7 +14,7 @@ class Configuracion : AppCompatActivity() {
 
         val btn_ayuda: Button = findViewById(R.id.buttonAyuda)
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarConfiguracion)
-        var perfilFragment = FragmentPerfil()
+
 
         btn_ayuda.setOnClickListener {
             var intent: Intent = Intent(this, Faq::class.java)

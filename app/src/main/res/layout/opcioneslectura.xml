@@ -1,164 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:layout_height="match_parent"
     android:background="@color/purple_200"
-    >
+    android:orientation="vertical">
 
-
-    <TableLayout
-        android:id="@+id/table_layout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <TableRow
-            android:id="@+id/table_row1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="28sp"
-                android:layout_margin="15dp"
-                android:textColor="@color/light_text"
-                android:text="Tamaño de Texto"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="Tamaño de Texto"
+            android:textColor="@color/light_text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:text="-"
-                android:textColor="@color/yellow_dark"
-                android:textSize="48sp"   android:layout_margin="10dp"
-                android:textStyle="bold"
-                android:id="@+id/menosLectura"
-              />
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:text="Aa"
-                android:textColor="@color/black"
-                android:textSize="38sp"
-                android:textStyle="bold"
-     />
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:text="+"
-                android:textColor="@color/yellow_dark"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                android:id="@+id/masLectura"
-             />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/table_row2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="28sp"
-                android:layout_margin="15dp"
-                android:textColor="@color/light_text"
-                android:text="Color de la Pagina"/>
-
-            <Button
-                android:layout_width="70dp"   android:layout_margin="10dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                app:backgroundTint="@null"
-                android:background="@drawable/menos"
-                android:id="@+id/bc1"
-                android:contentDescription="Color 1"
-          />
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                app:backgroundTint="@color/black"
-                android:background="@drawable/menos"
-                android:id="@+id/bc2"
-                android:contentDescription="Color 2"
-                />
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/menos"
-                android:id="@+id/bc3"
-                android:contentDescription="Color 3"
-                />
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/menos_vec"
+            android:layout_gravity="center"/>
 
 
 
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
 
-        </TableRow>
+            android:layout_marginStart="30dp"
+            android:text="Aa"
+            android:textColor="@color/blue_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/mas_vec"
+            android:layout_gravity="center"/>
 
-        <TableRow
-            android:id="@+id/table_row3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="28sp"
-                android:layout_margin="15dp"
-                android:textColor="@color/light_text"
-                android:text="Modo de lectura"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/menos"
-                android:text="->"      android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@color/yellow_dark"
-                android:contentDescription="Izquierda"
-                android:id="@+id/derecha"
-                />
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/menos"
-                android:text="<-"      android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@color/yellow_dark"
-                android:id="@+id/izquierda"
-                android:contentDescription="Derecha"
-                />
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"   android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/menos"
-                android:text="v"      android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@color/yellow_dark"
-                android:id="@+id/abajo"
-                android:contentDescription="Abajo"
-                />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="Color de la Pagina"
+            android:textColor="@color/light_text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        </TableRow>
-    </TableLayout>
+        <Button
+            android:id="@+id/bc1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/menos_vec"
+            android:contentDescription="Color 1"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/bc2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/menos_vec"
+            android:contentDescription="Color 2"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/bc3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/menos_vec"
+            android:contentDescription="Color 3" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="Modo de lectura"
+            android:textColor="@color/light_text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/flechaderecha"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="28dp"
+            android:src="@drawable/flechaizq"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/flecha_abajo"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
 
 </LinearLayout>
