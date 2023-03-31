@@ -38,13 +38,13 @@ class HistoriaBase : AppCompatActivity() {
         val butonconfiguracion: Button = findViewById(R.id.btnConfiguracion)
         val butonlectura: Button = findViewById(R.id.btnLectura)
         val butonRegresar: Button = findViewById(R.id.blRegresar)
-        val butonSiguiente: Button = findViewById(R.id.blSiguiente)
+        val btn_fin_lectura: Button = findViewById(R.id.btnFinLectura)
         val barraProgreso: ProgressBar = findViewById(R.id.barraHistoriaBase)
         val btn_diccionario: Button = findViewById(R.id.btnDiccionario)
         butonconfiguracion.visibility = View.VISIBLE
         butonRegresar.visibility = View.VISIBLE
         barraProgreso.visibility = View.VISIBLE
-        butonSiguiente.visibility = View.VISIBLE
+        btn_fin_lectura.visibility = View.VISIBLE
         butonlectura.visibility =View.VISIBLE
         btn_diccionario.visibility = View.INVISIBLE
 
@@ -57,11 +57,15 @@ class HistoriaBase : AppCompatActivity() {
             butonconfiguracion.visibility = View.INVISIBLE
             butonRegresar.visibility = View.INVISIBLE
             barraProgreso.visibility = View.INVISIBLE
-            butonSiguiente.visibility = View.INVISIBLE
+            btn_fin_lectura.visibility = View.INVISIBLE
             butonlectura.visibility = View.INVISIBLE
             btn_diccionario.visibility = View.VISIBLE
         }
 
+        btn_fin_lectura.setOnClickListener {
+            var intent: Intent= Intent(this,FinLectura::class.java)
+            startActivity(intent)
+        }
 
     }
 }
