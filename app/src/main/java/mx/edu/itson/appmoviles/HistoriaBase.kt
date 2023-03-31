@@ -1,13 +1,13 @@
 package mx.edu.itson.appmoviles
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class HistoriaBase : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,21 +17,21 @@ class HistoriaBase : AppCompatActivity() {
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarHistoria)
 
         iv_regresar.setOnClickListener {
-            var intent: Intent= Intent(this,HistoriaInfo::class.java)
+            var intent: Intent = Intent(this, HistoriaInfo::class.java)
             startActivity(intent)
         }
 
         val btn_lectura: Button = findViewById(R.id.btnLectura)
 
         btn_lectura.setOnClickListener {
-            var intent: Intent= Intent(this,PopUpVoz::class.java)
+            var intent: Intent = Intent(this, PopUpVoz::class.java)
             startActivity(intent)
         }
 
         val btn_configuracion: Button = findViewById(R.id.btnConfiguracion)
 
         btn_configuracion.setOnClickListener {
-            var intent: Intent= Intent(this,PopUpLectura::class.java)
+            var intent: Intent = Intent(this, PopUpLectura::class.java)
             startActivity(intent)
         }
         val textViewTitulo: TextView = findViewById(R.id.txt_titulo)
@@ -45,14 +45,20 @@ class HistoriaBase : AppCompatActivity() {
         butonRegresar.visibility = View.VISIBLE
         barraProgreso.visibility = View.VISIBLE
         btn_fin_lectura.visibility = View.VISIBLE
-        butonlectura.visibility =View.VISIBLE
+        butonlectura.visibility = View.VISIBLE
         btn_diccionario.visibility = View.INVISIBLE
 
 
         btn_diccionario.setOnClickListener {
-            var intent2: Intent= Intent(this,PopUpDiccionario::class.java)
-            startActivityForResult(intent2, 1)
+            var intent2: Intent = Intent(this, PopUpDiccionario::class.java)
+            startActivity(intent2)
+            butonconfiguracion.visibility = View.VISIBLE
+            butonRegresar.visibility = View.VISIBLE
+            barraProgreso.visibility = View.VISIBLE
+            btn_fin_lectura.visibility = View.VISIBLE
+            butonlectura.visibility = View.VISIBLE
             btn_diccionario.visibility = View.INVISIBLE
+
         }
         textViewTitulo.setOnClickListener {
             butonconfiguracion.visibility = View.INVISIBLE
@@ -64,20 +70,10 @@ class HistoriaBase : AppCompatActivity() {
         }
 
         btn_fin_lectura.setOnClickListener {
-            var intent: Intent= Intent(this,FinLectura::class.java)
+            var intent: Intent = Intent(this, FinLectura::class.java)
             startActivity(intent)
         }
 
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1) { // Verifica si se recibe la respuesta para el código de solicitud 1
-            butonconfiguracion.visibility = View.VISIBLE
-            butonRegresar.visibility = View.VISIBLE
-            barraProgreso.visibility = View.VISIBLE
-            btn_fin_lectura.visibility = View.VISIBLE
-            butonlectura.visibility = View.VISIBLE
-            btn_diccionario.visibility = View.VISIBLE // Haz visible el botón de diccionario nuevamente si lo deseas
-        }
-    }
+
 }

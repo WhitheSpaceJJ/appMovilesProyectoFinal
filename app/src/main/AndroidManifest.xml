@@ -14,13 +14,17 @@
         android:theme="@style/Theme.APPMOviles"
         tools:targetApi="31">
         <activity
-            android:name=".PopUpVoz"
+            android:name=".PopUpMedallaInfo"
             android:exported="false"
             android:theme="@style/Theme.APPMOviles.TemaPopUp"/>
         <activity
+            android:name=".PopUpVoz"
+            android:exported="false"
+            android:theme="@style/Theme.APPMOviles.TemaPopUp" />
+        <activity
             android:name=".PopUpLectura"
             android:exported="false"
-            android:theme="@style/Theme.APPMOviles.TemaPopUp"/>
+            android:theme="@style/Theme.APPMOviles.TemaPopUp" />
         <activity
             android:name=".PopUpDiccionario"
             android:exported="false"
