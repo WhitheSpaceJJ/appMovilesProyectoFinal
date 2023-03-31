@@ -30,15 +30,11 @@ class HistoriaInfo : AppCompatActivity() {
             var intent: Intent = Intent(this, HistoriaBase::class.java)
             startActivity(intent)
         }
-
+        val imageViewRegresar: ImageView=findViewById(R.id.imageView4Play)
+        imageViewRegresar.setOnClickListener{
+            var intent: Intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+        }
     }
 }
 
-/*
-var image:Int,
-                    var titulo: String,
-                    var autor: String,
-                    var numPaginas: String,
-    //var generos: ArrayList<String>,
-                    var sinopsis: String)
-*/
