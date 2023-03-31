@@ -14,6 +14,10 @@
         android:theme="@style/Theme.APPMOviles"
         tools:targetApi="31">
         <activity
+            android:name=".PopUpPrueba"
+            android:theme="@style/Theme.APPMOviles.TemaPopUp"
+            android:exported="false" />
+        <activity
             android:name=".HistoriaBase"
             android:exported="false" />
         <activity
@@ -65,9 +69,6 @@
             android:name=".BibliotecaBase"
             android:exported="false" />
         <activity
-            android:name=".Biblioteca"
-            android:exported="false" />
-        <activity
             android:name=".CategoriaBase"
             android:exported="false" />
         <activity
@@ -79,9 +80,7 @@
         <activity
             android:name=".Fantasia"
             android:exported="false" />
-        <activity
-            android:name=".Buscar"
-            android:exported="false" />
+
         <activity
             android:name=".Configuracion"
             android:exported="false" />

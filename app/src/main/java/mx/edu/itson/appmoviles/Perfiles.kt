@@ -26,7 +26,7 @@ class Perfiles : AppCompatActivity() {
         }
 
         Perfil3.setOnClickListener{
-            var intent: Intent = Intent(this, Menu::class.java)
+            var intent: Intent = Intent(this, PopUpPrueba::class.java)
             startActivity(intent)
         }
 
