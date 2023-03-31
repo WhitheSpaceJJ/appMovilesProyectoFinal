@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="187dp"
+        android:layout_width="156dp"
+        android:layout_height="170dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/mask"
-        android:scaleType="fitCenter"
-        android:src="@drawable/biblioteca1" />
+        android:scaleType="fitXY"
+
+        android:background="@color/white"/>
 
 </LinearLayout>
 

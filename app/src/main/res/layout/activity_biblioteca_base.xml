@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/bibliotecaImagen"
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="187dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/mask"
         android:scaleType="fitCenter"
-        android:src="@drawable/biblioteca1" />
+        android:background="@drawable/biblioteca1" />
 
 
     <ProgressBar
