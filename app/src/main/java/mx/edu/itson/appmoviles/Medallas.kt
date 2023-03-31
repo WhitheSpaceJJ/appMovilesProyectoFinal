@@ -3,6 +3,8 @@ package mx.edu.itson.appmoviles
 
 
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +30,8 @@ class Medallas : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    var adapter: MedallasAdapter? = null
+    var medallas: ArrayList<Int> = ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +48,8 @@ class Medallas : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(layout.activity_medallas, container, false)
 
-        val medallas = listOf(R.drawable.medalla1, R.drawable.medalla2, R.drawable.medalla3, R.drawable.medalla4, R.drawable.medalla5, R.drawable.medalla6)
-
-        val adapter = MedallasAdapter(medallas)
+        agregarMedallas()
+        adapter = MedallasAdapter(view.context, medallas)
         val gridView = view.findViewById<GridView>(R.id.medallas)
         gridView.adapter = adapter
        val regresar:ImageView=view.findViewById(R.id.buttonRegresar)
@@ -57,6 +60,16 @@ class Medallas : Fragment() {
         }
 
         return view
+    }
+
+    private fun agregarMedallas(){
+
+        medallas.add(R.drawable.medalla1)
+        medallas.add(R.drawable.medalla2)
+        medallas.add(R.drawable.medalla3)
+        medallas.add(R.drawable.medalla4)
+        medallas.add(R.drawable.medalla5)
+        medallas.add(R.drawable.medalla6)
     }
 
     companion object {
@@ -78,7 +91,15 @@ class Medallas : Fragment() {
                 }
             }
     }
-    class MedallasAdapter(private val medallas: List<Int>) : BaseAdapter() {
+    class MedallasAdapter: BaseAdapter{
+        var context: Context? = null
+        var medallas = ArrayList<Int>()
+
+        constructor(context: Context, medallas: ArrayList<Int>){
+            this.context = context
+            this.medallas = medallas
+        }
+
 
         override fun getCount(): Int {
             return medallas.size
@@ -93,10 +114,20 @@ class Medallas : Fragment() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.item_medalla_coleccionable_catalogo, parent, false)
-            val imageView = view.findViewById<ImageView>(R.id.imageView)
-            imageView.setImageResource(medallas[position])
-            return view
+            var medallas = medallas[position]
+            var inflator =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var vista = inflator.inflate(R.layout.item_medalla_coleccionable_catalogo, null)
+
+            var imagen: ImageView = vista.findViewById(R.id.imageView)
+
+            imagen.setImageResource(medallas)
+            imagen.setOnClickListener {
+                var intento = Intent(context, PopUpMedallaInfo::class.java)
+                context!!.startActivity(intento)
+            }
+        return vista
         }
+
     }
 }

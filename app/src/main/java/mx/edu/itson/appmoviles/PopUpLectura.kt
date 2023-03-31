@@ -15,6 +15,6 @@ class PopUpLectura : AppCompatActivity() {
         var ancho: Int = medidasVentana.widthPixels;
         var alto: Int = medidasVentana.heightPixels
 
-        window.setLayout((ancho*0.75).toInt(), (alto*0.35).toInt())
+        window.setLayout((ancho).toInt(), (alto*0.45).toInt())
     }
 }
