@@ -46,6 +46,7 @@
             android:gravity="center"
             android:layout_marginTop="30dp"
             android:id="@+id/escuhar"
+            android:text="-"
             android:contentDescription="Escuchar Historia"
             app:backgroundTint="@null"
             android:background="@drawable/switchon"
