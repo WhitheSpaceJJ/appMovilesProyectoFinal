@@ -129,10 +129,8 @@ class FragmentCatalogo : Fragment() {
             var imagen: ImageView = vista.findViewById(R.id.imageView)
 
             imagen.setImageResource(historia.image)
-
             imagen.setOnClickListener {
                 var intento = Intent(context, HistoriaInfo::class.java)
-
                 intento.putExtra("image", historia.image)
                 intento.putExtra("titulo", historia.titulo)
                 intento.putExtra("autor", historia.autor)

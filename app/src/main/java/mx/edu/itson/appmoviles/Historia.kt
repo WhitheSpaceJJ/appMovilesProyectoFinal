@@ -1,5 +1,7 @@
 package mx.edu.itson.appmoviles
 
+import java.io.Serializable
+
 data class Historia(var image:Int,
                     var titulo: String,
                     var autor: String,
