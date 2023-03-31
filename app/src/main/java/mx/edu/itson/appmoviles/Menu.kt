@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import mx.edu.itson.appmoviles.databinding.ActivityMenuBinding
+import mx.edu.itson.appmoviles.databinding.FragmentActividadesBinding
 
 
 class Menu : AppCompatActivity() {
