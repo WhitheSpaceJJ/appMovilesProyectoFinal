@@ -50,13 +50,14 @@ class HistoriaBase : AppCompatActivity() {
 
 
         btn_diccionario.setOnClickListener {
-            val bundle4 = intent.extras!!
             var intent2: Intent= Intent(this,PopUpDiccionario::class.java)
-            intent2.putExtra("image",bundle4.getInt("image"))
-            intent2.putExtra("autor",bundle4.getString("autor"))
-            intent2.putExtra("numPaginas",bundle4.getString("numPaginas"))
-            intent2.putExtra("sinopsis",bundle4.getString("sinopsis"))
             startActivity(intent2)
+            butonconfiguracion.visibility = View.VISIBLE
+            butonRegresar.visibility = View.VISIBLE
+            barraProgreso.visibility = View.VISIBLE
+            btn_fin_lectura.visibility = View.VISIBLE
+            butonlectura.visibility =View.VISIBLE
+            btn_diccionario.visibility = View.INVISIBLE
         }
         textViewTitulo.setOnClickListener {
             butonconfiguracion.visibility = View.INVISIBLE
