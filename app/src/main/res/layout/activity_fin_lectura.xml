@@ -81,20 +81,20 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_fin_lectura"
+        android:id="@+id/btnestoyListo"
         app:backgroundTint="@null"
         android:layout_width="259dp"
-        android:layout_height="60dp"
+        android:layout_height="68dp"
         android:layout_gravity="center"
         android:background="@drawable/round_button_green"
         android:text="Estoy Listo" />
     <Button
-        android:id="@+id/btn_finlectura_despues"
+        android:id="@+id/btnAhoraNo"
         app:backgroundTint="@null"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_width="259dp"
-        android:layout_height="60dp"
+        android:layout_height="48dp"
         android:layout_gravity="center"
         android:background="@drawable/round_gray"
-        android:text="Estoy Listo" />
+        android:text="Ahora no" />
 </LinearLayout>

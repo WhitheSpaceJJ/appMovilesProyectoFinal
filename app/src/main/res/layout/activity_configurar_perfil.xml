@@ -50,7 +50,7 @@
             android:layout_height="225dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="40dp"
-            android:src="@drawable/perfilfull1"/>
+            android:src="@drawable/perfil_full_2"/>
 
         <ImageView
             android:layout_width="wrap_content"
