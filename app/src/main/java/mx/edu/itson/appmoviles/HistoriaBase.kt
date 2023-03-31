@@ -3,8 +3,11 @@ package mx.edu.itson.appmoviles
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.TextView
 
 class HistoriaBase : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +34,31 @@ class HistoriaBase : AppCompatActivity() {
             var intent: Intent= Intent(this,PopUpLectura::class.java)
             startActivity(intent)
         }
+        val textViewTitulo: TextView = findViewById(R.id.txt_titulo)
+        val butonconfiguracion: Button = findViewById(R.id.btnConfiguracion)
+        val butonlectura: Button = findViewById(R.id.btnLectura)
+        val butonRegresar: Button = findViewById(R.id.blRegresar)
+        val butonSiguiente: Button = findViewById(R.id.blSiguiente)
+        val barraProgreso: ProgressBar = findViewById(R.id.barraHistoriaBase)
+        butonconfiguracion.visibility = View.VISIBLE
+        butonRegresar.visibility = View.VISIBLE
+        barraProgreso.visibility = View.VISIBLE
+        butonSiguiente.visibility = View.VISIBLE
+        butonlectura.visibility =View.VISIBLE
+        val btn_diccionario: Button = findViewById(R.id.btnDiccionario)
+
+        btn_diccionario.setOnClickListener {
+            var intent: Intent= Intent(this,PopUpDiccionario::class.java)
+            startActivity(intent)
+        }
+        textViewTitulo.setOnClickListener {
+            butonconfiguracion.visibility = View.INVISIBLE
+            butonRegresar.visibility = View.INVISIBLE
+            barraProgreso.visibility = View.INVISIBLE
+            butonSiguiente.visibility = View.INVISIBLE
+            butonlectura.visibility = View.INVISIBLE
+        }
+
+
     }
 }
