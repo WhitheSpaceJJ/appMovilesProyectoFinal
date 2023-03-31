@@ -51,12 +51,7 @@ class HistoriaBase : AppCompatActivity() {
 
         btn_diccionario.setOnClickListener {
             var intent2: Intent= Intent(this,PopUpDiccionario::class.java)
-            startActivity(intent2)
-            butonconfiguracion.visibility = View.VISIBLE
-            butonRegresar.visibility = View.VISIBLE
-            barraProgreso.visibility = View.VISIBLE
-            btn_fin_lectura.visibility = View.VISIBLE
-            butonlectura.visibility =View.VISIBLE
+            startActivityForResult(intent2, 1)
             btn_diccionario.visibility = View.INVISIBLE
         }
         textViewTitulo.setOnClickListener {
@@ -73,5 +68,16 @@ class HistoriaBase : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) { // Verifica si se recibe la respuesta para el código de solicitud 1
+            butonconfiguracion.visibility = View.VISIBLE
+            butonRegresar.visibility = View.VISIBLE
+            barraProgreso.visibility = View.VISIBLE
+            btn_fin_lectura.visibility = View.VISIBLE
+            butonlectura.visibility = View.VISIBLE
+            btn_diccionario.visibility = View.VISIBLE // Haz visible el botón de diccionario nuevamente si lo deseas
+        }
     }
 }
