@@ -30,7 +30,7 @@ class HistoriaInfo : AppCompatActivity() {
             var intent: Intent = Intent(this, HistoriaBase::class.java)
             startActivity(intent)
         }
-        val imageViewRegresar: ImageView=findViewById(R.id.imageView4Play)
+        val imageViewRegresar: ImageView=findViewById(R.id.imageView2Regresar2)
         imageViewRegresar.setOnClickListener{
             var intent: Intent = Intent(this, Menu::class.java)
             startActivity(intent)
