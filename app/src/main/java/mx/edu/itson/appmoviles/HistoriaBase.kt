@@ -8,72 +8,79 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isInvisible
 
-class HistoriaBase : AppCompatActivity() {
+
+class HistoriaBase : AppCompatActivity(), View.OnClickListener {
+
+    var tv_texto_historia: TextView? = null
+    var btn_configuracion_historia: Button? = null
+    var btn_regresar_lectura: Button? = null
+    var btn_siguiente_lectura: Button? = null
+    var pb_progreso: ProgressBar? = null
+    var btn_diccionario: Button? = null
+    var btn_escuchar_historia: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_historia_base)
 
-        val iv_regresar: ImageView = findViewById(R.id.ivRegresarHistoria)
+        tv_texto_historia = findViewById(R.id.tvTextoHistoria)
+        btn_configuracion_historia = findViewById(R.id.btnConfiguracionHistoria)
+        btn_regresar_lectura = findViewById(R.id.btnRegresarLectura)
+        btn_siguiente_lectura = findViewById(R.id.btnSiguienteLectura)
+        pb_progreso = findViewById(R.id.pbHistoriaBase)
+        btn_diccionario = findViewById(R.id.btnDiccionarioHistoria)
+        btn_escuchar_historia = findViewById(R.id.btnEscucharHistoria)
 
-        iv_regresar.setOnClickListener {
+        val iv_regresar_historia: ImageView = findViewById(R.id.ivRegresarHistoria)
+
+        iv_regresar_historia.setOnClickListener {
             var intent: Intent = Intent(this, HistoriaInfo::class.java)
             startActivity(intent)
         }
 
-        val btn_lectura: Button = findViewById(R.id.btnLectura)
-
-        btn_lectura.setOnClickListener {
+        btn_escuchar_historia?.setOnClickListener {
             var intent: Intent = Intent(this, PopUpVoz::class.java)
             startActivity(intent)
         }
 
-        val btn_configuracion: Button = findViewById(R.id.btnConfiguracion)
-
-        btn_configuracion.setOnClickListener {
+        btn_configuracion_historia?.setOnClickListener {
             var intent: Intent = Intent(this, PopUpLectura::class.java)
             startActivity(intent)
         }
-        val textViewTitulo: TextView = findViewById(R.id.txt_titulo)
-        val butonconfiguracion: Button = findViewById(R.id.btnConfiguracion)
-        val butonlectura: Button = findViewById(R.id.btnLectura)
-        val butonRegresar: Button = findViewById(R.id.blRegresar)
-        val btn_fin_lectura: Button = findViewById(R.id.btnFinLectura)
-        val barraProgreso: ProgressBar = findViewById(R.id.barraHistoriaBase)
-        val btn_diccionario: Button = findViewById(R.id.btnDiccionario)
-        butonconfiguracion.visibility = View.VISIBLE
-        butonRegresar.visibility = View.VISIBLE
-        barraProgreso.visibility = View.VISIBLE
-        btn_fin_lectura.visibility = View.VISIBLE
-        butonlectura.visibility = View.VISIBLE
-        btn_diccionario.visibility = View.INVISIBLE
 
-
-        btn_diccionario.setOnClickListener {
-            var intent2: Intent = Intent(this, PopUpDiccionario::class.java)
-            startActivity(intent2)
-            butonconfiguracion.visibility = View.VISIBLE
-            butonRegresar.visibility = View.VISIBLE
-            barraProgreso.visibility = View.VISIBLE
-            btn_fin_lectura.visibility = View.VISIBLE
-            butonlectura.visibility = View.VISIBLE
-            btn_diccionario.visibility = View.INVISIBLE
-
-        }
-        textViewTitulo.setOnClickListener {
-            butonconfiguracion.visibility = View.INVISIBLE
-            butonRegresar.visibility = View.INVISIBLE
-            barraProgreso.visibility = View.INVISIBLE
-            btn_fin_lectura.visibility = View.INVISIBLE
-            butonlectura.visibility = View.INVISIBLE
-            btn_diccionario.visibility = View.VISIBLE
-        }
-
-        btn_fin_lectura.setOnClickListener {
-            var intent: Intent = Intent(this, FinLectura::class.java)
+        btn_diccionario?.setOnClickListener {
+            var intent: Intent = Intent(this, PopUpDiccionario::class.java)
             startActivity(intent)
         }
 
+
     }
+
+
+    override fun onClick(view: View) {
+
+        when(view.id){
+            R.id.tvTextoHistoria ->{
+                if(btn_diccionario?.isInvisible== true){
+                    btn_regresar_lectura?.visibility = View.INVISIBLE
+                    pb_progreso?.visibility = View.INVISIBLE
+                    btn_siguiente_lectura?.visibility = View.INVISIBLE
+                    btn_configuracion_historia?.visibility = View.INVISIBLE
+                    btn_escuchar_historia?.visibility = View.INVISIBLE
+                    btn_diccionario?.visibility = View.VISIBLE
+                }else{
+                    btn_regresar_lectura?.visibility = View.VISIBLE
+                    pb_progreso?.visibility = View.VISIBLE
+                    btn_siguiente_lectura?.visibility = View.VISIBLE
+                    btn_configuracion_historia?.visibility = View.VISIBLE
+                    btn_escuchar_historia?.visibility = View.VISIBLE
+                    btn_diccionario?.visibility = View.INVISIBLE
+                }
+            }
+        }
+    }
+
 
 }

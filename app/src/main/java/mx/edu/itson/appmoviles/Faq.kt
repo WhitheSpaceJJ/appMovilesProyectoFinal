@@ -72,11 +72,5 @@ class Faq : AppCompatActivity(), View.OnClickListener {
 
 }
 
-/*
-        btn_cantidad_perfiles.setOnClickListener {
-
-            tv_mini_perfiles.setVisibility(View.VISIBLE)
-        }
- */
 
 
