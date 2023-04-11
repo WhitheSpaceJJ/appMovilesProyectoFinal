@@ -14,8 +14,8 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/mask"
-        android:scaleType="fitCenter"
-        android:background="@drawable/biblioteca1" />
+        android:scaleType="fitXY"
+        android:src="@drawable/biblioteca1" />
 
 
     <ProgressBar

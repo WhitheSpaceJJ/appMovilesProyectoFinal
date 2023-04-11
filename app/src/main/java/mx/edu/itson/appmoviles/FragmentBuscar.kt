@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import org.w3c.dom.Text
 
@@ -46,7 +47,7 @@ class FragmentBuscar : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_buscar, container, false)
         agregarCategorias()
         adapter = CategoriaObjetoAdapter(view.context, catalogo)
-        var listView: GridView = view.findViewById(R.id.categorias)
+        var listView: ListView = view.findViewById(R.id.categorias)
         listView.adapter=adapter
         return view
     }
@@ -90,15 +91,18 @@ class FragmentBuscar : Fragment() {
         catalogo.add(
             CategoriaObjeto("Ciencia Ficción",R.drawable.cienciaficion)
         )
+
+        catalogo.add(
+            CategoriaObjeto("Magia",R.drawable.otonotemporada)
+        )
         catalogo.add(
             CategoriaObjeto("Animales",R.drawable.animales)
         )
         catalogo.add(
             CategoriaObjeto("Aventura",R.drawable.aventura)
         )
-        catalogo.add(
-            CategoriaObjeto("Magia",R.drawable.otonotemporada)
-        )
+
+
     }
 
     class CategoriaObjetoAdapter : BaseAdapter {

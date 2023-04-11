@@ -83,7 +83,7 @@ class FragmentActividades : Fragment() {
 
     private fun agregarCategorias() {
         catalogo.add(
-            CategoriaObjeto("Pronucniación",R.drawable.pronunciacion)
+            CategoriaObjeto("Pronunciación",R.drawable.pronunciacion)
         )
         catalogo.add(
             CategoriaObjeto("Deletreo",R.drawable.deletreo)

@@ -15,6 +15,6 @@ class PopUpMedallaInfo : AppCompatActivity() {
         var ancho: Int = medidasVentana.widthPixels;
         var alto: Int = medidasVentana.heightPixels
 
-        window.setLayout((ancho*0.80).toInt(), (alto*0.27).toInt())
+        window.setLayout((ancho*0.80).toInt(), (alto*0.15).toInt())
     }
 }
