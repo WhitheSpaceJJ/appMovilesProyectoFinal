@@ -177,13 +177,13 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/primavera2"
+                android:id="@+id/verano"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="25dp"
-                android:background="@drawable/primaveratemporada"
+                android:background="@drawable/veranotemporada"
                 android:drawableTop="@drawable/mask"
                 android:scaleType="fitCenter" />
 
@@ -196,7 +196,7 @@
                 android:orientation="horizontal">
 
                 <ProgressBar
-                    android:id="@+id/progressbarPrimavera2"
+                    android:id="@+id/progressbarVerano"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="250dp"
                     android:layout_height="10dp"
@@ -207,7 +207,7 @@
                     android:progressDrawable="@drawable/progress_bar" />
 
                 <TextView
-                    android:id="@+id/txtTotalPrimavera2"
+                    android:id="@+id/txtTotalVerano"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
