@@ -10,6 +10,8 @@ import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,14 +44,14 @@ class FragmentActividades : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_actividades, container, false)
         agregarCategorias()
         agregarHistorias()
-        adapter1 = FragmentBiblioteca.BibliotecaObjetoAdapter(view.context,catalogo1)
         adapter = FragmentActividades.CategoriaObjetoAdapter(view.context, catalogo)
         var listView: GridView = view.findViewById(R.id.gvPorCategoria)
-        var listView1: GridView = view.findViewById(R.id.gvActividadesHistoria)
         listView.adapter=adapter
-        listView1.adapter=adapter1
 
-
+        val adapter2 = BibliotecaObjetoAdapter(catalogo1)
+        val recyclerView:RecyclerView = view.findViewById(R.id.gvActividadesHistoria)
+        recyclerView.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.adapter = adapter2
         return view
     }
 
@@ -77,7 +79,6 @@ class FragmentActividades : Fragment() {
     var catalogo: ArrayList<CategoriaObjeto> = ArrayList<CategoriaObjeto>()
     var adapter: CategoriaObjetoAdapter? = null
     var catalogo1: ArrayList<BibliotecaObjeto> = ArrayList<BibliotecaObjeto>()
-    var adapter1: FragmentBiblioteca.BibliotecaObjetoAdapter? = null
 
 
 
@@ -158,40 +159,28 @@ class FragmentActividades : Fragment() {
         }
     }
 
+    class BibliotecaObjetoAdapter(private val historiasBiblioteca: ArrayList<BibliotecaObjeto>) :
+        RecyclerView.Adapter<BibliotecaObjetoAdapter.ViewHolder>() {
 
-    class BibliotecaObjetoAdapter : BaseAdapter {
-        var context: Context? = null
-        var historiasBiblioteca = ArrayList<BibliotecaObjeto>()
-
-        constructor(context: Context, historiasBiblioteca : ArrayList<BibliotecaObjeto>) {
-            this.context = context
-            this.historiasBiblioteca  = historiasBiblioteca
+        class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val imagen: ImageView = itemView.findViewById(R.id.bibliotecaImagen)
+            val texto: TextView = itemView.findViewById(R.id.tituloBiblioteca)
         }
 
-        override fun getCount(): Int {
-            return historiasBiblioteca .size
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.activity_biblioteca_base, parent, false)
+            return ViewHolder(itemView)
         }
 
-        override fun getItem(p0: Int): Any {
-            return historiasBiblioteca [p0]
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            val historia = historiasBiblioteca[position]
+            holder.imagen.setImageResource(historia.image)
+            holder.texto.text = historia.titulo
         }
 
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
-        }
-
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            var historia = historiasBiblioteca [p0]
-            var inflator =
-                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            var vista = inflator.inflate(R.layout.activity_biblioteca_base, null)
-
-            var imagen: ImageView = vista.findViewById(R.id.bibliotecaImagen)
-
-            imagen.setImageResource(historia.image)
-            var texto: TextView =vista.findViewById(R.id.tituloBiblioteca)
-            texto.setText(historia.titulo)
-            return vista
+        override fun getItemCount(): Int {
+            return historiasBiblioteca.size
         }
     }
 }
