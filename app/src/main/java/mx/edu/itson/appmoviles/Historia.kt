@@ -12,4 +12,4 @@ data class Historia(var image:Int,
                     var imagenes: ArrayList<Int>
                     ,
                     var parrafos: ArrayList<String>
-                    )
+                    ): Serializable
