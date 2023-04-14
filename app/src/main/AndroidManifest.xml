@@ -32,6 +32,7 @@
         <activity
             android:name=".HistoriaBase"
             android:exported="false" />
+
         <activity
             android:name=".FinLectura"
             android:exported="false" />
@@ -55,6 +56,12 @@
             android:exported="false" />
         <activity
             android:name=".Perfiles"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".Usuario"
             android:exported="false" />
         <activity
             android:name=".IniciarSesion"
