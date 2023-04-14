@@ -9,7 +9,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,9 +41,23 @@ class FragmentCatalogo : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_catalogo, container, false)
         agregarHistorias()
+        agregarHistorias()
+        /*
         adapter = HistoriaAdapter(view.context, catalogo)
         var listView: GridView = view.findViewById(R.id.catalogo)
         listView.adapter=adapter
+    */
+        // Obtén la referencia al RecyclerView desde el diseño XML
+        val recyclerView: RecyclerView = view.findViewById(R.id.catalogo)
+
+// Crea un GridLayoutManager para organizar los elementos en una cuadrícula de 2 columnas
+        val layoutManager = GridLayoutManager(context, 2)
+        recyclerView.layoutManager = layoutManager
+
+// Crea un adaptador personalizado que extienda de RecyclerView.Adapter, y pásalo al RecyclerView
+        val adapter = HistoriaAdapter(requireContext(), catalogo)
+        recyclerView.adapter = adapter
+
         return view
     }
 
@@ -127,7 +144,55 @@ class FragmentCatalogo : Fragment() {
         )
 
     }
+    class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>) :
+        RecyclerView.Adapter<HistoriaAdapter.ViewHolder>() {
 
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val view = LayoutInflater.from(context).inflate(R.layout.item_medalla_coleccionable_catalogo, parent, false)
+            return ViewHolder(view)
+        }
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            val historia = catalogo[position]
+            val height = context.resources.getDimension(R.dimen.image_heightCatalogo).toInt()
+            val width = context.resources.getDimension(R.dimen.image_widthCatalogo).toInt()
+
+            holder.imagen.setImageResource(historia.image)
+            holder.imagen.layoutParams.height = height
+            holder.imagen.layoutParams.width = width
+            if (((position%2)==0)&&(position!=0)) {
+                val marginTop = context.resources.getDimension(R.dimen.imageTopCatalogo2).toInt()
+                val params = holder.imagen.layoutParams as ViewGroup.MarginLayoutParams
+                params.setMargins(0, marginTop, 0, 0)
+                holder.imagen.layoutParams = params
+            }else if((position==1)||((position%2)!=0)) {
+                val marginTop = context.resources.getDimension(R.dimen.imageTopCatalogo).toInt()
+                val params = holder.imagen.layoutParams as ViewGroup.MarginLayoutParams
+                params.setMargins(0, marginTop, 0, 0)
+                holder.imagen.layoutParams = params
+            }
+            holder.imagen.setOnClickListener {
+                var intento = Intent(context, HistoriaInfo::class.java)
+                intento.putExtra("historia", historia)
+                intento.putExtra("image", historia.image)
+                intento.putExtra("titulo", historia.titulo)
+                intento.putExtra("autor", historia.autor)
+                intento.putExtra("numPaginas", historia.numPaginas)
+                intento.putExtra("sinopsis", historia.sinopsisi)
+                context.startActivity(intento)
+            }
+        }
+
+        override fun getItemCount(): Int {
+            return catalogo.size
+        }
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            var imagen: ImageView = itemView.findViewById(R.id.imageView)
+        }
+    }
+
+/*
     class HistoriaAdapter : BaseAdapter {
         var context: Context? = null
         var catalogo = ArrayList<Historia>()
@@ -148,16 +213,22 @@ class FragmentCatalogo : Fragment() {
         override fun getItemId(p0: Int): Long {
             return p0.toLong()
         }
-
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             var historia = catalogo[p0]
-            var inflator =
-                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.item_medalla_coleccionable_catalogo, null)
 
-            var imagen: ImageView = vista.findViewById(R.id.imageView)
+            if (((p0%2)!=0)&&(p0==1)) {
+              vista = inflator.inflate(R.layout.catalogocolumna2, null)
+            }
 
+            var imagen: ImageView = vista.findViewById(R.id.imageView)
+            val height = context!!.resources.getDimension(R.dimen.image_heightCatalogo).toInt()
+            val width = context!!.resources.getDimension(R.dimen.image_widthCatalogo).toInt()
             imagen.setImageResource(historia.image)
+            imagen.layoutParams.height = height
+            imagen.layoutParams.width = width
+
             imagen.setOnClickListener {
                 var intento = Intent(context, HistoriaInfo::class.java)
                 intento.putExtra("historia", historia)
@@ -168,7 +239,36 @@ class FragmentCatalogo : Fragment() {
                 intento.putExtra("sinopsis", historia.sinopsisi)
                 context!!.startActivity(intento)
             }
+
             return vista
         }
+        /
+override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+    var historia = catalogo[p0]
+    var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    var vista = inflator.inflate(R.layout.item_medalla_coleccionable_catalogo, null)
+
+    var imagen: ImageView = vista.findViewById(R.id.imageView)
+    val height = context!!.resources.getDimension(R.dimen.image_heightCatalogo).toInt()
+    val width = context!!.resources.getDimension(R.dimen.image_widthCatalogo).toInt()
+    imagen.setImageResource(historia.image)
+    imagen.layoutParams.height = height
+    imagen.layoutParams.width = width
+
+    imagen.setOnClickListener {
+        var intento = Intent(context, HistoriaInfo::class.java)
+        intento.putExtra("historia", historia)
+        intento.putExtra("image", historia.image)
+        intento.putExtra("titulo", historia.titulo)
+        intento.putExtra("autor", historia.autor)
+        intento.putExtra("numPaginas", historia.numPaginas)
+        intento.putExtra("sinopsis", historia.sinopsisi)
+        context!!.startActivity(intento)
     }
+
+    return vista
+}
+/
+    }
+    */
 }

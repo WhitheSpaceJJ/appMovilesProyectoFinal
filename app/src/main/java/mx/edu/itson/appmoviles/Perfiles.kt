@@ -94,9 +94,12 @@ class Perfiles : AppCompatActivity() {
                 var vista2 = inflator.inflate(R.layout.perfil_item, null)
                 var imagen: ImageView = vista2.findViewById(R.id.ivperfil)
                 imagen.setImageResource(R.drawable.agregar)
-                var imagenFondo: ImageView = vista2.findViewById(R.id.ivperfilfondo)
+                val height = context!!.resources.getDimension(R.dimen.image_height).toInt()
+                imagen.layoutParams.height = height
+                imagen.layoutParams.width = height
                 var txv:TextView=vista2.findViewById(R.id.tvperfilnombre)
                 txv.setText(perfil.nombre)
+                var imagenFondo: ImageView = vista2.findViewById(R.id.ivperfilfondo)
                 imagenFondo.setImageResource(R.drawable.perfil4)
                 imagenFondo.setOnClickListener {
                     var intento = Intent(context, ConfigurarPerfil::class.java)
