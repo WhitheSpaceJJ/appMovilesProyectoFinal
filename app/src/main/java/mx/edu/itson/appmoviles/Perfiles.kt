@@ -19,10 +19,19 @@ class Perfiles : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfiles)
+
+        if(intent.hasExtra("usuario")){
+            var usuario2=intent.getSerializableExtra("usuario") as Usuario
+            var perfilesUsuarioObtenido: ArrayList<PerfilUsuario> =usuario2.perfiles
+            perfilesUsuarioObtenido.add(0, PerfilUsuario("Agregar Perfil", 0, R.drawable.agregar))
+            adapter = PerfilAdapter(this, perfilesUsuarioObtenido)
+            var listView: GridView = findViewById(R.id.grvperfiles)
+            listView.adapter=adapter
+        }
+/*
         agregarPerfiles()
-        adapter = PerfilAdapter(this, perfiles)
-        var listView: GridView = findViewById(R.id.grvperfiles)
-        listView.adapter=adapter
+        */
+
         /*
         val agregar_perfil: ImageView = findViewById(R.id.iv_agregar_perfil)
         agregar_perfil.setOnClickListener{
@@ -59,9 +68,6 @@ class Perfiles : AppCompatActivity() {
     }
     private fun agregarPerfiles() {
         perfiles.add(PerfilUsuario("Agregar Perfil",0,R.drawable.agregar))
-        perfiles.add(PerfilUsuario("jose",21,R.drawable.perfiloficial1))
-        perfiles.add(PerfilUsuario("giovanni",37,R.drawable.perfiloficial2))
-        perfiles.add(PerfilUsuario("josegiovanni",58,R.drawable.perfiloficial3))
     }
     class PerfilAdapter : BaseAdapter {
         var context: Context? = null
@@ -131,6 +137,7 @@ class Perfiles : AppCompatActivity() {
                 imagen.setImageResource(perfil.imagen)
                 imagen.setOnClickListener {
                     var intento = Intent(context,Menu::class.java)
+                    intento.putExtra("perfil",perfil)
                     context!!.startActivity(intento)
                 }
                 return vista

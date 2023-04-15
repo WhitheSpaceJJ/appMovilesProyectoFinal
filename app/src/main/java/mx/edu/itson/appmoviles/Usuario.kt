@@ -1,8 +1,11 @@
 package mx.edu.itson.appmoviles
+
+import java.io.Serializable
+
 data class Usuario(
-    val correoElectronico: String,
-    val nombreUsuario: String,
-    val contrasena: String,
-    val temasFavoritos: ArrayList<String> = ArrayList(),
-    val perfiles: ArrayList<PerfilUsuario> = ArrayList()
-)
+    var correoElectronico: String,
+    var nombreUsuario: String,
+    var contrasena: String,
+    var temasFavoritos: ArrayList<String> = ArrayList(),
+    var perfiles: ArrayList<PerfilUsuario> = ArrayList()
+): Serializable

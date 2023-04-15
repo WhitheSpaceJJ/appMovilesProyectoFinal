@@ -85,7 +85,7 @@
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="532dp"
         android:textAllCaps="false"
-        android:textSize="15dp"/>
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/btn_registrarse"
@@ -98,5 +98,8 @@
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="614dp"
         android:textAllCaps="false"
-        android:textSize="15dp"/>
+        android:textSize="15sp"/>
+
+
+
 </LinearLayout>
