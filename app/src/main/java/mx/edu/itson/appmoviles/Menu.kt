@@ -5,11 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import mx.edu.itson.appmoviles.databinding.ActivityMenuBinding
-import mx.edu.itson.appmoviles.databinding.FragmentActividadesBinding
 
 
 class Menu : AppCompatActivity() {
 
+
+    fun Menu() {
+
+    }
 
     private lateinit var binding: ActivityMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,19 +20,15 @@ class Menu : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         var perfilFragment = FragmentPerfil()
         var actividadesFragment = FragmentActividades()
-        var catalogoFragment = FragmentCatalogo()
-        catalogoFragment.setHistorias(catalogo)
         var buscarFragment = FragmentBuscar()
         var bibliotecaFragment = FragmentBiblioteca()
-        agregarHistorias()
+        var catologoFragment = FragmentCatalogo()
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-
                 R.id.nav_Inicio -> {
-                    setCurrentFragment(catalogoFragment)
+                    setCurrentFragment(catologoFragment)
                     true
                 }
 
@@ -143,10 +142,14 @@ class Menu : AppCompatActivity() {
 
     }
     fun setCurrentFragment(fragment: Fragment) {
+
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.containerView, fragment)
             commit()
         }
     }
-
+    fun getOpciones(): List<Historia> {
+      agregarHistorias()
+        return catalogo
+    }
 }

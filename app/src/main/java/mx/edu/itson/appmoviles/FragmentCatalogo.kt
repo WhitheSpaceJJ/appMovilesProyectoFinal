@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.GridView
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,11 +20,13 @@ private const val ARG_PARAM2 = "param2"
 class FragmentCatalogo : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    var catalogo: ArrayList<Historia> = ArrayList<Historia>()
+
     var adapter: HistoriaAdapter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -40,7 +39,8 @@ class FragmentCatalogo : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_catalogo, container, false)
-
+        val menu = Menu()
+        var catalogo= menu.getOpciones()
         /*
         adapter = HistoriaAdapter(view.context, catalogo)
         var listView: GridView = view.findViewById(R.id.catalogo)
@@ -54,14 +54,12 @@ class FragmentCatalogo : Fragment() {
         recyclerView.layoutManager = layoutManager
 
 // Crea un adaptador personalizado que extienda de RecyclerView.Adapter, y pásalo al RecyclerView
-        val adapter = HistoriaAdapter(requireContext(), catalogo)
+        val adapter = HistoriaAdapter(requireContext(), catalogo as ArrayList<Historia>)
         recyclerView.adapter = adapter
 
         return view
     }
-    fun setHistorias(historias: ArrayList<Historia>) {
-        this.catalogo = historias
-    }
+
 
     class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>) :
         RecyclerView.Adapter<HistoriaAdapter.ViewHolder>() {
