@@ -7,7 +7,7 @@ import android.os.Handler
 
 class MainActivity : AppCompatActivity() {
 
-    private val DELAY_TIME = 3000L
+    private val DELAY_TIME = 1000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

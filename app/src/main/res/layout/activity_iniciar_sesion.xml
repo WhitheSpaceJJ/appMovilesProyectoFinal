@@ -36,15 +36,16 @@
     <EditText
         android:id="@+id/et_contraseña_inicio"
         android:layout_width="300dp"
-        android:layout_height="59dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_gray"
+        android:fontFamily="@font/nunito_bold"
         android:hint="@string/contrasena"
+        android:inputType="textPassword"
         android:paddingStart="30dp"
         android:textColorHint="@color/gray"
-        android:textSize="21sp"
-        android:fontFamily="@font/nunito_bold"/>
+        android:textSize="21sp" />
 
 
     <TextView
@@ -99,6 +100,7 @@
         tools:layout_editor_absoluteY="614dp"
         android:textAllCaps="false"
         android:textSize="15sp"/>
+
 
 
 
