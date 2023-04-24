@@ -7,11 +7,18 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class PaswordOlvidada : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pasword_olvidada)
+
+        auth = Firebase.auth
 
         val btnChecar: Button = findViewById(R.id.btn_checar)
 
@@ -24,7 +31,18 @@ class PaswordOlvidada : AppCompatActivity() {
             var usuario: String = et_usuario_contra_olvidada.text.toString()
 
             if (!usuario.isNullOrBlank()) {
-                //enviarcorreo
+
+                auth.sendPasswordResetEmail(usuario).addOnCompleteListener{ task ->
+
+                    if(task.isSuccessful){
+                        Toast.makeText(this,"Se envio un correo a $usuario",Toast.LENGTH_SHORT).show()
+
+                    }else{
+                        Toast.makeText(this,"Error al enviar correo",Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
             } else {
                 Toast.makeText(this, "Ingrese usuario", Toast.LENGTH_SHORT).show()
             }

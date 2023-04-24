@@ -7,12 +7,19 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class IniciarSesion : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
+
+        auth = Firebase.auth
+
         var usuario = Usuario(
             correoElectronico = "",
             nombreUsuario = "",
@@ -98,12 +105,33 @@ class IniciarSesion : AppCompatActivity() {
         var contrasenia: String = etContrasenia.text.toString()
 
         if (!usuario.isNullOrBlank() && !contrasenia.isNullOrBlank()) {
-            //ingresarFirebase()
+            ingresarFirebase(usuario, contrasenia)
         } else {
             Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
         }
 
 
+    }
+
+    private fun ingresarFirebase(email:String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    //Log.d(TAG, "signInWithEmail:success")
+                    val user = auth.currentUser
+
+                    val intent: Intent = Intent(this, Perfiles::class.java)
+                    startActivity(intent)
+                    //updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    //Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                    //updateUI(null)
+                }
+            }
     }
 
 }
