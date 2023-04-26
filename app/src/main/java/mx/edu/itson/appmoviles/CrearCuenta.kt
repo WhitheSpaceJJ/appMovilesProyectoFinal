@@ -3,13 +3,14 @@ package mx.edu.itson.appmoviles
 import android.content.Intent
 import android.os.Bundle
 import android.util.Printer
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class CrearCuenta : AppCompatActivity() {
@@ -19,6 +20,10 @@ class CrearCuenta : AppCompatActivity() {
     var et_crear_contra: EditText? = null
     var et_crear_contra_confirmar: EditText? = null
 
+    //realtime database
+    private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
+
+    //logeo
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +84,21 @@ class CrearCuenta : AppCompatActivity() {
                         baseContext, "${user?.email} Se ha creado correctamente, puede inciar sesión.",
                         Toast.LENGTH_SHORT
                     ).show()
+                    saveMarkFromForm()
+                    userRef.addChildEventListener(object : ChildEventListener {
+                        override fun onCancelled(databaseError: DatabaseError) { }
+                        override fun onChildMoved(dataSnapshot: DataSnapshot, previusName: String?) { }
+                        override fun onChildChanged(dataSnapshot: DataSnapshot, previusName: String?) { }
+                        override fun onChildRemoved(snapshot: DataSnapshot) { }
+
+                        override fun onChildAdded(dataSnapshot: DataSnapshot, p1: String?) {
+                            //val usuario = dataSnapshot.getValue(User::class.java)
+                            //if (usuario != null) writeMark(usuario)
+                        }
+
+                    })
                     limpiarCampos()
+
                     val intent: Intent = Intent(this, IniciarSesion::class.java)
                     startActivity(intent)
                     //updateUI(user)
@@ -108,4 +127,26 @@ class CrearCuenta : AppCompatActivity() {
         et_crear_correo?.setText("")
         et_crear_contra_confirmar?.setText("")
     }
+
+    private fun saveMarkFromForm() {
+        et_crear_usuario = findViewById(R.id.etCrearusuario)
+        et_crear_correo= findViewById(R.id.etCrearCorreoE)
+
+
+
+        val usuario = User(
+            et_crear_usuario?.text.toString(),
+            et_crear_correo?.text.toString(),
+        )
+        userRef.push().setValue(usuario)
+    }
+
+    /*
+    private fun writeMark(mark: User){
+        var listV: TextView = findViewById(R.id.list_textView) as TextView
+        val text = listV .text.toString() + mark.toString() + "\n"
+        listV.text = text
+    }
+
+     */
 }
