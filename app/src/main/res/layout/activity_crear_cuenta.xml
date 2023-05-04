@@ -33,7 +33,7 @@
 
 
     <EditText
-        android:id="@+id/etCrearusuario"
+        android:id="@+id/etCrearNombre"
         android:layout_width="246dp"
         android:layout_height="59dp"
         android:layout_gravity="center"

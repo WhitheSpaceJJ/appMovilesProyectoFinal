@@ -2,8 +2,10 @@ package mx.edu.itson.appmoviles
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Printer
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -15,10 +17,11 @@ import com.google.firebase.ktx.Firebase
 
 class CrearCuenta : AppCompatActivity() {
 
-    var et_crear_usuario: EditText? = null
+    var et_crear_nombre: EditText? = null
     var et_crear_correo: EditText? = null
     var et_crear_contra: EditText? = null
     var et_crear_contra_confirmar: EditText? = null
+
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -48,21 +51,27 @@ class CrearCuenta : AppCompatActivity() {
 
     private fun valida_registro() {
 
-        et_crear_usuario = findViewById(R.id.etCrearusuario)
-        et_crear_correo= findViewById(R.id.etCrearCorreoE)
-        et_crear_contra= findViewById(R.id.etCrearContrasenia)
+        et_crear_nombre = findViewById(R.id.etCrearNombre)
+        et_crear_correo = findViewById(R.id.etCrearCorreoE)
+        et_crear_contra = findViewById(R.id.etCrearContrasenia)
         et_crear_contra_confirmar = findViewById(R.id.etCrearContraseniaConfirmar)
 
-        var usuario: String = et_crear_usuario?.text.toString()
+        var nombre: String = et_crear_nombre?.text.toString()
         var correo: String = et_crear_correo?.text.toString()
         var contra1: String = et_crear_contra?.text.toString()
         var contra2: String = et_crear_contra_confirmar?.text.toString()
 
-        if (!usuario.isNullOrBlank() && !correo.isNullOrBlank() && !contra1.isNullOrBlank() &&
+        val usuario = Usuario(
+
+            nombre,
+            correo
+        )
+
+        if (!nombre.isNullOrBlank() && !correo.isNullOrBlank() && !contra1.isNullOrBlank() &&
             !contra2.isNullOrBlank()
         ) {
             if (contra1 == contra2) {
-                registrarFirebase(correo, contra1)
+                registrarFirebase(correo, contra1, usuario)
             } else {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             }
@@ -71,7 +80,7 @@ class CrearCuenta : AppCompatActivity() {
         }
     }
 
-    private fun registrarFirebase(email: String, password: String) {
+    private fun registrarFirebase(email: String, password: String, usuario: Usuario) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -81,15 +90,27 @@ class CrearCuenta : AppCompatActivity() {
 
 
                     Toast.makeText(
-                        baseContext, "${user?.email} Se ha creado correctamente, puede inciar sesión.",
+                        baseContext,
+                        "${user?.email} Se ha creado correctamente, puede inciar sesión.",
                         Toast.LENGTH_SHORT
                     ).show()
-                    saveMarkFromForm()
+                    var uid = user?.uid.toString()
+                    saveMarkFromForm(uid)
                     userRef.addChildEventListener(object : ChildEventListener {
-                        override fun onCancelled(databaseError: DatabaseError) { }
-                        override fun onChildMoved(dataSnapshot: DataSnapshot, previusName: String?) { }
-                        override fun onChildChanged(dataSnapshot: DataSnapshot, previusName: String?) { }
-                        override fun onChildRemoved(snapshot: DataSnapshot) { }
+                        override fun onCancelled(databaseError: DatabaseError) {}
+                        override fun onChildMoved(
+                            dataSnapshot: DataSnapshot,
+                            previusName: String?
+                        ) {
+                        }
+
+                        override fun onChildChanged(
+                            dataSnapshot: DataSnapshot,
+                            previusName: String?
+                        ) {
+                        }
+
+                        override fun onChildRemoved(snapshot: DataSnapshot) {}
 
                         override fun onChildAdded(dataSnapshot: DataSnapshot, p1: String?) {
                             //val usuario = dataSnapshot.getValue(User::class.java)
@@ -99,8 +120,7 @@ class CrearCuenta : AppCompatActivity() {
                     })
                     limpiarCampos()
 
-                    val intent: Intent = Intent(this, IniciarSesion::class.java)
-                    startActivity(intent)
+
                     //updateUI(user)
                 } else if (task.exception.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
 
@@ -121,24 +141,45 @@ class CrearCuenta : AppCompatActivity() {
 
     }
 
-    private fun limpiarCampos(){
+    private fun limpiarCampos() {
         et_crear_contra?.setText("")
-        et_crear_usuario?.setText("")
+        et_crear_nombre?.setText("")
         et_crear_correo?.setText("")
         et_crear_contra_confirmar?.setText("")
     }
 
-    private fun saveMarkFromForm() {
-        et_crear_usuario = findViewById(R.id.etCrearusuario)
-        et_crear_correo= findViewById(R.id.etCrearCorreoE)
+    private fun saveMarkFromForm(uid: String) {
+
+        et_crear_nombre = findViewById(R.id.etCrearNombre)
+        et_crear_correo = findViewById(R.id.etCrearCorreoE)
 
 
+        val usuario = Usuario(
+            uid = uid,
+            correoElectronico = et_crear_correo?.text.toString(),
+            nombreUsuario = et_crear_nombre?.text.toString(),
+            temasFavoritos = arrayListOf(
+                /*
+                "tecnología", "ciencia", "cultura"
+                 ,"tecnología", "ciencia", "cultura"
+                 */
+            ),
+            perfiles = arrayListOf(
+                PerfilUsuario(
+                    "", 0, 0,
+                    arrayListOf(0, 0, 0, 0),
+                    arrayListOf(0, 0, 0, 0)
+                )
+            )
 
-        val usuario = User(
-            et_crear_usuario?.text.toString(),
-            et_crear_correo?.text.toString(),
         )
-        userRef.push().setValue(usuario)
+
+
+        userRef.child(uid).setValue(usuario)
+
+        val intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+        intent.putExtra("usuario", usuario)
+        startActivity(intent)
     }
 
     /*

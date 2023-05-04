@@ -23,7 +23,6 @@ class IniciarSesion : AppCompatActivity() {
         var usuario = Usuario(
             correoElectronico = "",
             nombreUsuario = "",
-            contrasena = "",
             temasFavoritos = arrayListOf(
                 /*
                 "tecnología", "ciencia", "cultura"
