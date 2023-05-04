@@ -1,6 +1,7 @@
 package mx.edu.itson.appmoviles
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -20,11 +21,28 @@ class ConfigurarPerfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configurar_perfil)
 
-        val btnSigConfiPerfil: Button = findViewById(R.id.btnSiguienteConfiPerfil)
-
-
         val iv_regresar: ImageView = findViewById(R.id.iv_regresar_configurar_perfil)
         val btn_siguiente: Button = findViewById(R.id.btnSiguienteConfiPerfil)
+        val mas_edad: ImageView = findViewById(R.id.ivMasEdad)
+        val menos_edad: ImageView = findViewById(R.id.ivMenosEdad)
+        val siguiente_imagen_perfil: ImageView = findViewById(R.id.ivSiguienteImgPerfil)
+        val anterior_imagen_perfil: ImageView = findViewById(R.id.ivAnteriorImgPerfil)
+        val imagen_perfil: ImageView = findViewById(R.id.ivImagenPerfil)
+
+
+        mas_edad.setOnClickListener {
+            et_configura_edad = findViewById(R.id.et_configurar_edad)
+            var edadUser = et_configura_edad?.text.toString().toInt()
+            edadUser++
+            et_configura_edad?.setText(edadUser.toString())
+        }
+
+        menos_edad.setOnClickListener {
+            et_configura_edad = findViewById(R.id.et_configurar_edad)
+            var edadUser = et_configura_edad?.text.toString().toInt()
+            edadUser--
+            et_configura_edad?.setText(edadUser.toString())
+        }
 
         iv_regresar.setOnClickListener {
             var intent: Intent = Intent(this, CrearCuenta::class.java)
