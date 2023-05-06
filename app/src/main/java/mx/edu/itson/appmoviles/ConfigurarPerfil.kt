@@ -1,7 +1,6 @@
 package mx.edu.itson.appmoviles
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +13,9 @@ class ConfigurarPerfil : AppCompatActivity() {
 
     var et_configura_nombre: EditText? = null
     var et_configura_edad: EditText? = null
+    var imagenesPerfil = ArrayList<Int>()
+    var imagenPerfil: Int = 1
+    var numPerfil=0
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -28,6 +30,27 @@ class ConfigurarPerfil : AppCompatActivity() {
         val siguiente_imagen_perfil: ImageView = findViewById(R.id.ivSiguienteImgPerfil)
         val anterior_imagen_perfil: ImageView = findViewById(R.id.ivAnteriorImgPerfil)
         val imagen_perfil: ImageView = findViewById(R.id.ivImagenPerfil)
+        cargarImgPerfiles()
+
+
+        siguiente_imagen_perfil.setOnClickListener {
+            imagenPerfil++
+            if (imagenPerfil > (imagenesPerfil.size - 1)) {
+                imagenPerfil = 0
+            }
+
+            imagen_perfil.setImageResource(imagenesPerfil.get(imagenPerfil))
+
+        }
+
+        anterior_imagen_perfil.setOnClickListener {
+            imagenPerfil--
+            if (imagenPerfil < 0) {
+                imagenPerfil = 2
+            }
+
+            imagen_perfil.setImageResource(imagenesPerfil.get(imagenPerfil))
+        }
 
 
         mas_edad.setOnClickListener {
@@ -51,63 +74,57 @@ class ConfigurarPerfil : AppCompatActivity() {
 
         btn_siguiente.setOnClickListener {
 
-            if (intent.hasExtra("usuario")) {
-                var usuario2 = intent.getSerializableExtra("usuario") as Usuario
+            if (intent.hasExtra("uid")) {
+                var uid = intent.getSerializableExtra("uid") as String
 
-                validaPerfil(usuario2)
+                validaPerfil(uid)
 
-                var intent: Intent = Intent(this, Temas::class.java)
-                startActivity(intent)
             }
         }
     }
 
-    private fun validaPerfil(usuario: Usuario) {
+    private fun validaPerfil(uid: String) {
         et_configura_nombre = findViewById(R.id.et_configura_nombre)
         et_configura_edad = findViewById(R.id.et_configurar_edad)
 
         var nombre: String = et_configura_nombre?.text.toString()
         var edad: String = et_configura_edad?.text.toString()
-        //var uid: String = usuario.uid.toString()
+
 
         if (!nombre.isNullOrBlank() && !edad.isNullOrBlank()) {
-            agregarPerfilFirebase(nombre, edad, usuario)
+            agregarPerfilFirebase(nombre, edad, imagenPerfil, uid)
         } else {
             Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun agregarPerfilFirebase(nombre: String, edad: String, usuario: Usuario) {
+    private fun agregarPerfilFirebase(nombre: String, edad: String, imagen: Int, uid: String) {
 
-        val uid = usuario.uid.toString()
-        val tamPerfiles = usuario.perfiles.size-1
+        val perfiles = arrayListOf(
+            PerfilUsuario(
+                nombre = nombre,
+                edad = edad.toInt(),
+                imagen = imagen
 
-        val usuarioAux = Usuario(
-            /*
-            uid = uid,
-            correoElectronico = usuario.correoElectronico.toString(),
-            nombreUsuario = usuario.nombreUsuario.toString(),
-            temasFavoritos = arrayListOf(
-                /*
-                "tecnología", "ciencia", "cultura"
-                 ,"tecnología", "ciencia", "cultura"
-                 */
-            ),
-            perfiles = arrayListOf(
-                PerfilUsuario(
-                    nombre, edad.toInt(), 0,
-                    arrayListOf(0, 0, 0, 0),
-                    arrayListOf(0, 0, 0, 0)
-                )
-            )*/
-
-
+            )
         )
-        userRef.child(uid).child("perfiles").child(tamPerfiles.toString()).child("nombre").setValue(nombre)
-        userRef.child(uid).child("perfiles").child(tamPerfiles.toString()).child("edad").setValue(edad)
+        
 
-        //userRef.child(usuario.uid.toString()).setValue(usuario)
-        //database.child("users").child(userId).child("username").setValue(name)
+        userRef.child(uid).child("perfiles").child(numPerfil.toString()).setValue(perfiles)
 
+
+        val intent: Intent = Intent(this, Temas::class.java)
+        intent.putExtra(
+            "uid", uid
+        )
+        startActivity(intent)
+
+
+    }
+
+    fun cargarImgPerfiles() {
+        imagenesPerfil.add(R.drawable.perfilfull1)
+        imagenesPerfil.add(R.drawable.perfilfull2)
+        imagenesPerfil.add(R.drawable.perfilfull3)
     }
 }

@@ -11,6 +11,7 @@ class Temas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temas)
 
+
         val btn_listo : Button = findViewById(R.id.btn_listo)
         val btn_regresar : ImageView = findViewById(R.id.btn_regresar)
         btn_listo.setOnClickListener{
@@ -18,7 +19,9 @@ class Temas : AppCompatActivity() {
             startActivity(intent)
         }
         btn_regresar.setOnClickListener{
+            var uid = intent.getSerializableExtra("uid") as String
             var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+            intent.putExtra("uid", uid)
             startActivity(intent)
         }
     }

@@ -7,5 +7,6 @@ data class PerfilUsuario(
     val edad: Int,
     val imagen: Int,
     var bibliotecaHistorias: ArrayList<Int> = ArrayList(),
-    var porcentajes: ArrayList<Int> = ArrayList()
+    var porcentajes: ArrayList<Int> = ArrayList(),
+    var temasFavoritos: ArrayList<String> = ArrayList()
 ): Serializable

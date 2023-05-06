@@ -71,7 +71,7 @@ class CrearCuenta : AppCompatActivity() {
             !contra2.isNullOrBlank()
         ) {
             if (contra1 == contra2) {
-                registrarFirebase(correo, contra1, usuario)
+                registrarFirebase(correo, contra1)
             } else {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             }
@@ -80,7 +80,7 @@ class CrearCuenta : AppCompatActivity() {
         }
     }
 
-    private fun registrarFirebase(email: String, password: String, usuario: Usuario) {
+    private fun registrarFirebase(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -158,19 +158,6 @@ class CrearCuenta : AppCompatActivity() {
             uid = uid,
             correoElectronico = et_crear_correo?.text.toString(),
             nombreUsuario = et_crear_nombre?.text.toString(),
-            temasFavoritos = arrayListOf(
-                /*
-                "tecnología", "ciencia", "cultura"
-                 ,"tecnología", "ciencia", "cultura"
-                 */
-            ),
-            perfiles = arrayListOf(
-                PerfilUsuario(
-                    "", 0, 0,
-                    arrayListOf(0, 0, 0, 0),
-                    arrayListOf(0, 0, 0, 0)
-                )
-            )
 
         )
 
@@ -178,7 +165,7 @@ class CrearCuenta : AppCompatActivity() {
         userRef.child(uid).setValue(usuario)
 
         val intent: Intent = Intent(this, ConfigurarPerfil::class.java)
-        intent.putExtra("usuario", usuario)
+        intent.putExtra("uid", uid)
         startActivity(intent)
     }
 
