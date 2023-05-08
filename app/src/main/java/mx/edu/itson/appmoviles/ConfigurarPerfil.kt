@@ -7,7 +7,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class ConfigurarPerfil : AppCompatActivity() {
 
@@ -15,7 +18,7 @@ class ConfigurarPerfil : AppCompatActivity() {
     var et_configura_edad: EditText? = null
     var imagenesPerfil = ArrayList<Int>()
     var imagenPerfil: Int = 1
-    var numPerfil=0
+    var numPerfil = 0
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -100,17 +103,32 @@ class ConfigurarPerfil : AppCompatActivity() {
 
     private fun agregarPerfilFirebase(nombre: String, edad: String, imagen: Int, uid: String) {
 
-        val perfiles = arrayListOf(
-            PerfilUsuario(
-                nombre = nombre,
-                edad = edad.toInt(),
-                imagen = imagen
 
-            )
-        )
-        
+        userRef.child(uid).child("perfiles").addListenerForSingleValueEvent(object : ValueEventListener{
 
-        userRef.child(uid).child("perfiles").child(numPerfil.toString()).setValue(perfiles)
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val perfilesList = mutableListOf<PerfilUsuario>()
+                for (ds in dataSnapshot.children){
+                    val nombre = ds.child("nombre").value as String
+                    val edad = ds.child("edad").value as Long
+                    val imagen = ds.child("imagen").value as Long
+                    val perfilUsuario = PerfilUsuario(nombre,edad.toInt(), imagen.toInt())
+                    perfilesList.add(perfilUsuario)
+                }
+
+                perfilesList.add(PerfilUsuario(nombre,edad.toInt(),imagen))
+                userRef.child(uid).child("perfiles").setValue(perfilesList)
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+
+        })
+
+
 
 
         val intent: Intent = Intent(this, Temas::class.java)
