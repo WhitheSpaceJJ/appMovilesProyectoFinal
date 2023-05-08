@@ -117,7 +117,9 @@ class ConfigurarPerfil : AppCompatActivity() {
                 }
 
                 perfilesList.add(PerfilUsuario(nombre,edad.toInt(),imagen))
+                numPerfil = perfilesList.size
                 userRef.child(uid).child("perfiles").setValue(perfilesList)
+
 
             }
 
@@ -131,10 +133,11 @@ class ConfigurarPerfil : AppCompatActivity() {
 
 
 
+
+
         val intent: Intent = Intent(this, Temas::class.java)
-        intent.putExtra(
-            "uid", uid
-        )
+        intent.putExtra("uid", uid)
+        intent.putExtra("numPerfil",numPerfil)
         startActivity(intent)
 
 
