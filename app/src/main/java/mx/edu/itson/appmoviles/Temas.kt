@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 class Temas : AppCompatActivity() {
 
     var uid: String?=null
-    var numPerfil: Int? =null
+    var numPerfil: String? =null
     var temasFavoritos = ArrayList<String>()
 
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -20,20 +20,21 @@ class Temas : AppCompatActivity() {
         setContentView(R.layout.activity_temas)
 
         uid = intent.getSerializableExtra("uid") as String
-        numPerfil = intent.getSerializableExtra("numPerfil") as Int
+        numPerfil = intent.getSerializableExtra("numPerfil") as String
 
 
         val btn_listo : Button = findViewById(R.id.btn_listo)
         val btn_regresar : ImageView = findViewById(R.id.btn_regresar)
+
         btn_listo.setOnClickListener{
 
-            userRef.child(uid!!).child("perfiles").child(numPerfil.toString()).child("temasFavoritos").setValue(temasFavoritos)
+            userRef.child(uid!!).child("perfiles").child(numPerfil!!).child("temasFavoritos").setValue(temasFavoritos)
 
             var intent: Intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
         btn_regresar.setOnClickListener{
-
+            //uid = intent.getSerializableExtra("uid") as String
             var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
             intent.putExtra("uid", uid)
             startActivity(intent)

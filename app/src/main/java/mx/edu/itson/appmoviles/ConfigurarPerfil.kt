@@ -18,7 +18,7 @@ class ConfigurarPerfil : AppCompatActivity() {
     var et_configura_edad: EditText? = null
     var imagenesPerfil = ArrayList<Int>()
     var imagenPerfil: Int = 1
-    var numPerfil = 0
+
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -95,50 +95,57 @@ class ConfigurarPerfil : AppCompatActivity() {
 
 
         if (!nombre.isNullOrBlank() && !edad.isNullOrBlank()) {
-            agregarPerfilFirebase(nombre, edad, imagenPerfil, uid)
+            agregarPerfilFirebase(nombre, edad.toInt(), imagenPerfil, uid)
         } else {
             Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun agregarPerfilFirebase(nombre: String, edad: String, imagen: Int, uid: String) {
+    private fun agregarPerfilFirebase(nombre: String, edad: Int, imagen: Int, uid: String) {
 
 
-        userRef.child(uid).child("perfiles").addListenerForSingleValueEvent(object : ValueEventListener{
+        userRef.child(uid).child("perfiles")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
 
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val perfilesList = mutableListOf<PerfilUsuario>()
-                for (ds in dataSnapshot.children){
-                    val nombre = ds.child("nombre").value as String
-                    val edad = ds.child("edad").value as Long
-                    val imagen = ds.child("imagen").value as Long
-                    val perfilUsuario = PerfilUsuario(nombre,edad.toInt(), imagen.toInt())
-                    perfilesList.add(perfilUsuario)
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val perfilesList = mutableListOf<PerfilUsuario>()
+                    for (ds in dataSnapshot.children) {
+                        val nombre = ds.child("nombre").value as String
+                        val edad = ds.child("edad").value as Long
+                        val imagen = ds.child("imagen").value as Long
+                        val perfilUsuario = PerfilUsuario(nombre, edad.toInt(), imagen.toInt())
+
+                        perfilesList.add(perfilUsuario)
+                    }
+
+                    perfilesList.add(PerfilUsuario(nombre, edad, imagen))
+                    var numPerfil = perfilesList.size - 1
+
+                    val perfil = HashMap<String, Any>()
+                    perfil["nombre"] = nombre
+                    perfil["edad"] = edad
+                    perfil["imagen"] = imagen
+
+
+                    userRef.child(uid).child("perfiles").child(numPerfil.toString())
+                        .updateChildren(perfil).addOnSuccessListener {
+                        // El registro ha sido actualizado correctamente
+                    }
+                        .addOnFailureListener {
+                            // Se produjo un error al actualizar el registro
+                        }
+                    //userRef.child(uid).child("perfiles").updateChildren(perfilesList)
+
+                    enviarInfo(uid, numPerfil.toString())
+
                 }
 
-                perfilesList.add(PerfilUsuario(nombre,edad.toInt(),imagen))
-                numPerfil = perfilesList.size
-                userRef.child(uid).child("perfiles").setValue(perfilesList)
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
 
 
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-
-        })
-
-
-
-
-
-
-        val intent: Intent = Intent(this, Temas::class.java)
-        intent.putExtra("uid", uid)
-        intent.putExtra("numPerfil",numPerfil)
-        startActivity(intent)
+            })
 
 
     }
@@ -147,5 +154,12 @@ class ConfigurarPerfil : AppCompatActivity() {
         imagenesPerfil.add(R.drawable.perfilfull1)
         imagenesPerfil.add(R.drawable.perfilfull2)
         imagenesPerfil.add(R.drawable.perfilfull3)
+    }
+
+    fun enviarInfo(uid: String, numPerfil: String) {
+        val intent: Intent = Intent(this, Temas::class.java)
+        intent.putExtra("uid", uid)
+        intent.putExtra("numPerfil", numPerfil)
+        startActivity(intent)
     }
 }
