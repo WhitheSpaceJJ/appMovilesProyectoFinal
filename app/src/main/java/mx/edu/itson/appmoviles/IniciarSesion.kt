@@ -71,7 +71,7 @@ class IniciarSesion : AppCompatActivity() {
                     //Log.d(TAG, "signInWithEmail:success")
                     val user = auth.currentUser
 
-                    val uid = auth.uid.toString()
+                    val uid = user?.uid.toString()
 
 
 

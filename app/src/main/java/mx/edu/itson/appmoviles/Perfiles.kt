@@ -12,10 +12,14 @@ import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
+import com.google.firebase.database.FirebaseDatabase
 
 class Perfiles : AppCompatActivity() {
     var perfiles: ArrayList<PerfilUsuario> = ArrayList<PerfilUsuario>()
     var adapter:PerfilAdapter? = null
+
+    //realtime database
+    private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfiles)
@@ -66,9 +70,12 @@ class Perfiles : AppCompatActivity() {
         }
  */
     }
+    /*
     private fun agregarPerfiles() {
         perfiles.add(PerfilUsuario("Agregar Perfil",0,R.drawable.agregar))
     }
+
+     */
     class PerfilAdapter : BaseAdapter {
         var context: Context? = null
         var catalogo = ArrayList<PerfilUsuario>()

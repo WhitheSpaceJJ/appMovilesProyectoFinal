@@ -76,10 +76,11 @@
                     android:background="@drawable/botontemaselectable"
                     android:drawableTop="@drawable/balon"
                     android:fontFamily="@font/nunito_bold"
+                    android:onClick="agregaCategoria"
                     android:text="@string/deportes"
+                    app:backgroundTint="@null"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
-                    android:onClick="agregaCategoria"
                     android:textSize="15sp" />
 
                 <Button
@@ -93,6 +94,7 @@
                     android:text="@string/animales"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
+                    app:backgroundTint="@null"
                     android:onClick="agregaCategoria"
                     android:textSize="15sp" />
             </TableRow>
@@ -111,6 +113,7 @@
                     android:text="@string/magia"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
+                    app:backgroundTint="@null"
                     android:onClick="agregaCategoria"
                     android:textSize="15sp" />
 
@@ -125,6 +128,7 @@
                     android:text="@string/videojuegos"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
+                    app:backgroundTint="@null"
                     android:onClick="agregaCategoria"
                     android:textSize="15sp" />
             </TableRow>
@@ -143,6 +147,7 @@
                     android:text="@string/musical"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
+                    app:backgroundTint="@null"
                     android:onClick="agregaCategoria"
                     android:textSize="15sp" />
 
@@ -157,6 +162,7 @@
                     android:text="@string/aventura"
                     android:textAllCaps="false"
                     android:textColor="@color/deep_gray"
+                    app:backgroundTint="@null"
                     android:onClick="agregaCategoria"
                     android:textSize="15sp" />
             </TableRow>
