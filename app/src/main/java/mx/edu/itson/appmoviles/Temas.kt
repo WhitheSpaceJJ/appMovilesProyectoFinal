@@ -43,9 +43,12 @@ class Temas : AppCompatActivity() {
         btn_listo.setOnClickListener {
 
             userRef.child(uid!!).child("perfiles").child(numPerfil!!).child("temasFavoritos")
+
                 .setValue(temasFavoritos)
 
             var intent: Intent = Intent(this, Menu::class.java)
+            intent.putExtra("uid", uid)
+            intent.putExtra("numPerfil", numPerfil)
             startActivity(intent)
         }
         btn_regresar.setOnClickListener {

@@ -139,6 +139,16 @@
         android:text="@string/siguiente"
         android:textAllCaps="false"
         app:backgroundTint="@null" />
+    <Button
+        android:id="@+id/btnBorrarCuenta"
+        android:layout_width="246dp"
+        android:layout_height="63dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle5"
+        android:text="Borrar Cuenta"
+        android:textAllCaps="false"
+        app:backgroundTint="@null" />
 
 
 </LinearLayout>

@@ -1,16 +1,21 @@
 package mx.edu.itson.appmoviles
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
 
 class ConfigurarPerfil : AppCompatActivity() {
 
@@ -18,10 +23,12 @@ class ConfigurarPerfil : AppCompatActivity() {
     var et_configura_edad: EditText? = null
     var imagenesPerfil = ArrayList<Int>()
     var imagenPerfil: Int = 1
+    private lateinit var auth: FirebaseAuth
 
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configurar_perfil)
@@ -33,6 +40,8 @@ class ConfigurarPerfil : AppCompatActivity() {
         val siguiente_imagen_perfil: ImageView = findViewById(R.id.ivSiguienteImgPerfil)
         val anterior_imagen_perfil: ImageView = findViewById(R.id.ivAnteriorImgPerfil)
         val imagen_perfil: ImageView = findViewById(R.id.ivImagenPerfil)
+        val btn_borrarCuenta:Button = findViewById(R.id.btnBorrarCuenta)
+
         cargarImgPerfiles()
 
 
@@ -84,6 +93,40 @@ class ConfigurarPerfil : AppCompatActivity() {
 
             }
         }
+
+        btn_borrarCuenta.setOnClickListener {
+
+            if (intent.hasExtra("uid")) {
+                var uid = intent.getSerializableExtra("uid") as String
+
+                borrarCuenta(uid)
+
+            }
+        }
+    }
+
+    fun borrarCuenta(uid: String) {
+
+        val user = Firebase.auth.currentUser!!
+
+        user.delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "La cuenta se ha eliminado", Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, "User account deleted.")
+                }
+            }
+
+        userRef.child(uid).removeValue()
+
+
+
+        val intent: Intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
+
+
+
     }
 
     private fun validaPerfil(uid: String) {
