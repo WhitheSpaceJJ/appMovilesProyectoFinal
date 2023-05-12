@@ -40,7 +40,7 @@ class ConfigurarPerfil : AppCompatActivity() {
         val siguiente_imagen_perfil: ImageView = findViewById(R.id.ivSiguienteImgPerfil)
         val anterior_imagen_perfil: ImageView = findViewById(R.id.ivAnteriorImgPerfil)
         val imagen_perfil: ImageView = findViewById(R.id.ivImagenPerfil)
-        val btn_borrarCuenta:Button = findViewById(R.id.btnBorrarCuenta)
+
 
         cargarImgPerfiles()
 
@@ -94,40 +94,9 @@ class ConfigurarPerfil : AppCompatActivity() {
             }
         }
 
-        btn_borrarCuenta.setOnClickListener {
-
-            if (intent.hasExtra("uid")) {
-                var uid = intent.getSerializableExtra("uid") as String
-
-                borrarCuenta(uid)
-
-            }
-        }
-    }
-
-    fun borrarCuenta(uid: String) {
-
-        val user = Firebase.auth.currentUser!!
-
-        user.delete()
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "La cuenta se ha eliminado", Toast.LENGTH_SHORT).show()
-                    Log.d(TAG, "User account deleted.")
-                }
-            }
-
-        userRef.child(uid).removeValue()
-
-
-
-        val intent: Intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-
-
-
 
     }
+
 
     private fun validaPerfil(uid: String) {
         et_configura_nombre = findViewById(R.id.et_configura_nombre)

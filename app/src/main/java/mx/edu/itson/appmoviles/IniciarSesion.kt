@@ -75,7 +75,7 @@ class IniciarSesion : AppCompatActivity() {
 
 
 
-                    val intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+                    val intent: Intent = Intent(this, Perfiles::class.java)
                     intent.putExtra("uid", uid)
                     startActivity(intent)
                     //updateUI(user)
