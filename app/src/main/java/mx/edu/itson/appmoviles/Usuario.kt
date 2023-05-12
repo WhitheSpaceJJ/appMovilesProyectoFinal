@@ -9,4 +9,6 @@ data class Usuario(
     var perfiles: ArrayList<PerfilUsuario> = ArrayList()
 
 
-): Serializable
+): Serializable{
+    override fun toString() = correoElectronico + "\t" + nombreUsuario
+}

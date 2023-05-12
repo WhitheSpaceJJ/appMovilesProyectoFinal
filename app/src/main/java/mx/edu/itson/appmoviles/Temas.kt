@@ -53,7 +53,7 @@ class Temas : AppCompatActivity() {
         }
         btn_regresar.setOnClickListener {
             //uid = intent.getSerializableExtra("uid") as String
-            var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+            var intent: Intent = Intent(this, ReadExamen::class.java)
             intent.putExtra("uid", uid)
             startActivity(intent)
         }
