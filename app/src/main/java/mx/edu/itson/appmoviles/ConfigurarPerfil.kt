@@ -1,13 +1,8 @@
 package mx.edu.itson.appmoviles
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -20,7 +15,7 @@ import com.google.firebase.ktx.Firebase
 class ConfigurarPerfil : AppCompatActivity() {
 
     var et_configura_nombre: EditText? = null
-    var et_configura_edad: EditText? = null
+    var et_configura_edad: TextView? = null
     var imagenesPerfil = ArrayList<Int>()
     var imagenPerfil: Int = 1
     private lateinit var auth: FirebaseAuth
@@ -32,6 +27,8 @@ class ConfigurarPerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configurar_perfil)
+        auth = Firebase.auth
+
 
         val iv_regresar: ImageView = findViewById(R.id.iv_regresar_configurar_perfil)
         val btn_siguiente: Button = findViewById(R.id.btnSiguienteConfiPerfil)
@@ -66,16 +63,19 @@ class ConfigurarPerfil : AppCompatActivity() {
 
 
         mas_edad.setOnClickListener {
-            et_configura_edad = findViewById(R.id.et_configurar_edad)
+            et_configura_edad = findViewById(R.id.tv_configurar_edad)
             var edadUser = et_configura_edad?.text.toString().toInt()
             edadUser++
             et_configura_edad?.setText(edadUser.toString())
         }
 
         menos_edad.setOnClickListener {
-            et_configura_edad = findViewById(R.id.et_configurar_edad)
+            et_configura_edad = findViewById(R.id.tv_configurar_edad)
             var edadUser = et_configura_edad?.text.toString().toInt()
-            edadUser--
+            if (edadUser > 4) {
+                edadUser--
+            }
+
             et_configura_edad?.setText(edadUser.toString())
         }
 
@@ -86,12 +86,12 @@ class ConfigurarPerfil : AppCompatActivity() {
 
         btn_siguiente.setOnClickListener {
 
-            if (intent.hasExtra("uid")) {
-                var uid = intent.getSerializableExtra("uid") as String
 
-                validaPerfil(uid)
+            var uid = auth.uid.toString()
 
-            }
+            validaPerfil(uid)
+
+
         }
 
 
@@ -100,7 +100,7 @@ class ConfigurarPerfil : AppCompatActivity() {
 
     private fun validaPerfil(uid: String) {
         et_configura_nombre = findViewById(R.id.et_configura_nombre)
-        et_configura_edad = findViewById(R.id.et_configurar_edad)
+        et_configura_edad = findViewById(R.id.tv_configurar_edad)
 
         var nombre: String = et_configura_nombre?.text.toString()
         var edad: String = et_configura_edad?.text.toString()
@@ -114,6 +114,14 @@ class ConfigurarPerfil : AppCompatActivity() {
     }
 
     private fun agregarPerfilFirebase(nombre: String, edad: Int, imagen: Int, uid: String) {
+
+        var imagen2 = 0
+
+        when (imagen) {
+            0 -> imagen2 = R.drawable.perfilfull1
+            1 -> imagen2 = R.drawable.perfilfull2
+            2 -> imagen2 = R.drawable.perfilfull3
+        }
 
 
         userRef.child(uid).child("perfiles")
@@ -130,19 +138,19 @@ class ConfigurarPerfil : AppCompatActivity() {
                         perfilesList.add(perfilUsuario)
                     }
 
-                    perfilesList.add(PerfilUsuario(nombre, edad, imagen))
+                    perfilesList.add(PerfilUsuario(nombre, edad, imagen2))
                     var numPerfil = perfilesList.size - 1
 
                     val perfil = HashMap<String, Any>()
                     perfil["nombre"] = nombre
                     perfil["edad"] = edad
-                    perfil["imagen"] = imagen
+                    perfil["imagen"] = imagen2
 
 
                     userRef.child(uid).child("perfiles").child(numPerfil.toString())
                         .updateChildren(perfil).addOnSuccessListener {
-                        // El registro ha sido actualizado correctamente
-                    }
+                            // El registro ha sido actualizado correctamente
+                        }
                         .addOnFailureListener {
                             // Se produjo un error al actualizar el registro
                         }
@@ -173,5 +181,12 @@ class ConfigurarPerfil : AppCompatActivity() {
         intent.putExtra("uid", uid)
         intent.putExtra("numPerfil", numPerfil)
         startActivity(intent)
+    }
+
+    fun limpiarCapmpos() {
+        var nombre: String = et_configura_nombre?.text.toString()
+        var edad: String = et_configura_edad?.text.toString()
+        imagenPerfil = 1
+
     }
 }

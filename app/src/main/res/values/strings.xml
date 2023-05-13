@@ -57,7 +57,7 @@
 
     <!--Contraseña olvidada-->
     <string name="perdiste_tu_contrasena">¿Perdiste tu contraseña?</string>
-    <string name="desc_contrasena">¡No te preocupes! Escribe tu usuario para recuperarla</string>
+    <string name="desc_contrasena">¡No te preocupes! Escribe tu correo electronico para recuperarla</string>
     <string name="checar">Checar</string>
 
     <string name="hola_user">¡Hola, Hannah23!</string>

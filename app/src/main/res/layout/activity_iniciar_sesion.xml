@@ -27,7 +27,7 @@
         android:layout_height="59dp"
         android:layout_gravity="center"
         android:background="@drawable/round_gray"
-        android:hint="@string/usuario"
+        android:hint="@string/correo_electronico"
         android:paddingStart="30dp"
         android:textColorHint="@color/gray"
         android:textSize="21sp"

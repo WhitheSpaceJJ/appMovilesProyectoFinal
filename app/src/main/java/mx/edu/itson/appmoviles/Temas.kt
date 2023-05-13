@@ -45,6 +45,7 @@ class Temas : AppCompatActivity() {
             userRef.child(uid!!).child("perfiles").child(numPerfil!!).child("temasFavoritos")
 
                 .setValue(temasFavoritos)
+            limpiarCategoria()
 
             var intent: Intent = Intent(this, Menu::class.java)
             intent.putExtra("uid", uid)
@@ -52,9 +53,8 @@ class Temas : AppCompatActivity() {
             startActivity(intent)
         }
         btn_regresar.setOnClickListener {
-            //uid = intent.getSerializableExtra("uid") as String
+            limpiarCategoria()
             var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
-            intent.putExtra("uid", uid)
             startActivity(intent)
         }
     }
@@ -170,5 +170,56 @@ class Temas : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun limpiarCategoria() {
+
+        btnDeportes = findViewById(R.id.btn_deportes)
+
+        btnDeportes?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnDeportes?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnDeportes?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Deportes")
+
+        btnAnimales = findViewById(R.id.btn_animales)
+
+
+        btnAnimales?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnAnimales?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnAnimales?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Animales")
+
+        btnMagia = findViewById(R.id.btn_magia)
+
+
+        btnMagia?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnMagia?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnMagia?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Magia")
+
+        btnVideojuegos = findViewById(R.id.btn_videojuegos)
+
+
+        btnVideojuegos?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnVideojuegos?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnVideojuegos?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Videojuegos")
+
+        btnMusical = findViewById(R.id.btn_musical)
+
+
+        btnMusical?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnMusical?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnMusical?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Aventuras")
+
+        btnAventuras = findViewById(R.id.btn_aventuras)
+
+
+
+        btnAventuras?.setBackgroundDrawable(getResources().getDrawable(R.drawable.botontemaselectable))
+        btnAventuras?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
+        btnAventuras?.setTextColor(getResources().getColor(R.color.deep_gray))
+        //temasFavoritos.remove("Animales")
     }
 }

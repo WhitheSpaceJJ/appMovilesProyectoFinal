@@ -73,10 +73,28 @@ class IniciarSesion : AppCompatActivity() {
 
                     val uid = user?.uid.toString()
 
+                    var usuario =  Usuario(
+                        uid = uid,
+                        correoElectronico = "",
+                        nombreUsuario = "",
+                        perfiles = arrayListOf(PerfilUsuario("jose",21,R.drawable.perfiloficial1,
+                            arrayListOf(1,2,3,4),
+                            arrayListOf(0,0,0,0)
+                        ),
+                            PerfilUsuario("giovanni",37,R.drawable.perfiloficial2,
+                                arrayListOf(1,2,3,4),
+                                arrayListOf(0,0,0,0)
+                            ),
+                            PerfilUsuario("josegiovanni",58,R.drawable.perfiloficial3,
+                                arrayListOf(1,2,3,4),
+                                arrayListOf(0,0,0,0))
+                        )
+                    )
 
 
                     val intent: Intent = Intent(this, Perfiles::class.java)
                     intent.putExtra("uid", uid)
+                    intent.putExtra("usuario", usuario)
                     startActivity(intent)
                     //updateUI(user)
                 } else {

@@ -44,7 +44,7 @@ class PaswordOlvidada : AppCompatActivity() {
                 }
 
             } else {
-                Toast.makeText(this, "Ingrese usuario", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Ingrese correo electronico valido", Toast.LENGTH_SHORT).show()
             }
         }
 

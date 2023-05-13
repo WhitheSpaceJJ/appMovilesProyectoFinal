@@ -59,7 +59,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:background="@drawable/round_gray"
-        android:hint="@string/usuario"
+        android:hint="@string/correo_electronico"
         android:padding="10dp"
         android:paddingStart="25dp"
         android:textColorHint="@color/gray"
