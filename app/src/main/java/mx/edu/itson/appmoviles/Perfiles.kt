@@ -12,11 +12,15 @@ import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
 class Perfiles : AppCompatActivity() {
     var perfiles: ArrayList<PerfilUsuario> = ArrayList<PerfilUsuario>()
     var adapter:PerfilAdapter? = null
+    private lateinit var auth: FirebaseAuth
 
     //realtime database
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
@@ -24,6 +28,26 @@ class Perfiles : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfiles)
 
+        auth = Firebase.auth
+
+        val user = auth.currentUser
+
+        val uid = user?.uid.toString()
+
+        userRef.child(uid).get().addOnSuccessListener { dataSnapshot ->
+            if (dataSnapshot.exists()){
+                val usuario = dataSnapshot.getValue(Usuario::class.java)
+                var perfilesUsuarioObtenido: ArrayList<PerfilUsuario> = usuario!!.perfiles
+                perfilesUsuarioObtenido.add(0, PerfilUsuario("Agregar Perfil", 0, R.drawable.agregar))
+                adapter = PerfilAdapter(this, perfilesUsuarioObtenido)
+                var listView: GridView = findViewById(R.id.grvperfiles)
+                listView.adapter=adapter
+
+            }
+        }
+
+
+/*
         if(intent.hasExtra("usuario")){
             var usuario2=intent.getSerializableExtra("usuario") as Usuario
             var perfilesUsuarioObtenido: ArrayList<PerfilUsuario> =usuario2.perfiles
@@ -32,6 +56,8 @@ class Perfiles : AppCompatActivity() {
             var listView: GridView = findViewById(R.id.grvperfiles)
             listView.adapter=adapter
         }
+
+ */
 /*
         agregarPerfiles()
         */
@@ -129,19 +155,24 @@ class Perfiles : AppCompatActivity() {
                 var imagen: ImageView = vista.findViewById(R.id.ivperfil)
                 var txv:TextView=vista.findViewById(R.id.tvperfilnombre)
                 txv.setText(perfil.nombre)
-                if (perfil.imagen.equals(R.drawable.perfiloficial1)){
+                if (perfil.imagen!!.equals(R.drawable.perfilfull1)){
                     var imagenFondo: ImageView = vista.findViewById(R.id.ivperfilfondo)
                     imagenFondo.setImageResource(R.drawable.perfil1)
+                    imagen.setImageResource(R.drawable.perfiloficial1)
+
+
                 }
-                if (perfil.imagen.equals(R.drawable.perfiloficial2)){
+                if (perfil.imagen!!.equals(R.drawable.perfilfull2)){
                     var imagenFondo: ImageView = vista.findViewById(R.id.ivperfilfondo)
                     imagenFondo.setImageResource(R.drawable.perfil2)
+                    imagen.setImageResource(R.drawable.perfiloficial2)
                 }
-                if (perfil.imagen.equals(R.drawable.perfiloficial3)){
+                if (perfil.imagen!!.equals(R.drawable.perfilfull3)){
                     var imagenFondo: ImageView = vista.findViewById(R.id.ivperfilfondo)
                     imagenFondo.setImageResource(R.drawable.perfil3)
+                    imagen.setImageResource(R.drawable.perfiloficial3)
                 }
-                imagen.setImageResource(perfil.imagen)
+                //imagen.setImageResource(perfil.imagen!!)
                 imagen.setOnClickListener {
                     var intento = Intent(context,Menu::class.java)
                     intento.putExtra("perfil",perfil)

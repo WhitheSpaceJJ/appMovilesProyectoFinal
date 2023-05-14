@@ -48,7 +48,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/perfilImagen"
+                android:id="@+id/ivPerfilImagen"
                 android:layout_width="240dp"
                 android:layout_height="220dp"
                 android:layout_gravity="center"
@@ -62,7 +62,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/round_darkblue"
                 android:text="@string/nom_perfil"
-                android:id="@+id/usuarioPerfil"
+                android:id="@+id/tvNombreUsuarioPerfil"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30sp" />

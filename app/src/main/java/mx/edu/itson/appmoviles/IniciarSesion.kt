@@ -15,7 +15,9 @@ import com.google.firebase.ktx.Firebase
 
 class IniciarSesion : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     private var userRef = FirebaseDatabase.getInstance().getReference("usuarios")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
@@ -63,7 +65,7 @@ class IniciarSesion : AppCompatActivity() {
 
     }
 
-    private fun ingresarFirebase(email:String, password: String) {
+    private fun ingresarFirebase(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -73,38 +75,73 @@ class IniciarSesion : AppCompatActivity() {
 
                     val uid = user?.uid.toString()
 
-                    var usuario =  Usuario(
+/*
+                    var usuario = Usuario(
                         uid = uid,
                         correoElectronico = "",
                         nombreUsuario = "",
-                        perfiles = arrayListOf(PerfilUsuario("jose",21,R.drawable.perfiloficial1,
-                            arrayListOf(1,2,3,4),
-                            arrayListOf(0,0,0,0)
-                        ),
-                            PerfilUsuario("giovanni",37,R.drawable.perfiloficial2,
-                                arrayListOf(1,2,3,4),
-                                arrayListOf(0,0,0,0)
+                        perfiles = arrayListOf(
+                            PerfilUsuario(
+                                "jose", 21, R.drawable.perfiloficial1,
+                                arrayListOf(1, 2, 3, 4),
+                                arrayListOf(0, 0, 0, 0)
                             ),
-                            PerfilUsuario("josegiovanni",58,R.drawable.perfiloficial3,
-                                arrayListOf(1,2,3,4),
-                                arrayListOf(0,0,0,0))
+                            PerfilUsuario(
+                                "giovanni", 37, R.drawable.perfiloficial2,
+                                arrayListOf(1, 2, 3, 4),
+                                arrayListOf(0, 0, 0, 0)
+                            ),
+                            PerfilUsuario(
+                                "josegiovanni", 58, R.drawable.perfiloficial3,
+                                arrayListOf(1, 2, 3, 4),
+                                arrayListOf(0, 0, 0, 0)
+                            )
                         )
                     )
 
+ */
+
 
                     val intent: Intent = Intent(this, Perfiles::class.java)
-                    intent.putExtra("uid", uid)
-                    intent.putExtra("usuario", usuario)
                     startActivity(intent)
+
+
+                    /*
+                    userRef.child(uid).get().addOnSuccessListener { dataSnapshot ->
+                        if (dataSnapshot.exists()){
+                            val usuario = dataSnapshot.getValue(Usuario::class.java)
+                            val intent: Intent = Intent(this, Perfiles::class.java)
+                            intent.putExtra("usuario", usuario)
+                            startActivity(intent)
+                        }
+                    }
+
+                     */
+
+
                     //updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     //Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     //updateUI(null)
                 }
             }
     }
+
+    fun obterUsuario(uid: String) {
+
+        userRef.child(uid).get().addOnSuccessListener { dataSnapshot ->
+            if (dataSnapshot.exists()) {
+                val usuario = dataSnapshot.getValue(Usuario::class.java)
+                println("El usuario leido : ${usuario}")
+            }
+        }
+
+    }
+
 
 }

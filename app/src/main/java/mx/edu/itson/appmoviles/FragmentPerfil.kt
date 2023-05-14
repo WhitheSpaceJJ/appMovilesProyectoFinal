@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import mx.edu.itson.appmoviles.R.*
 
@@ -42,6 +43,13 @@ class FragmentPerfil : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(layout.fragment_perfil, container, false)
+        val perfil = arguments?.getSerializable("perfil") as PerfilUsuario
+
+        val tvNombre: TextView = view.findViewById(R.id.tvNombreUsuarioPerfil)
+        tvNombre.setText(perfil.nombre.toString())
+
+        val imgPerfil: ImageView = view.findViewById(R.id.ivPerfilImagen)
+        imgPerfil.setImageResource(perfil.imagen!!.toInt())
 
         val ivConfiguracion: ImageView = view.findViewById(R.id.img_configuracion)
 
@@ -76,6 +84,8 @@ class FragmentPerfil : Fragment() {
          * @return A new instance of fragment FragmentPerfil.
          */
         // TODO: Rename and change types and number of parameters
+
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FragmentPerfil().apply {

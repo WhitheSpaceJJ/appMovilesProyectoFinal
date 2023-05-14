@@ -28,6 +28,7 @@
                     android:elevation="10dp" />
 
                 <ImageView
+
                     android:layout_width="199dp"
                     android:layout_height="180dp"
                     android:layout_gravity="center"

@@ -18,6 +18,9 @@ class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
+
+        val perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
+
         val view = binding.root
         setContentView(view)
         var perfilFragment = FragmentPerfil()
@@ -25,10 +28,13 @@ class Menu : AppCompatActivity() {
         var buscarFragment = FragmentBuscar()
         var bibliotecaFragment = FragmentBiblioteca()
         var catologoFragment = FragmentCatalogo()
+        val args = Bundle()
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_Inicio -> {
+
                     setCurrentFragment(catologoFragment)
+
                     true
                 }
 
@@ -49,6 +55,8 @@ class Menu : AppCompatActivity() {
 
                 R.id.nav_Perfil -> {
                     setCurrentFragment(perfilFragment)
+                    args.putSerializable("perfil",perfil)
+                    perfilFragment.arguments = args
                     true
                 }
                 else -> false
