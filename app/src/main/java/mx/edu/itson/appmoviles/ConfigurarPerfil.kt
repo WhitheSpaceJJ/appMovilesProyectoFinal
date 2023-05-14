@@ -90,6 +90,7 @@ class ConfigurarPerfil : AppCompatActivity() {
             var uid = auth.uid.toString()
 
             validaPerfil(uid)
+            limpiarCapmpos()
 
 
         }
@@ -145,6 +146,7 @@ class ConfigurarPerfil : AppCompatActivity() {
                     perfil["nombre"] = nombre
                     perfil["edad"] = edad
                     perfil["imagen"] = imagen2
+                    perfil["numPerfil"] = numPerfil
 
 
                     userRef.child(uid).child("perfiles").child(numPerfil.toString())

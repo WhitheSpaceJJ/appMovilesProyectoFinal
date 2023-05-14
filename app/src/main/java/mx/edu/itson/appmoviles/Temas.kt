@@ -48,9 +48,7 @@ class Temas : AppCompatActivity() {
             limpiarCategoria()
 
             var intent: Intent = Intent(this, Menu::class.java)
-            intent.putExtra("uid", uid)
-            intent.putExtra("numPerfil", numPerfil)
-            startActivity(intent)
+            enviarInfo(uid!!, numPerfil!!.toInt())
         }
         btn_regresar.setOnClickListener {
             limpiarCategoria()
@@ -221,5 +219,21 @@ class Temas : AppCompatActivity() {
         btnAventuras?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15F)
         btnAventuras?.setTextColor(getResources().getColor(R.color.deep_gray))
         //temasFavoritos.remove("Animales")
+    }
+
+    fun enviarInfo(uid: String, numPerfil: Int) {
+
+        userRef.child(uid).get().addOnSuccessListener { dataSnapshot ->
+            if (dataSnapshot.exists()) {
+                val usuario = dataSnapshot.getValue(Usuario::class.java)
+                var perfil: PerfilUsuario = usuario!!.perfiles.get(numPerfil)
+
+
+                val intent: Intent = Intent(this, Menu::class.java)
+                intent.putExtra("perfil", perfil)
+                startActivity(intent)
+            }
+        }
+
     }
 }
