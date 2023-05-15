@@ -5,17 +5,23 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class Configuracion : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuracion)
+        auth = Firebase.auth
 
         val btn_ayuda: Button = findViewById(R.id.buttonAyuda)
         val iv_regresar: ImageView = findViewById(R.id.ivRegresarConfiguracion)
         val btn_editar_perfil: Button = findViewById(R.id.btnEditarPerfil)
         val btn_cambiar_perfil: Button = findViewById(R.id.btnCambiarPerfil)
+        val btn_cerrar_sesion: Button = findViewById(R.id.btnCerrarSesion)
 
 
 
@@ -38,6 +44,12 @@ class Configuracion : AppCompatActivity() {
             var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
             startActivity(intent)
 
+        }
+
+        btn_cerrar_sesion.setOnClickListener {
+            auth.signOut()
+            var intent: Intent = Intent(this, IniciarSesion::class.java)
+            startActivity(intent)
         }
     }
 
