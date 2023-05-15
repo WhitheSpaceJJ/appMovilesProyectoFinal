@@ -71,10 +71,10 @@ class Menu : AppCompatActivity() {
             Historia(
                 1,  R.drawable.regaloprincesa,
                 "El regalo de la princesa",
-                "Pepe Aguilar",
+                "Paola Artmann",
                 "6",
                 "Érase una vez una pequeña princesa que al cumplir los diez años tuvo una fantástica fiesta. Había músicos, flores, helado de fresa y pasteles con glaseado rosa. Los invitados trajeron los más maravillosos regalos. Pero entre todos los regalos, uno en particular llamó la atención de la princesa. Era una caja pequeña, envuelta en papel dorado y con un lazo rojo. La princesa abrió la caja con cuidado y dentro encontró un espejo mágico que podía concederle cualquier deseo. Sin embargo, la princesa sabía que con grandes poderes venían grandes responsabilidades.",
-                arrayListOf("Aventura", "Fantasía", "Magia", "Princesas", "Amistad", "Crecimiento"),
+                arrayListOf("Magia","Fantacia"),
                 arrayListOf(R.drawable.princesa1,R.drawable.princesa2,R.drawable.princesa3,R.drawable.princesa4,R.drawable.princesa5,R.drawable.princesa6), // Imágenes no especificadas
                 arrayListOf(
                     //6
@@ -90,10 +90,10 @@ class Menu : AppCompatActivity() {
             Historia(
                 2, R.drawable.reinanieves,
                 "Blancanieves",
-                "Disney plus TV",
+                "Jacob Grimm, Wilhelm Grimm",
                 "8",
                 "Había una vez una reina que anhelaba tener una hija, y un día sus deseos se cumplieron con el nacimiento de una hermosa niña de piel blanca como la nieve, labios rojos como la sangre y cabello negro como el ébano. Pero la felicidad no duró mucho tiempo, ya que la reina falleció poco después del nacimiento de su hija. El rey se volvió a casar con una mujer vanidosa y cruel, quien poseía un espejo mágico al que preguntaba quién era la más hermosa del reino. Cuando el espejo respondió que Blancanieves lo era, la madrastra se enfureció y ordenó la muerte de la joven. Sin embargo, el cazador enviado para realizar la tarea se apiadó de Blancanieves y la dejó escapar. La joven llegó a un bosque, donde encontró refugio en una cabaña habitada por siete enanos. Pero la malvada madrastra descubrió que Blancanieves seguía viva y se disfrazó para envenenarla con una manzana. Afortunadamente, un príncipe la despertó de su sueño con un beso de amor verdadero y vivieron felices para siempre.",
-                arrayListOf("Cuento de hadas", "Fantasía", "Aventura", "Infantil","Amor","Lealtad"),
+                arrayListOf("Fantasía", "Aventura", "Magia","Misterio"),
                 arrayListOf(R.drawable.blanca1,R.drawable.blanca2,R.drawable.blanca3,R.drawable.blanca4,R.drawable.blanca5,R.drawable.blanca6,R.drawable.blanca7,R.drawable.blanca8),
                 arrayListOf(
                     "Una reina deseaba tener una hija, y su deseo se cumplió con el nacimiento de Blancanieves.",
@@ -112,10 +112,10 @@ class Menu : AppCompatActivity() {
             Historia(
                 3,    R.drawable.cenicienta,
                 "Cenicienta",
-                "Maria Bonita",
+                "Clyde Geronimi",
                 "5",
                 "Érase una vez una hermosa joven que vivía con su madrastra y dos hermanastras que la obligaban a hacer todo el trabajo de la casa. La pobre joven tenía que cocinar, limpiar y también lavarles la ropa.",
-                arrayListOf("Ficción", "Cuento de hadas", "Romance", "Drama", "Infantil", "Fantasía"),
+                arrayListOf("Fantasia", "Magia"),
                 arrayListOf(R.drawable.cenicienta1,R.drawable.cenicienta2,R.drawable.cenicienta3,R.drawable.cenicienta4,R.drawable.cenicienta5),
                 // 5
                 arrayListOf(
@@ -131,10 +131,10 @@ class Menu : AppCompatActivity() {
             Historia(
                 4,  R.drawable.pinocho,
                 "Pinocho",
-                "Carlos Coyoli",
+                "Carlos Collodi",
                 "6",
                 "Érase una vez un anciano carpintero llamado Gepeto que era muy feliz haciendo juguetes de madera para los niños de su pueblo. Un día, hizo una marioneta de una madera de pino muy especial y decidió llamarla Pinocho. En la noche, un hada azul llegó al taller del anciano carpintero:",
-                arrayListOf("Cuento de hadas", "Aventura", "Infantil", "Fantasía","Familiar","Magia"),
+                arrayListOf("Magia", "Aventura"),
                 arrayListOf(R.drawable.pinocho1,R.drawable.pinocho2,R.drawable.pinocho3,R.drawable.pinocho4,R.drawable.pinocho5,R.drawable.pinocho6),
                 //6
                 arrayListOf(

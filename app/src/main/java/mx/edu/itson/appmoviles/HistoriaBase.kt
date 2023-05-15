@@ -20,10 +20,17 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
     var pb_progreso: ProgressBar? = null
     var btn_diccionario: Button? = null
     var btn_escuchar_historia: Button? = null
+    var historia: Historia? = null
+    var numParrafo: Int = 0
+    var maxProgBar: Int = 0
+    var progreso: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_historia_base)
+
+        historia = intent.getSerializableExtra("historia") as Historia
 
         tv_texto_historia = findViewById(R.id.tvTextoHistoria)
         btn_configuracion_historia = findViewById(R.id.btnConfiguracionHistoria)
@@ -33,12 +40,73 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
         btn_diccionario = findViewById(R.id.btnDiccionarioHistoria)
         btn_escuchar_historia = findViewById(R.id.btnEscucharHistoria)
 
+        val iv_imagen_lectura: ImageView = findViewById(R.id.imagenLectura)
+
+        iv_imagen_lectura.setImageResource(historia!!.image)
+        tv_texto_historia!!.setText(historia!!.parrafos.get(0))
+        pb_progreso!!.setMax(historia!!.parrafos.size-1)
+        pb_progreso!!.progress = progreso
+
+        btn_siguiente_lectura!!.setOnClickListener {
+            numParrafo++
+            progreso++
+            if (numParrafo > (historia!!.parrafos.size - 1)) {
+                numParrafo = historia!!.parrafos.size - 1
+                var intent: Intent = Intent(this, FinLectura::class.java)
+                startActivity(intent)
+            }
+            if (progreso > historia!!.parrafos.size) {
+                progreso = historia!!.parrafos.size
+            }
+            tv_texto_historia!!.setText(historia!!.parrafos.get(numParrafo))
+            pb_progreso!!.progress = progreso
+
+
+        }
+
+        btn_regresar_lectura!!.setOnClickListener {
+            numParrafo--
+            progreso--
+            if (numParrafo < 0) {
+                numParrafo = 0
+            }
+
+            if (progreso < 0) {
+                progreso = 0
+            }
+
+            tv_texto_historia!!.setText(historia!!.parrafos.get(numParrafo))
+            pb_progreso!!.progress = progreso
+        }
+
         val iv_regresar_historia: ImageView = findViewById(R.id.ivRegresarHistoria)
+
 
         iv_regresar_historia.setOnClickListener {
             var intent: Intent = Intent(this, HistoriaInfo::class.java)
             startActivity(intent)
         }
+
+        /*
+                siguiente_imagen_perfil.setOnClickListener {
+            imagenPerfil++
+            if (imagenPerfil > (imagenesPerfil.size - 1)) {
+                imagenPerfil = 0
+            }
+
+            imagen_perfil.setImageResource(imagenesPerfil.get(imagenPerfil))
+
+        }
+
+        anterior_imagen_perfil.setOnClickListener {
+            imagenPerfil--
+            if (imagenPerfil < 0) {
+                imagenPerfil = 2
+            }
+
+            imagen_perfil.setImageResource(imagenesPerfil.get(imagenPerfil))
+        }
+         */
 
         btn_escuchar_historia?.setOnClickListener {
             var intent: Intent = Intent(this, PopUpVoz::class.java)
@@ -61,16 +129,16 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
 
-        when(view.id){
-            R.id.tvTextoHistoria ->{
-                if(btn_diccionario?.isInvisible== true){
+        when (view.id) {
+            R.id.tvTextoHistoria -> {
+                if (btn_diccionario?.isInvisible == true) {
                     btn_regresar_lectura?.visibility = View.INVISIBLE
                     pb_progreso?.visibility = View.INVISIBLE
                     btn_siguiente_lectura?.visibility = View.INVISIBLE
                     btn_configuracion_historia?.visibility = View.INVISIBLE
                     btn_escuchar_historia?.visibility = View.INVISIBLE
                     btn_diccionario?.visibility = View.VISIBLE
-                }else{
+                } else {
                     btn_regresar_lectura?.visibility = View.VISIBLE
                     pb_progreso?.visibility = View.VISIBLE
                     btn_siguiente_lectura?.visibility = View.VISIBLE

@@ -82,6 +82,8 @@ class FragmentBuscar : Fragment() {
 
 
     private fun agregarCategorias() {
+        catalogo.clear()
+
         catalogo.add(
  CategoriaObjeto("Fantasia",R.drawable.fantasia)
         )

@@ -27,7 +27,10 @@ class HistoriaInfo : AppCompatActivity() {
 
         val imageView: ImageView=findViewById(R.id.imageView4Play)
         imageView.setOnClickListener{
+            val historia = intent.getSerializableExtra("historia") as Historia
             var intent: Intent = Intent(this, HistoriaBase::class.java)
+            intent.putExtra("historia", historia)
+
             startActivity(intent)
         }
 
