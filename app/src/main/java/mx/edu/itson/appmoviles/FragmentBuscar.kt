@@ -3,16 +3,14 @@ package mx.edu.itson.appmoviles
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.GridView
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
-import org.w3c.dom.Text
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,7 +46,7 @@ class FragmentBuscar : Fragment() {
         agregarCategorias()
         adapter = CategoriaObjetoAdapter(view.context, catalogo)
         var listView: ListView = view.findViewById(R.id.categorias)
-        listView.adapter=adapter
+        listView.adapter = adapter
         return view
     }
 
@@ -73,35 +71,31 @@ class FragmentBuscar : Fragment() {
     }
 
 
-
-
-
     var catalogo: ArrayList<CategoriaObjeto> = ArrayList<CategoriaObjeto>()
     var adapter: CategoriaObjetoAdapter? = null
-
 
 
     private fun agregarCategorias() {
         catalogo.clear()
 
         catalogo.add(
- CategoriaObjeto("Fantasia",R.drawable.fantasia)
+            CategoriaObjeto("Fantasia", R.drawable.fantasia)
         )
         catalogo.add(
-            CategoriaObjeto("Misterio",R.drawable.misterio)
+            CategoriaObjeto("Misterio", R.drawable.misterio)
         )
         catalogo.add(
-            CategoriaObjeto("Ciencia Ficción",R.drawable.cienciaficion)
+            CategoriaObjeto("Ciencia Ficción", R.drawable.cienciaficion)
         )
 
         catalogo.add(
-            CategoriaObjeto("Magia",R.drawable.otonotemporada)
+            CategoriaObjeto("Magia", R.drawable.otonotemporada)
         )
         catalogo.add(
-            CategoriaObjeto("Animales",R.drawable.animales)
+            CategoriaObjeto("Animales", R.drawable.animales)
         )
         catalogo.add(
-            CategoriaObjeto("Aventura",R.drawable.aventura)
+            CategoriaObjeto("Aventura", R.drawable.aventura)
         )
 
 
@@ -111,7 +105,7 @@ class FragmentBuscar : Fragment() {
         var context: Context? = null
         var catalogo = ArrayList<CategoriaObjeto>()
 
-        constructor(context: Context,categoriaObjeto: ArrayList<CategoriaObjeto>) {
+        constructor(context: Context, categoriaObjeto: ArrayList<CategoriaObjeto>) {
             this.context = context
             this.catalogo = categoriaObjeto
         }
@@ -135,11 +129,18 @@ class FragmentBuscar : Fragment() {
             var vista = inflator.inflate(R.layout.activity_categoria_base, null)
 
             var imagen: ImageView = vista.findViewById(R.id.categoria)
-            var text:TextView=vista.findViewById(R.id.txtCategoria)
-    imagen.setImageResource(historia.imagen)
+            var text: TextView = vista.findViewById(R.id.txtCategoria)
+            imagen.setImageResource(historia.imagen)
             text.setText(historia.titulo)
+            text.setOnClickListener {
+                var intent = Intent(context,FragmentCategoria::class.java)
+                intent.putExtra("palabra", text.toString())
+                context!!.startActivity(intent)
+            }
 
             return vista
         }
     }
+
+
 }

@@ -36,6 +36,7 @@ class IniciarSesion : AppCompatActivity() {
         }
 
         tvolvide_Pass.setOnClickListener {
+            //var intent: Intent = Intent(this, PaswordOlvidada::class.java)
             var intent: Intent = Intent(this, PaswordOlvidada::class.java)
             startActivity(intent)
         }

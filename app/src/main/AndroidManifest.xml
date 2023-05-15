@@ -14,8 +14,9 @@
         android:theme="@style/Theme.APPMOviles"
         tools:targetApi="31">
         <activity
-            android:name=".ReadExamen"
+            android:name=".cargaCatalogo"
             android:exported="false" />
+
         <activity
             android:name=".PopUpMedallaInfo"
             android:exported="false"

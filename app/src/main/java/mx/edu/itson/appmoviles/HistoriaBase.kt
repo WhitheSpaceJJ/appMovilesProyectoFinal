@@ -42,7 +42,7 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
 
         val iv_imagen_lectura: ImageView = findViewById(R.id.imagenLectura)
 
-        iv_imagen_lectura.setImageResource(historia!!.image)
+        iv_imagen_lectura.setImageResource(historia!!.image!!.toInt())
         tv_texto_historia!!.setText(historia!!.parrafos.get(0))
         pb_progreso!!.setMax(historia!!.parrafos.size-1)
         pb_progreso!!.progress = progreso
@@ -60,6 +60,7 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
             }
             tv_texto_historia!!.setText(historia!!.parrafos.get(numParrafo))
             pb_progreso!!.progress = progreso
+            iv_imagen_lectura.setImageResource(historia!!.imagenes.get(numParrafo))
 
 
         }
@@ -77,6 +78,7 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
 
             tv_texto_historia!!.setText(historia!!.parrafos.get(numParrafo))
             pb_progreso!!.progress = progreso
+            iv_imagen_lectura.setImageResource(historia!!.imagenes.get(numParrafo))
         }
 
         val iv_regresar_historia: ImageView = findViewById(R.id.ivRegresarHistoria)

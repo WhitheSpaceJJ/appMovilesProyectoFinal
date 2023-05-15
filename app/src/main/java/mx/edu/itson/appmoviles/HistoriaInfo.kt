@@ -18,7 +18,7 @@ class HistoriaInfo : AppCompatActivity() {
 
         if(intent.hasExtra("historia")){
             val historia = intent.getSerializableExtra("historia") as Historia
-            iv_iamgen_historia.setImageResource(historia.image)
+            iv_iamgen_historia.setImageResource(historia.image!!.toInt())
             tv_titulo_historia.text = historia.titulo
             tv_autor_historia.text = historia.autor
             tv_paginas_historia.text = historia.numPaginas

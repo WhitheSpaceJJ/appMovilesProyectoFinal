@@ -2,16 +2,15 @@ package mx.edu.itson.appmoviles
 
 import java.io.Serializable
 
-data class Historia(var id:Int
-                       ,var image:Int,
-                    var titulo: String,
-                    var autor: String,
-                    var numPaginas: String,
-                    var sinopsisi: String
-                    ,
-                    var generos: ArrayList<String>,
-                    var imagenes: ArrayList<Int>
-                    ,
-                    var parrafos: ArrayList<String>,
+data class Historia(
+    var id: Int?=null,
+    var image: Int?=null,
+    var titulo: String?=null,
+    var autor: String?=null,
+    var numPaginas: String?=null,
+    var sinopsisi: String?=null,
+    var generos: ArrayList<String> = ArrayList(),
+    var imagenes: ArrayList<Int> = ArrayList(),
+    var parrafos: ArrayList<String> = ArrayList(),
 
-                    ): Serializable
+    ) : Serializable

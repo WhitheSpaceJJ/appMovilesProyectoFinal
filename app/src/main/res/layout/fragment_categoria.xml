@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentCatalogo">
+    tools:context=".FragmentCategoria">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvTituloCatalogo"
+            android:id="@+id/tvTituloCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/catalogo"
+        android:id="@+id/rvCategoria"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
