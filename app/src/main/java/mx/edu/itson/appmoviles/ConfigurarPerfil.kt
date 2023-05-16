@@ -38,6 +38,17 @@ class ConfigurarPerfil : AppCompatActivity() {
         val anterior_imagen_perfil: ImageView = findViewById(R.id.ivAnteriorImgPerfil)
         val imagen_perfil: ImageView = findViewById(R.id.ivImagenPerfil)
 
+        if(intent.hasExtra("perfil")){
+            et_configura_nombre= findViewById(R.id.et_configura_nombre)
+            et_configura_edad = findViewById(R.id.tv_configurar_edad)
+            val perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
+            et_configura_nombre?.setText(perfil.nombre.toString())
+            et_configura_edad?.setText(perfil.edad.toString())
+
+
+
+        }
+
 
         cargarImgPerfiles()
 
@@ -148,17 +159,40 @@ class ConfigurarPerfil : AppCompatActivity() {
                     perfil["imagen"] = imagen2
                     perfil["numPerfil"] = numPerfil
 
+                    if(intent.hasExtra("perfil")){
 
-                    userRef.child(uid).child("perfiles").child(numPerfil.toString())
-                        .updateChildren(perfil).addOnSuccessListener {
-                            // El registro ha sido actualizado correctamente
-                        }
-                        .addOnFailureListener {
-                            // Se produjo un error al actualizar el registro
-                        }
-                    //userRef.child(uid).child("perfiles").updateChildren(perfilesList)
+                        val perfilUp = intent.getSerializableExtra("perfil") as PerfilUsuario
+                        val perfil = HashMap<String, Any>()
+                        perfil["nombre"] = nombre
+                        perfil["edad"] = edad
+                        perfil["imagen"] = imagen2
+                        perfil["numPerfil"] = perfilUp.numPerfil!!.toInt()
+                        userRef.child(uid).child("perfiles").child(perfilUp.numPerfil.toString())
+                            .updateChildren(perfil).addOnSuccessListener {
+                                // El registro ha sido actualizado correctamente
+                            }
+                            .addOnFailureListener {
+                                // Se produjo un error al actualizar el registro
+                            }
+                        //userRef.child(uid).child("perfiles").updateChildren(perfilesList)
 
-                    enviarInfo(uid, numPerfil.toString())
+                        enviarInfo(uid, perfilUp.numPerfil.toString())
+
+                    }else{
+                        userRef.child(uid).child("perfiles").child(numPerfil.toString())
+                            .updateChildren(perfil).addOnSuccessListener {
+                                // El registro ha sido actualizado correctamente
+                            }
+                            .addOnFailureListener {
+                                // Se produjo un error al actualizar el registro
+                            }
+                        //userRef.child(uid).child("perfiles").updateChildren(perfilesList)
+
+                        enviarInfo(uid, numPerfil.toString())
+                    }
+
+
+
 
                 }
 
