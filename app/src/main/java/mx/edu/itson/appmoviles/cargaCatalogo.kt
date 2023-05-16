@@ -12,7 +12,7 @@ class cargaCatalogo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carga_catalogo)
-        agregarHistorias()
+       // agregarHistorias()
         val btnCargarhistorias : Button =findViewById(R.id.btnCargarCatalogo)
 
         btnCargarhistorias.setOnClickListener {
@@ -22,6 +22,7 @@ class cargaCatalogo : AppCompatActivity() {
 
     }
 
+    /*
     private fun agregarHistorias() {
 
         catalogo.add(
@@ -48,12 +49,20 @@ class cargaCatalogo : AppCompatActivity() {
                     "La princesa sabía que con grandes poderes venían grandes responsabilidades.",
                     "La princesa aprendió a usar el espejo mágico con sabiduría y bondad.",
                     "La princesa vivió feliz para siempre con el espejo mágico a su lado."
+                ),
+                "¿Qué regalaron a la princesa?",
+                "ESPEJO",
+                arrayListOf("P","C","O","A",
+                    "E","S","E","J"
+
                 )
+
             )
         )
         catalogo.add(
             Historia(
-                2, R.drawable.reinanieves,
+                2,
+                R.drawable.reinanieves,
                 "Blancanieves",
                 "Jacob Grimm, Wilhelm Grimm",
                 "8",
@@ -78,7 +87,13 @@ class cargaCatalogo : AppCompatActivity() {
                     "Blancanieves llegó a un bosque y encontró refugio en una cabaña habitada por siete enanos.",
                     "La madrastra descubrió que Blancanieves seguía viva y se disfrazó para envenenarla con una manzana.",
                     "Un príncipe la despertó de su sueño con un beso de amor verdadero y vivieron felices para siempre."
+                ),
+                "¿Cuántos enanos hay en el cuento?",
+                "SIETE",
+                arrayListOf(
+                    "O","A","S","E","S","T","I","E"
                 )
+
             )
         )
 
@@ -104,6 +119,11 @@ class cargaCatalogo : AppCompatActivity() {
                     "Cenicienta asiste al baile con un hermoso vestido y zapatos de cristal, y se roba la atención del príncipe.",
                     "Cuando llega la medianoche, Cenicienta tiene que huir del baile y regresar a casa.",
                     "El príncipe queda enamorado de Cenicienta y busca por todo el pueblo para encontrarla."
+                ),
+                "¿A dónde quería ir Cenicienta?",
+                "BAILE",
+                arrayListOf("A","B","E","I","C","L","A","U"
+
                 )
             )
         )
@@ -131,9 +151,16 @@ class cargaCatalogo : AppCompatActivity() {
                     "Pinocho era una marioneta muy traviesa y desobediente, y siempre se metía en problemas.",
                     "Pinocho aprendió importantes lecciones sobre la honestidad y la responsabilidad durante sus aventuras.",
                     "Al final de la historia, Pinocho se convirtió en un niño de verdad gracias a su buen comportamiento."
+                ),
+                "¿Cuál era el nombre del anciano carpintero?",
+                "GEPETO",
+                arrayListOf("P","G","A","E","U","E","O","T"
+
                 )
             )
         )
 
     }
+
+     */
 }

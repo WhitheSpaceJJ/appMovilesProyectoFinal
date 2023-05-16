@@ -100,6 +100,7 @@ class Actividad : AppCompatActivity(), View.OnClickListener {
 
 
     fun llenarOpciones(historia: Historia) {
+
         val opciones: ArrayList<Char> = historia.opciones
 
         tv_letraSeleccionada1?.setText(opciones.get(0).toString())
@@ -110,6 +111,8 @@ class Actividad : AppCompatActivity(), View.OnClickListener {
         tv_letraSeleccionada6?.setText(opciones.get(5).toString())
         tv_letraSeleccionada7?.setText(opciones.get(6).toString())
         tv_letraSeleccionada8?.setText(opciones.get(7).toString())
+
+
 
     }
 
