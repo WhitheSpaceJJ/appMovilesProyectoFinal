@@ -133,9 +133,9 @@ class FragmentBuscar : Fragment() {
             imagen.setImageResource(historia.imagen)
             text.setText(historia.titulo)
             text.setOnClickListener {
-                var intent = Intent(context,FragmentCategoria::class.java)
-                intent.putExtra("palabra", text.toString())
-                context!!.startActivity(intent)
+                //var intent = Intent(context,FragmentCategoria::class.java)
+                //intent.putExtra("palabra", text.toString())
+                //context!!.startActivity(intent)
             }
 
             return vista

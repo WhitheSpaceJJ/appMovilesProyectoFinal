@@ -22,6 +22,7 @@ class Configuracion : AppCompatActivity() {
         val btn_editar_perfil: Button = findViewById(R.id.btnEditarPerfil)
         val btn_cambiar_perfil: Button = findViewById(R.id.btnCambiarPerfil)
         val btn_cerrar_sesion: Button = findViewById(R.id.btnCerrarSesion)
+        val perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
 
 
 
@@ -32,6 +33,7 @@ class Configuracion : AppCompatActivity() {
 
         iv_regresar.setOnClickListener {
             var intent: Intent = Intent(this, Menu::class.java)
+            intent.putExtra("perfil",perfil)
             startActivity(intent)
 
         }
@@ -42,6 +44,7 @@ class Configuracion : AppCompatActivity() {
         }
         btn_editar_perfil.setOnClickListener {
             var intent: Intent = Intent(this, ConfigurarPerfil::class.java)
+            intent.putExtra("perfil",perfil)
             startActivity(intent)
 
         }

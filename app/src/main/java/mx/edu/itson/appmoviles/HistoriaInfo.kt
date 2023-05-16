@@ -38,7 +38,9 @@ class HistoriaInfo : AppCompatActivity() {
 
         val imageViewRegresar: ImageView=findViewById(R.id.imageView2Regresar2)
         imageViewRegresar.setOnClickListener{
+            val perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
             var intent: Intent = Intent(this, Menu::class.java)
+            intent.putExtra("perfil", perfil)
             startActivity(intent)
         }
     }

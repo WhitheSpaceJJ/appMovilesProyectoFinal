@@ -92,6 +92,9 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
 
         iv_regresar_historia.setOnClickListener {
             var intent: Intent = Intent(this, HistoriaInfo::class.java)
+            intent.putExtra("perfil",perfil)
+            intent.putExtra("historia",historia)
+
             startActivity(intent)
         }
 

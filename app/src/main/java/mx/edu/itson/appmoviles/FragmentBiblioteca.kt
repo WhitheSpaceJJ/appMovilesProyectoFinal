@@ -80,6 +80,7 @@ class FragmentBiblioteca : Fragment() {
             )
         )
     }
+
     var catalogo: ArrayList<BibliotecaObjeto> = ArrayList<BibliotecaObjeto>()
     var adapter: FragmentBiblioteca.BibliotecaObjetoAdapter? = null
     companion object {

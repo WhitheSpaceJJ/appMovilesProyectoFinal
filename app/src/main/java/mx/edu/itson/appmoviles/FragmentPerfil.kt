@@ -58,6 +58,7 @@ class FragmentPerfil : Fragment() {
         ivConfiguracion.setOnClickListener {
             // Crea un Intent para llamar la Activity
             val intent = Intent(activity, Configuracion::class.java)
+            intent.putExtra("perfil",perfil)
             startActivity(intent)
         }
         val ivMedallas:ImageView= view.findViewById(R.id.medallasPerfil)
