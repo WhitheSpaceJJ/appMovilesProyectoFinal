@@ -42,6 +42,7 @@ class FragmentCategoria : Fragment() {
         val view = inflater.inflate(R.layout.fragment_categoria, container, false)
         val menu = Menu()
         var categoria = menu.getOpciones()
+        val perfil = arguments?.getSerializable("perfil") as PerfilUsuario
 
         //var busqueda =
 
@@ -56,13 +57,13 @@ class FragmentCategoria : Fragment() {
 
         // Crea un adaptador personalizado que extienda de RecyclerView.Adapter, y pásalo al RecyclerView
         val adapter =
-            FragmentCatalogo.HistoriaAdapter(requireContext(), categoriaResultado as ArrayList<Historia>)
+            FragmentCatalogo.HistoriaAdapter(requireContext(), categoriaResultado as ArrayList<Historia>, perfil)
         recyclerView.adapter = adapter
 
         return view
     }
 
-    class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>) :
+    class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>, private val perfil: PerfilUsuario) :
         RecyclerView.Adapter<HistoriaAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

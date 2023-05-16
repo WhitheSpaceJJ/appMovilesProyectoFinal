@@ -39,9 +39,10 @@ class FragmentCatalogo : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_catalogo, container, false)
+        val perfil = arguments?.getSerializable("perfil") as PerfilUsuario
         val menu = Menu()
         var catalogo = menu.getOpciones()
-        println("fragment"+ catalogo.toString())
+
         /*
         adapter = HistoriaAdapter(view.context, catalogo)
         var listView: GridView = view.findViewById(R.id.catalogo)
@@ -55,14 +56,14 @@ class FragmentCatalogo : Fragment() {
         recyclerView.layoutManager = layoutManager
 
 // Crea un adaptador personalizado que extienda de RecyclerView.Adapter, y pásalo al RecyclerView
-        val adapter = HistoriaAdapter(requireContext(), catalogo as ArrayList<Historia>)
+        val adapter = HistoriaAdapter(requireContext(), catalogo as ArrayList<Historia>, perfil  )
         recyclerView.adapter = adapter
 
         return view
     }
 
 
-    class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>) :
+    class HistoriaAdapter(private val context: Context, private val catalogo: ArrayList<Historia>, private val perfil: PerfilUsuario) :
         RecyclerView.Adapter<HistoriaAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -92,7 +93,7 @@ class FragmentCatalogo : Fragment() {
             }
             holder.imagen.setOnClickListener {
                 var intento = Intent(context, HistoriaInfo::class.java)
-
+                intento.putExtra("perfil", perfil)
                 intento.putExtra("historia", historia)
                 /*
                 intento.putExtra("image", historia.image)
@@ -112,6 +113,29 @@ class FragmentCatalogo : Fragment() {
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             var imagen: ImageView = itemView.findViewById(R.id.imageView)
         }
+    }
+
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment FragmentPerfil.
+         */
+        // TODO: Rename and change types and number of parameters
+
+
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            FragmentCatalogo().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
     }
 
 }

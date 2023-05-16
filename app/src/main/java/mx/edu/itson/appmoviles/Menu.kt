@@ -4,18 +4,11 @@ package mx.edu.itson.appmoviles
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import mx.edu.itson.appmoviles.databinding.ActivityMenuBinding
 
 
 class Menu : AppCompatActivity() {
 
-    var catalogo: ArrayList<Historia> = ArrayList<Historia>()
-
-    private var userRef = FirebaseDatabase.getInstance().getReference("libros")
 
 
     fun Menu() {
@@ -30,7 +23,6 @@ class Menu : AppCompatActivity() {
 
         val perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
 
-        obtenerHistorias()
 
         val view = binding.root
         setContentView(view)
@@ -38,13 +30,16 @@ class Menu : AppCompatActivity() {
         var actividadesFragment = FragmentActividades()
         var buscarFragment = FragmentBuscar()
         var bibliotecaFragment = FragmentBiblioteca()
-        var catologoFragment = FragmentCatalogo()
+        var catalogoFragment = FragmentCatalogo()
         val args = Bundle()
+
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_Inicio -> {
 
-                    setCurrentFragment(catologoFragment)
+                    setCurrentFragment(catalogoFragment)
+                    args.putSerializable("perfil", perfil)
+                    catalogoFragment.arguments = args
 
                     true
                 }
@@ -77,7 +72,7 @@ class Menu : AppCompatActivity() {
     }
 
 
-    /*
+
     var catalogo: ArrayList<Historia> = ArrayList<Historia>()
     private fun agregarHistorias() {
 
@@ -193,7 +188,7 @@ class Menu : AppCompatActivity() {
         )
 
     }
-         */
+
 
 
     fun setCurrentFragment(fragment: Fragment) {
@@ -206,59 +201,10 @@ class Menu : AppCompatActivity() {
 
 
     fun getOpciones(): List<Historia> {
-        val catalogo2=catalogo
-
-        return catalogo2
+        agregarHistorias()
+        return catalogo
     }
 
-    private fun agregarHistorias(catalogoDB: ArrayList<Historia>){
-        catalogo = catalogoDB
-
-
-    }
-
-
-    fun obtenerHistorias() {
-
-        userRef.addListenerForSingleValueEvent(object : ValueEventListener{
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val catalogo2 = mutableListOf<Historia>()
-                for (ds in dataSnapshot.children){
-                    /*
-                    val id = ds.child("id").value as Long
-                    val image = ds.child("image").value as Long
-                    val titulo= ds.child("titulo").value as String
-                    val autor= ds.child("autor").value as String
-                    val numPaginas = ds.child("numPaginas").value as String
-                    val sinopsisi= ds.child("sinopsisi").value as String
-
-                    val generos= ds.child("generos").value as ArrayList<String>
-                    val imagenes= ds.child("imagenes").value as ArrayList<Int>
-
-
-
-                    val parrafos= ds.child("parrafos").value as ArrayList<String>
-
-                     */
-
-                    //val historia = Historia(id.toInt(),image.toInt(),titulo,autor,numPaginas,sinopsisi,generos,imagenes,parrafos)
-
-                    val historia = ds.getValue(Historia::class.java)
-                    catalogo2.add(historia!!)
-                    catalogo.add(historia)
-                    agregarHistorias(catalogo)
-
-
-
-                }
-        }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
-
-}
 
 
 

@@ -45,6 +45,8 @@
         android:textSize="20dp" />
 
     <ImageView
+
+        android:id="@+id/ivActividadImg"
         android:layout_width="409dp"
         android:layout_height="350dp"
         android:src="@drawable/game1" />

@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_catalogo"
-        android:name="mx.edu.itson.appmoviles.FragmentCatalogo" />
+        android:name="mx.edu.itson.appmoviles.FragmentBuscar" />
 
 
 

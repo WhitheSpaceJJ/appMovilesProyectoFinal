@@ -21,6 +21,7 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
     var btn_diccionario: Button? = null
     var btn_escuchar_historia: Button? = null
     var historia: Historia? = null
+    var perfil: PerfilUsuario? = null
     var numParrafo: Int = 0
     var maxProgBar: Int = 0
     var progreso: Int = 0
@@ -31,6 +32,8 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_historia_base)
 
         historia = intent.getSerializableExtra("historia") as Historia
+        perfil = intent.getSerializableExtra("perfil") as PerfilUsuario
+
 
         tv_texto_historia = findViewById(R.id.tvTextoHistoria)
         btn_configuracion_historia = findViewById(R.id.btnConfiguracionHistoria)
@@ -52,7 +55,10 @@ class HistoriaBase : AppCompatActivity(), View.OnClickListener {
             progreso++
             if (numParrafo > (historia!!.parrafos.size - 1)) {
                 numParrafo = historia!!.parrafos.size - 1
+
                 var intent: Intent = Intent(this, FinLectura::class.java)
+                intent.putExtra("perfil", perfil)
+                intent.putExtra("historia",historia)
                 startActivity(intent)
             }
             if (progreso > historia!!.parrafos.size) {
