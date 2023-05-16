@@ -43,6 +43,8 @@ class FragmentPerfil : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(layout.fragment_perfil, container, false)
+
+
         val perfil = arguments?.getSerializable("perfil") as PerfilUsuario
 
         val tvNombre: TextView = view.findViewById(R.id.tvNombreUsuarioPerfil)

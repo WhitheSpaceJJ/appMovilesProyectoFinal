@@ -59,6 +59,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvPreguntaActividad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -69,7 +70,7 @@
             android:textSize="20sp" />
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="370dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -80,52 +81,78 @@
                 android:layout_width="50dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/round_green2"
                 android:gravity="center"
                 android:text="T"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvLetraAdivinar2"
                 android:layout_width="50dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/round_green2"
                 android:gravity="center"
                 android:text="R"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvLetraAdivinar3"
                 android:layout_width="50dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/round_green2"
                 android:gravity="center"
                 android:text="E"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvLetraAdivinar4"
                 android:layout_width="50dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/round_green2"
                 android:gravity="center"
                 android:text="N"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tvLetraAdivinar5"
+                android:layout_width="50dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_green2"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tvLetraAdivinar6"
+                android:layout_width="50dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_green2"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:visibility="invisible" />
 
         </LinearLayout>
 
@@ -138,11 +165,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada1"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="A"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -151,11 +179,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada2"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="T"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -164,11 +193,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada3"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="I"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -177,11 +207,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada4"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="E"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -198,11 +229,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada5"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="R"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -211,11 +243,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada6"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="O"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -224,11 +257,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada7"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="N"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -237,11 +271,12 @@
             <TextView
                 android:id="@+id/tvLetraSeleccionada8"
                 android:layout_width="50dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/round_button_purple_ch"
                 android:gravity="center"
+                android:onClick="onClick"
                 android:text="S"
                 android:textColor="@color/white"
                 android:textSize="25sp"

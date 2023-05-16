@@ -58,13 +58,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_ver_perfil"
+        android:id="@+id/btnContinuarRegaloAbierto"
         app:backgroundTint="@null"
         android:layout_width="259dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="@drawable/round_button_purple"
 
-        android:text="Ver perfil" />
+        android:text="Continuar" />
 
 </LinearLayout>

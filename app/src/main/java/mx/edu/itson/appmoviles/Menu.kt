@@ -105,7 +105,8 @@ class Menu : AppCompatActivity() {
         )
         catalogo.add(
             Historia(
-                2, R.drawable.reinanieves,
+                2,
+                R.drawable.reinanieves,
                 "Blancanieves",
                 "Jacob Grimm, Wilhelm Grimm",
                 "8",
@@ -130,7 +131,13 @@ class Menu : AppCompatActivity() {
                     "Blancanieves llegó a un bosque y encontró refugio en una cabaña habitada por siete enanos.",
                     "La madrastra descubrió que Blancanieves seguía viva y se disfrazó para envenenarla con una manzana.",
                     "Un príncipe la despertó de su sueño con un beso de amor verdadero y vivieron felices para siempre."
+                ),
+                "¿Cuantos enanos hay en el cuento?",
+               "SIETE",
+                arrayListOf(
+                    'O','A','S','E','S','T','I','E'
                 )
+
             )
         )
 

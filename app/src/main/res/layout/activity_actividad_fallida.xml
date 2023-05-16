@@ -38,7 +38,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:justificationMode="inter_word"
-        android:text="Toma un regalo por tu esfuerzo"
+        android:text="Seguro que lo logras la proxima vez"
         android:textStyle="bold"
         android:textColor="@color/text_purple_dark"
         android:textSize="20sp" />
@@ -58,7 +58,7 @@
         android:layout_marginTop="30dp"/>
 
     <Button
-        android:id="@+id/btn_seguir_practicando"
+        android:id="@+id/btnSeguirPracticando"
         android:layout_width="259dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -67,7 +67,7 @@
         app:backgroundTint="@null" />
 
     <Button
-        android:id="@+id/btn_ahora_no"
+        android:id="@+id/btnAhoraNo"
         android:layout_width="259dp"
         android:layout_height="48dp"
         android:layout_marginTop="25dp"

@@ -12,5 +12,8 @@ data class Historia(
     var generos: ArrayList<String> = ArrayList(),
     var imagenes: ArrayList<Int> = ArrayList(),
     var parrafos: ArrayList<String> = ArrayList(),
+    var pregunta: String?=null,
+    var respuesta: String?=null,
+    var opciones: ArrayList<Char> = ArrayList()
 
     ) : Serializable

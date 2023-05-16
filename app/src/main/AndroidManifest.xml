@@ -88,6 +88,9 @@
             android:name=".Regalo"
             android:exported="false" />
         <activity
+            android:name=".Regalo_abierto"
+            android:exported="false" />
+        <activity
             android:name=".BibliotecaBase"
             android:exported="false" />
         <activity
